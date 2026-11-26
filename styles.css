@@ -236,6 +236,40 @@ code {
   color: var(--green);
 }
 
+.work-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--base01);
+  text-underline-offset: 4px;
+  transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+
+.work-link:hover {
+  color: var(--blue-bright);
+  text-decoration-color: currentColor;
+}
+
+.work-link:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.inline-link {
+  color: var(--blue-link);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+}
+
+.inline-link:hover {
+  color: var(--blue-bright);
+}
+
+.inline-link:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
 .work-item p {
   max-width: 78ch;
   margin: 0 0 0 2ch;
