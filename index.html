@@ -314,13 +314,13 @@
         </div>
       </section>
 
+      <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 2 edits · 4 thoughts</span></p>
       <div class="prompt-box">
         <a class="prompt-link" href="mailto:phongvcao@gmail.com">
           <span>phongvcao@gmail.com</span>
           <span class="cursor cursor-small" aria-hidden="true"></span>
         </a>
         <p class="prompt-meta"><span class="model-agent">Ultracode</span> <span class="model-auto">auto</span> <span class="model-dim">·</span> <span class="model-name">DeepSeek V4.1 Flash 1017</span> <span class="model-dim">·</span> <span class="model-max">max</span></p>
-        <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 2 edits · 4 thoughts</span></p>
       </div>
       <div class="prompt-status" aria-label="Session status">
         <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span class="status-hint"><span class="status-key">esc</span> interrupt</span></span>
@@ -336,7 +336,8 @@
         var pairs = [
           ["--topbar-h", document.querySelector(".pl-top")],
           ["--prompt-h", document.querySelector(".prompt-box")],
-          ["--status-h", document.querySelector(".prompt-status")]
+          ["--status-h", document.querySelector(".prompt-status")],
+          ["--activity-h", document.querySelector(".prompt-activity")]
         ];
         pairs.forEach(function (pair) {
           var el = pair[1];

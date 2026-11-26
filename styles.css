@@ -97,7 +97,7 @@ a:hover {
   flex: 1;
   width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
-  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h) + 48px);
+  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h) + var(--activity-h) + 48px);
 }
 
 .user-message {
@@ -167,8 +167,8 @@ h1 {
 .role {
   margin: 0 0 18px;
   color: var(--blue-bright);
-  font-size: 1.125rem;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  line-height: 1.4;
 }
 
 .role .mark {
@@ -244,10 +244,10 @@ code {
 }
 
 .section h2 {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   color: var(--vim-orange-light);
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.375rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
@@ -266,7 +266,7 @@ code {
 .work-item h3 {
   margin: 0 0 4px;
   color: var(--vim-orange-light);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 600;
 }
 
@@ -660,10 +660,18 @@ code {
 }
 
 .prompt-activity {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--status-h) + var(--prompt-h));
+  z-index: 100;
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 6px 0 0;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 16px 8px;
+  background: var(--base03);
   color: var(--base01);
   font-size: 0.9375rem;
   line-height: 1.5;
@@ -950,8 +958,8 @@ code {
 }
 
 .pl-light {
-  --seg-bg: var(--base1);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--base1);
 }
 
 
@@ -980,30 +988,30 @@ code {
   --seg-fg: var(--base1);
 }
 
-/* Right side: grey steps, darkest grey on the left, lightest at the edge. */
+/* Right side: dark steps, base02 under base01, text stays muted. */
 .pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(1) {
-  --seg-bg: var(--base0);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--base1);
 }
 
 .pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(2) {
-  --seg-bg: var(--base1);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base01);
+  --seg-fg: var(--base1);
 }
 
 .pl-line-social .pl-seg:nth-child(1) {
-  --seg-bg: var(--base0);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--base1);
 }
 
 .pl-line-social .pl-seg:nth-child(2) {
-  --seg-bg: var(--base1);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base01);
+  --seg-fg: var(--base1);
 }
 
 .pl-line-social .pl-seg:nth-child(3) {
-  --seg-bg: var(--base2);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--base1);
 }
 
 .pl-badge {
@@ -1020,8 +1028,8 @@ code {
 }
 
 .pl-context {
-  --seg-bg: var(--base0);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base01);
+  --seg-fg: var(--base1);
 }
 
 @media (max-width: 720px) {
@@ -1044,7 +1052,7 @@ code {
   }
 
   .role {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .intro {
