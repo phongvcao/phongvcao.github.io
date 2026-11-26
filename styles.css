@@ -134,6 +134,25 @@ a:hover {
   padding: var(--topbar-h) 0 24px;
 }
 
+/* The question, as a prompt already sent: its own bar under the powerline,
+   framed like the prompt box at the foot of the page. */
+.fired-prompt {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 40;
+  padding: 12px 16px;
+  border: 1px solid var(--base01);
+  border-left: 2px solid var(--blue);
+  background: var(--base02);
+}
+
+.fired-prompt p {
+  margin: 0;
+  color: var(--base1);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .response {
   padding-top: 28px;
 }
@@ -144,7 +163,7 @@ h1 {
   font-size: clamp(2.5rem, 6vw, 4.375rem);
   font-weight: 400;
   line-height: 1.02;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .cursor {
@@ -168,6 +187,14 @@ h1 {
   color: var(--blue-bright);
   font-size: 1.5rem;
   line-height: 1.4;
+}
+
+.role-logo {
+  width: 0.82em;
+  height: 0.82em;
+  margin-right: 0.3em;
+  fill: currentColor;
+  vertical-align: -0.04em;
 }
 
 .role .mark {
@@ -227,6 +254,12 @@ code {
   margin-right: 0.35em;
   font-size: 1.15em;
   line-height: 1;
+}
+
+/* Brand plates (the PDF mark) are drawn small inside their em box, so they
+   need a nudge to sit at the same optical weight as the outline icons. */
+.button .icon.icon-plate {
+  font-size: 1.3em;
 }
 
 .button-primary {
@@ -349,7 +382,7 @@ code {
   color: var(--vim-orange-light);
   font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -453,6 +486,7 @@ code {
   padding: 0 4px;
   border: 1px solid currentColor;
   font-size: 0.72em;
+  font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0;
   opacity: 0.8;
@@ -466,8 +500,36 @@ code {
   height: 1.3em;
   border: 1px solid currentColor;
   font-size: 1em;
+  font-weight: 700;
   line-height: 1;
   opacity: 0.8;
+}
+
+/* Real brand marks: no monogram frame, drawn in the text colour so they sit
+   in the Solarized palette instead of importing the company's own colour. */
+.company-mark.is-logo {
+  border: 0;
+  padding: 0.1em;
+}
+
+/* A wide mark (Arista) takes a wider box so its ink matches the height of the
+   square marks; the negative margin keeps the company names on one column. */
+.company-mark.is-wide {
+  width: 1.5em;
+  margin-right: -0.2em;
+}
+
+.company-mark svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.logo-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .term-link {
@@ -1085,11 +1147,6 @@ h1 .cursor {
   padding-right: 10px;
 }
 
-.pl-question {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--cyan);
-}
-
 .pl-theme-btn {
   --seg-bg: var(--base02);
   --seg-fg: var(--base0);
@@ -1132,6 +1189,18 @@ h1 .cursor {
 .pl-icon {
   margin-right: 0.28em;
   font-size: 0.95em;
+}
+
+.pl-icon svg {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  fill: currentColor;
+  vertical-align: -0.12em;
+}
+
+.pl-icon.icon-plate {
+  font-size: 1.1em;
 }
 
 .pl-pin {
