@@ -77,6 +77,22 @@ html[data-theme="light"] {
   box-sizing: border-box;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--base01);
+  -webkit-mask-image: url("assets/watermark.svg");
+  -webkit-mask-repeat: repeat;
+  -webkit-mask-size: 220px 110px;
+  mask-image: url("assets/watermark.svg");
+  mask-repeat: repeat;
+  mask-size: 220px 110px;
+  opacity: 0.045;
+}
+
 html {
   color-scheme: dark;
 }
