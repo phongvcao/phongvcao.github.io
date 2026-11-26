@@ -246,15 +246,16 @@ code {
 }
 
 .button-primary {
-  border-color: var(--vim-blue-link);
-  background: var(--vim-blue-link);
-  color: var(--base03);
+  border-color: var(--green);
+  background: var(--green);
+  color: #002b36;
 }
 
 .button-primary:hover {
-  border-color: var(--blue-bright);
-  background: var(--blue-bright);
-  color: var(--base03);
+  border-color: var(--green);
+  background: var(--green);
+  color: #002b36;
+  filter: brightness(1.12);
 }
 
 .bracket {
