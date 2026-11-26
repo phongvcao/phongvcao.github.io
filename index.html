@@ -493,6 +493,7 @@
       expItems.forEach(function (item) {
         var summary = item.querySelector(".exp-summary");
         if (!summary) return;
+        summary.setAttribute("title", "Hover to peek, click to keep this row open");
         item.addEventListener("pointerenter", function () {
           item.open = true;
         });

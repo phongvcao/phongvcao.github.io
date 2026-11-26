@@ -441,6 +441,10 @@ code {
   border-top: 1px solid var(--base01);
 }
 
+.exp-item[data-pinned] {
+  box-shadow: inset 2px 0 0 var(--blue);
+}
+
 .exp-summary {
   display: grid;
   grid-template-columns: 2em minmax(0, 1.4fr) minmax(0, 1fr) 12em;
@@ -456,7 +460,7 @@ code {
   display: none;
 }
 
-.exp-summary:hover {
+.exp-item:hover {
   background: var(--base02);
 }
 
