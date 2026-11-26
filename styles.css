@@ -13,22 +13,26 @@
   --magenta: #d33682;
   --violet: #6c71c4;
   --blue: #268bd2;
-  --blue-bright: #6cb6e0;
-  --blue-link: #4fa3d9;
   --cyan: #2aa198;
   --green: #859900;
-  --vim-cyan: #2aa198;
-  --vim-cyan-bright: #5fc7bc;
-  --vim-blue: #268bd2;
-  --vim-blue-link: #4fa3d9;
-  --vim-green: #859900;
-  --vim-yellow: #b58900;
-  --vim-yellow-bright: #d9a800;
-  --vim-violet: #6c71c4;
-  --vim-violet-link: #a78bfa;
-  --vim-violet-bright: #c4b5fd;
-  --vim-orange: #cb4b16;
-  --vim-orange-light: #f0a07a;
+  --blue-bright: var(--cyan);
+  --blue-link: var(--blue);
+  --vim-cyan: var(--cyan);
+  --vim-cyan-bright: var(--base2);
+  --vim-blue: var(--blue);
+  --vim-blue-link: var(--blue);
+  --vim-green: var(--green);
+  --vim-yellow: var(--yellow);
+  --vim-yellow-bright: var(--yellow);
+  --vim-violet: var(--violet);
+  --vim-violet-link: var(--violet);
+  --vim-violet-bright: var(--base2);
+  --vim-orange: var(--orange);
+  --vim-orange-light: var(--orange);
+  --topbar-h: 27px;
+  --prompt-h: 120px;
+  --status-h: 24px;
+
   --mono: "DejaVuSansMono Nerd Font", "DejaVu Sans Mono Nerd Font", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -67,12 +71,15 @@ a {
 
 .page {
   flex: 1;
-  width: min(1280px, calc(100% - 48px));
+  width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 24px 0 0;
+  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h));
 }
 
 .user-message {
+  position: sticky;
+  top: var(--topbar-h);
+  z-index: 50;
   padding: 16px 20px;
   border-left: 2px solid var(--blue);
   background: var(--base02);
@@ -130,7 +137,7 @@ h1 {
 .cursor {
   display: inline-block;
   margin-left: 0.08em;
-  color: var(--vim-blue);
+  color: inherit;
   animation: blink 1.15s steps(2, start) infinite;
 }
 
@@ -152,7 +159,6 @@ h1 {
 }
 
 .intro {
-  max-width: 78ch;
   margin: 0;
   color: var(--base1);
   font-size: 1rem;
@@ -286,7 +292,6 @@ code {
 }
 
 .work-item p {
-  max-width: 78ch;
   margin: 0 0 0 2ch;
   color: var(--base1);
   font-size: 0.9375rem;
@@ -322,12 +327,49 @@ code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.7em;
-  height: 1.7em;
+  width: 1.35em;
+  height: 1.35em;
   border: 1px solid currentColor;
   font-size: 0.72em;
   line-height: 1;
   opacity: 0.75;
+}
+
+.term-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.term-link:hover {
+  color: var(--vim-cyan-bright);
+  background: var(--base02);
+}
+
+.term-link:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.term-link code {
+  color: var(--vim-cyan);
+}
+
+.term-link:hover code {
+  color: var(--vim-cyan-bright);
+}
+
+.company-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.company-link:hover {
+  color: var(--base2);
+}
+
+.company-link:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
 }
 
 .experience-list {
@@ -351,6 +393,7 @@ code {
   padding: 11px 0;
   cursor: pointer;
   list-style: none;
+  font-size: 0.9375rem;
 }
 
 .exp-summary::-webkit-details-marker {
@@ -377,8 +420,11 @@ code {
 }
 
 .exp-role {
+  margin: 0;
   color: var(--base2);
+  font-size: 1em;
   font-weight: 600;
+  line-height: inherit;
 }
 
 .exp-company {
@@ -390,14 +436,21 @@ code {
 
 .exp-dates {
   color: var(--base0);
-  text-align: right;
+  text-align: left;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 
 .exp-body {
-  max-width: 78ch;
   padding: 0 0 14px 2em;
+}
+
+.exp-period {
+  margin: 10px 0 4px;
+  color: var(--base0);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .exp-bullets {
@@ -489,7 +542,13 @@ code {
 }
 
 .prompt-box {
-  margin-top: 40px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--status-h);
+  z-index: 100;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
   padding: 14px 16px;
   border: 1px solid var(--base01);
   border-left: 2px solid var(--blue);
@@ -515,7 +574,7 @@ code {
 }
 
 .cursor-small {
-  color: var(--vim-orange);
+  color: inherit;
 }
 
 .prompt-meta {
@@ -529,24 +588,121 @@ code {
   color: var(--vim-orange-light);
 }
 
+.prompt-note {
+  margin: 6px 0 0;
+  color: var(--base1);
+  font-size: 0.6875rem;
+}
+
+.prompt-status {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 4px 16px;
+  border-top: 1px solid var(--base01);
+  background: var(--base03);
+  color: var(--base0);
+  font-size: 0.65rem;
+  line-height: 1.3;
+}
+
+.status-left,
+.status-right {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.status-left {
+  color: var(--base1);
+}
+
+.status-pulse {
+  display: inline-block;
+  color: var(--blue);
+  animation: pulse-slide 1.6s ease-in-out infinite alternate;
+}
+
+.status-dots {
+  display: inline-flex;
+  gap: 1px;
+  color: var(--blue);
+}
+
+.status-dots span {
+  display: inline-block;
+  animation: dot-wave 1.4s ease-in-out infinite;
+}
+
+.status-dots span:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.status-dots span:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.status-dots span:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+.status-dots span:nth-child(5) {
+  animation-delay: 0.48s;
+}
+
+.status-right {
+  color: var(--base0);
+}
+
+@keyframes pulse-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes dot-wave {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .pl-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   background: var(--base03);
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   line-height: 1;
 }
 
 .pl-top {
-  padding: 0 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0;
   border-bottom: 1px solid var(--base01);
-}
-
-.pl-bottom {
-  padding: 0 12px;
-  border-top: 1px solid var(--base01);
 }
 
 .pl-group {
@@ -566,7 +722,7 @@ code {
   gap: 5px;
   height: 26px;
   margin-left: -10px;
-  padding: 0 16px 0 20px;
+  padding: 0 8px 0 12px;
   background: var(--seg-bg);
   color: var(--seg-fg);
   white-space: nowrap;
@@ -575,12 +731,12 @@ code {
 
 .pl-seg:first-child {
   margin-left: 0;
-  padding-left: 12px;
+  padding-left: 8px;
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
 }
 
 .pl-seg:last-child {
-  padding-right: 12px;
+  padding-right: 8px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10px 50%);
 }
 
@@ -589,6 +745,32 @@ code {
   padding-left: 12px;
   padding-right: 12px;
   clip-path: none;
+}
+
+.pl-left .pl-seg:last-child,
+.pl-left .pl-seg:only-child {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%, 10px 50%);
+}
+
+.pl-right .pl-seg,
+.pl-right .pl-seg:first-child,
+.pl-right .pl-seg:last-child,
+.pl-right .pl-seg:only-child {
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 10px 100%, 0 50%);
+}
+
+.pl-right .pl-seg {
+  margin-left: -10px;
+  padding: 0 8px 0 12px;
+}
+
+.pl-right .pl-seg:first-child {
+  margin-left: 0;
+  padding-left: 12px;
+}
+
+.pl-right .pl-seg:last-child {
+  padding-right: 8px;
 }
 
 .pl-icon {
@@ -620,29 +802,15 @@ code {
   --seg-fg: var(--base03);
 }
 
-.site-footer {
-  margin-top: 48px;
-}
-
-.pl-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 6px 16px;
-  padding: 6px 12px;
-  border-top: 1px solid var(--base02);
-  color: var(--base0);
-  background: var(--base03);
-  font-size: 0.6875rem;
-}
-
 @media (max-width: 720px) {
-  body {
-    font-size: 16px;
+  :root {
+    --topbar-h: 85px;
+    --prompt-h: 140px;
+    --status-h: 64px;
   }
 
-  .page {
-    padding-top: 16px;
+  body {
+    font-size: 16px;
   }
 
   .user-message {
@@ -696,27 +864,25 @@ code {
     padding-left: 1.5em;
   }
 
-  .prompt-box {
-    margin-top: 32px;
-  }
-
-  .site-footer {
-    margin-top: 32px;
-  }
-
   .pl-top {
-    padding: 0 6px;
-  }
-
-  .pl-bottom {
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
-    padding: 4px 6px;
+    width: min(1100px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 4px 0;
   }
 
-  .pl-bottom .pl-right {
+  .pl-top .pl-right {
     align-self: flex-end;
+  }
+
+  .pl-top .pl-group {
+    flex-wrap: wrap;
+  }
+
+  .prompt-status {
+    padding: 4px 8px;
   }
 
   .pl-hide-sm {
@@ -747,8 +913,30 @@ code {
     clip-path: none;
   }
 
-  .pl-footer {
-    padding: 6px;
+  .pl-left .pl-seg:last-child,
+  .pl-left .pl-seg:only-child {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%, 8px 50%);
+  }
+
+  .pl-right .pl-seg,
+  .pl-right .pl-seg:first-child,
+  .pl-right .pl-seg:last-child,
+  .pl-right .pl-seg:only-child {
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+  }
+
+  .pl-right .pl-seg {
+    margin-left: -8px;
+    padding: 0 8px 0 16px;
+  }
+
+  .pl-right .pl-seg:first-child {
+    margin-left: 0;
+    padding-left: 16px;
+  }
+
+  .pl-right .pl-seg:last-child {
+    padding-right: 8px;
   }
 }
 
