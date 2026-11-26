@@ -87,7 +87,7 @@
         <span class="pl-seg pl-vim pl-hide-sm" aria-hidden="true">&#xE62B;</span>
         <span class="pl-seg pl-dir pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#xF07B;</span>Senior SWE</span>
         <span class="pl-seg pl-vcs"><span class="pl-icon" aria-hidden="true">&#xF126;</span>Nvidia</span>
-        <span class="pl-seg pl-context">11+ yrs</span>
+        <span class="pl-seg pl-context" data-since="2015-06-01" data-template="{n}+ yrs">11+ yrs</span>
         <span class="pl-seg pl-status pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#xF00C;</span>resume.pdf</span>
       </div>
       <span class="pl-fill" aria-hidden="true"></span>
@@ -302,6 +302,19 @@
         <div class="education">
           <p class="edu-school"><a class="company-link" href="https://www.stonybrook.edu/" target="_blank" rel="noopener">Stony Brook University</a><span class="edu-sep" aria-hidden="true">·</span><span class="edu-place"><a class="company-link" href="https://en.wikipedia.org/wiki/Stony_Brook,_New_York" target="_blank" rel="noopener">Stony Brook, NY</a></span><span class="edu-sep" aria-hidden="true">·</span><span class="edu-dates">May 2015</span></p>
           <p class="edu-degree"><a class="company-link" href="https://www.cs.stonybrook.edu/" target="_blank" rel="noopener">Bachelor of Science in Computer Science</a></p>
+          <p class="career-stats" aria-label="Years in each role">
+            <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2024-05-01" data-template="{n}+ yrs firmware">2+ yrs firmware</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2024-01-01" data-template="{n}+ yrs AI">2+ yrs AI</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2023-01-01" data-template="{n}+ yrs vibe-code">3+ yrs vibe-code</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
+          </p>
         </div>
       </section>
 
@@ -315,7 +328,7 @@
       </div>
       <div class="prompt-status" aria-label="Session status">
         <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span class="status-hint"><span class="status-key">esc</span> interrupt</span></span>
-        <span class="status-right"><span class="status-stat">11+ yrs exp</span><span class="status-dot">·</span><span class="status-stat">2+ yrs firmware</span><span class="status-dot">·</span><span class="status-stat">2+ yrs AI</span><span class="status-dot">·</span><span class="status-stat">vibe-code 2026</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
+        <span class="status-right"><span>700K (65%)</span><span class="status-dot">·</span><span>$66.88</span><span class="status-dot">·</span><span class="status-agents">6 subagents</span><span class="status-dot">·</span><span>ctrl+x commands</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
       </div>
     </article>
   </main>
@@ -376,6 +389,26 @@
       }
       tick();
       setInterval(tick, 1000);
+
+      function yearsSince(iso) {
+        var start = new Date(iso);
+        var now = new Date();
+        var years = now.getFullYear() - start.getFullYear();
+        var month = now.getMonth() - start.getMonth();
+        if (month < 0 || (month === 0 && now.getDate() < start.getDate())) {
+          years -= 1;
+        }
+        return years;
+      }
+      function paintYears() {
+        document.querySelectorAll("[data-since]").forEach(function (el) {
+          el.textContent = el
+            .getAttribute("data-template")
+            .replace("{n}", yearsSince(el.getAttribute("data-since")));
+        });
+      }
+      paintYears();
+      setInterval(paintYears, 3600000);
 
       var spinnerEl = document.querySelector(".spinner");
       if (spinnerEl && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
