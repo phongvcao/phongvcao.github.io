@@ -190,7 +190,7 @@ h1 {
 }
 
 .role-logo {
-  height: 1em;
+  height: 1.102em;
   width: auto;
   margin-right: 0.3em;
   fill: currentColor;
@@ -264,14 +264,27 @@ code {
 
 .button .icon {
   margin-right: 0.35em;
-  font-size: 1.3em;
   line-height: 1;
 }
 
-/* Brand plates (the PDF mark) are drawn small inside their em box, so they
-   need a nudge to sit at the same optical weight as the outline icons. */
-.button .icon.icon-plate {
-  font-size: 1.45em;
+/* Nerd Font glyphs ink a different fraction of their em, so each mark gets
+   its own size. Every one lands at 1.5x the cap height of the text next to
+   it: DejaVu Sans Mono caps at 0.734em, so the target ink is 1.102em. */
+.button .icon,
+.pl-icon {
+  font-size: var(--icon-size, 1.26em); /* github inks 0.872em */
+}
+.button .icon.i-in,
+.pl-icon.i-in {
+  --icon-size: 1.47em; /* linkedin inks 0.750em */
+}
+.button .icon.i-mail,
+.pl-icon.i-mail {
+  --icon-size: 1.59em; /* envelope inks 0.692em */
+}
+.button .icon.i-pdf,
+.pl-icon.i-pdf {
+  --icon-size: 1.65em; /* pdf plate inks 0.668em */
 }
 
 .button-primary {
@@ -523,7 +536,7 @@ code {
 }
 
 .company-mark svg {
-  height: 1.05em;
+  height: 1.102em;
   width: auto;
   fill: currentColor;
 }
@@ -1191,20 +1204,17 @@ h1 .cursor {
 
 .pl-icon {
   margin-right: 0.28em;
-  font-size: 1.1em;
 }
 
 .pl-icon svg {
   display: inline-block;
-  height: 1em;
+  height: 1.102em;
   width: auto;
   fill: currentColor;
   vertical-align: -0.18em;
 }
 
-.pl-icon.icon-plate {
-  font-size: 1.3em;
-}
+
 
 .pl-pin {
   width: 0.85em;
