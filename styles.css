@@ -588,6 +588,7 @@ code {
 .exp-company {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   gap: 7px;
   color: var(--base2);
 }
