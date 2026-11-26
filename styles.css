@@ -97,7 +97,7 @@ a:hover {
   flex: 1;
   width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
-  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h) + var(--activity-h) + 48px);
+  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h) + var(--activity-h) + var(--career-h) + 12px);
 }
 
 .user-message {
@@ -267,14 +267,15 @@ code {
 
 .work-list {
   display: grid;
-  gap: 22px;
+  gap: 0;
 }
 
 .work-item h3 {
-  margin: 0 0 4px;
+  margin: 0;
   color: var(--vim-orange-light);
   font-size: 1.0625rem;
   font-weight: 600;
+  line-height: inherit;
 }
 
 .work-item h3 .plus {
@@ -319,7 +320,7 @@ code {
 }
 
 .work-item p {
-  margin: 0 0 0 2ch;
+  margin: 0;
   color: var(--base1);
   font-size: 0.9375rem;
   line-height: 1.65;
@@ -564,13 +565,22 @@ code {
 }
 
 .career-stats {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--status-h) + var(--prompt-h) + var(--activity-h));
+  z-index: 100;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  margin: 10px 0 0;
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 0 16px 6px;
+  background: var(--base03);
   color: var(--base0);
   font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
 .stat-dot {

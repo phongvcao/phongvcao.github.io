@@ -231,34 +231,83 @@
       <section class="section" aria-labelledby="work-title">
         <h2 id="work-title"><span class="mark" aria-hidden="true">## </span>Projects</h2>
         <div class="work-list">
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span><a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener">OpenBMC</a> firmware for GPU platforms</h3>
-            <p><a class="term-link" href="https://isocpp.org/" target="_blank" rel="noopener"><code>C++</code></a> firmware for GPU baseboard management controllers on <a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener"><code>OpenBMC</code></a>. <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><code>Redfish</code></a> resources, telemetry, inventory and power limits that server makers, fleet tools and factory tests read over the network.</p>
-          </article>
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span>Rack power management</h3>
-            <p>Power shelf controller firmware for <a class="term-link" href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noopener"><code>GB200 NVL72</code></a> racks. A <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><code>Redfish</code></a> data model and a <a class="term-link" href="https://www.freedesktop.org/wiki/Software/dbus/" target="_blank" rel="noopener"><code>D-Bus</code></a> power service that let data center tools read and set rack power limits and AC-loss behavior, adopted by a power shelf vendor.</p>
-          </article>
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span><a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener">Redfish</a> conformance automation</h3>
-            <p>A containerized conformance station in <a class="term-link" href="https://www.python.org/" target="_blank" rel="noopener"><code>Python</code></a>, <a class="term-link" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener"><code>FastAPI</code></a> and <a class="term-link" href="https://www.docker.com/" target="_blank" rel="noopener"><code>Docker</code></a>. One capture of a live board feeds the <a class="term-link" href="https://www.dmtf.org/" target="_blank" rel="noopener"><code>DMTF</code></a> and in-house validators, so a release image is checked on real hardware before it ships.</p>
-          </article>
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span>Security risk automation at <a class="company-link" href="https://www.google.com/" target="_blank" rel="noopener">Google</a></h3>
-            <p>Built features for <a class="company-link" href="https://abc.xyz/" target="_blank" rel="noopener">Alphabet</a>'s automated security-risk system, rating each device by hardware profile and user behavior. Cut data pipeline latency ~15% with parallel and concurrent processing (<a class="term-link" href="https://go.dev/" target="_blank" rel="noopener"><code>Go</code></a>, <a class="term-link" href="https://isocpp.org/" target="_blank" rel="noopener"><code>C++</code></a>, <a class="term-link" href="https://kubernetes.io/" target="_blank" rel="noopener"><code>Kubernetes</code></a>) and raised database performance ~11% with <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a> sharding.</p>
-          </article>
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span>Switch-chip drivers at <a class="company-link" href="https://www.arista.com/" target="_blank" rel="noopener">Arista</a></h3>
-            <p>Wrote Linux kernel modules and switch-chip drivers for <a class="term-link" href="https://www.arista.com/en/products/eos" target="_blank" rel="noopener"><code>Arista EOS</code></a> on thousands of switches in cloud data centers. Raised data transfer rates ~19% by refactoring kernel drivers and cut product cost ~10%.</p>
-          </article>
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span>Factory material flow at <a class="company-link" href="https://www.tesla.com/" target="_blank" rel="noopener">Tesla</a></h3>
-            <p>Led design and delivery of key features for <a class="company-link" href="https://www.tesla.com/" target="_blank" rel="noopener">Tesla</a>'s factory Material Flow System (<a class="term-link" href="https://go.dev/" target="_blank" rel="noopener"><code>Go</code></a>, <a class="term-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener"><code>JavaScript</code></a>, <a class="term-link" href="https://www.python.org/" target="_blank" rel="noopener"><code>Python</code></a>, <a class="term-link" href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener"><code>SQL</code></a>, <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a>). Drove factory material flow throughput up ~21% with pickup and drop-off prioritization; improved <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a> performance ~33% through topic partitioning and message compression.</p>
-          </article>
-          <article class="work-item">
-            <h3><span class="plus" aria-hidden="true">+ </span><a class="work-link" href="https://hire4real.fyi" target="_blank" rel="noopener">hire4real.fyi</a></h3>
-            <p>A free public index of <a class="term-link" href="https://www.dol.gov/" target="_blank" rel="noopener">US Department of Labor</a> filings, with an <a class="inline-link" href="https://github.com/hire4real/hire4real-core" target="_blank" rel="noopener">open-source parsing core</a> (<a class="term-link" href="https://opensource.org/license/mit" target="_blank" rel="noopener"><code>MIT</code></a>). Built and operated end to end with AI coding agents.</p>
-          </article>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">OpenBMC Firmware</h3>
+              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
+              <span class="exp-dates work-tags">OpenBMC, Redfish</span>
+            </summary>
+            <div class="exp-body">
+              <p><a class="term-link" href="https://isocpp.org/" target="_blank" rel="noopener"><code>C++</code></a> firmware for GPU baseboard management controllers on <a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener"><code>OpenBMC</code></a>. <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><code>Redfish</code></a> resources, telemetry, inventory and power limits that server makers, fleet tools and factory tests read over the network.</p>
+            </div>
+          </details>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">Rack Power Management</h3>
+              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
+              <span class="exp-dates work-tags">D-Bus, Redfish</span>
+            </summary>
+            <div class="exp-body">
+              <p>Power shelf controller firmware for <a class="term-link" href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noopener"><code>GB200 NVL72</code></a> racks. A <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><code>Redfish</code></a> data model and a <a class="term-link" href="https://www.freedesktop.org/wiki/Software/dbus/" target="_blank" rel="noopener"><code>D-Bus</code></a> power service that let data center tools read and set rack power limits and AC-loss behavior, adopted by a power shelf vendor.</p>
+            </div>
+          </details>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">Redfish Automation</h3>
+              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
+              <span class="exp-dates work-tags">Python, FastAPI</span>
+            </summary>
+            <div class="exp-body">
+              <p>A containerized conformance station in <a class="term-link" href="https://www.python.org/" target="_blank" rel="noopener"><code>Python</code></a>, <a class="term-link" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener"><code>FastAPI</code></a> and <a class="term-link" href="https://www.docker.com/" target="_blank" rel="noopener"><code>Docker</code></a>. One capture of a live board feeds the <a class="term-link" href="https://www.dmtf.org/" target="_blank" rel="noopener"><code>DMTF</code></a> and in-house validators, so a release image is checked on real hardware before it ships.</p>
+            </div>
+          </details>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">Security Risk Automation</h3>
+              <a class="exp-company company-link" href="https://www.google.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">G</span>Google</a>
+              <span class="exp-dates work-tags">Go, Spanner</span>
+            </summary>
+            <div class="exp-body">
+              <p>Built features for <a class="company-link" href="https://abc.xyz/" target="_blank" rel="noopener">Alphabet</a>'s automated security-risk system, rating each device by hardware profile and user behavior. Cut data pipeline latency ~15% with parallel and concurrent processing (<a class="term-link" href="https://go.dev/" target="_blank" rel="noopener"><code>Go</code></a>, <a class="term-link" href="https://isocpp.org/" target="_blank" rel="noopener"><code>C++</code></a>, <a class="term-link" href="https://kubernetes.io/" target="_blank" rel="noopener"><code>Kubernetes</code></a>) and raised database performance ~11% with <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a> sharding.</p>
+            </div>
+          </details>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">Switch-Chip Drivers</h3>
+              <a class="exp-company company-link" href="https://www.arista.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">A</span>Arista</a>
+              <span class="exp-dates work-tags">Linux, C++</span>
+            </summary>
+            <div class="exp-body">
+              <p>Wrote Linux kernel modules and switch-chip drivers for <a class="term-link" href="https://www.arista.com/en/products/eos" target="_blank" rel="noopener"><code>Arista EOS</code></a> on thousands of switches in cloud data centers. Raised data transfer rates ~19% by refactoring kernel drivers and cut product cost ~10%.</p>
+            </div>
+          </details>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">Material Flow System</h3>
+              <a class="exp-company company-link" href="https://www.tesla.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">T</span>Tesla</a>
+              <span class="exp-dates work-tags">Go, Kafka</span>
+            </summary>
+            <div class="exp-body">
+              <p>Led design and delivery of key features for <a class="company-link" href="https://www.tesla.com/" target="_blank" rel="noopener">Tesla</a>'s factory Material Flow System (<a class="term-link" href="https://go.dev/" target="_blank" rel="noopener"><code>Go</code></a>, <a class="term-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener"><code>JavaScript</code></a>, <a class="term-link" href="https://www.python.org/" target="_blank" rel="noopener"><code>Python</code></a>, <a class="term-link" href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener"><code>SQL</code></a>, <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a>). Drove factory material flow throughput up ~21% with pickup and drop-off prioritization; improved <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a> performance ~33% through topic partitioning and message compression.</p>
+            </div>
+          </details>
+          <details class="exp-item work-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role work-role">hire4real.fyi</h3>
+              <a class="exp-company company-link" href="https://hire4real.fyi" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">H</span>Hire4Real</a>
+              <span class="exp-dates work-tags">Python, AI agents</span>
+            </summary>
+            <div class="exp-body">
+              <p>A free public index of <a class="term-link" href="https://www.dol.gov/" target="_blank" rel="noopener">US Department of Labor</a> filings, with an <a class="inline-link" href="https://github.com/hire4real/hire4real-core" target="_blank" rel="noopener">open-source parsing core</a> (<a class="term-link" href="https://opensource.org/license/mit" target="_blank" rel="noopener"><code>MIT</code></a>). Built and operated end to end with AI coding agents.</p>
+            </div>
+          </details>
         </div>
       </section>
 
@@ -302,16 +351,16 @@
         <div class="education">
           <p class="edu-school"><a class="company-link" href="https://www.stonybrook.edu/" target="_blank" rel="noopener">Stony Brook University</a><span class="edu-sep" aria-hidden="true">·</span><span class="edu-place"><a class="company-link" href="https://en.wikipedia.org/wiki/Stony_Brook,_New_York" target="_blank" rel="noopener">Stony Brook, NY</a></span><span class="edu-sep" aria-hidden="true">·</span><span class="edu-dates">May 2015</span></p>
           <p class="edu-degree"><a class="company-link" href="https://www.cs.stonybrook.edu/" target="_blank" rel="noopener">Bachelor of Science in Computer Science</a></p>
-          <p class="career-stats" aria-label="Years in each role">
-            <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
-            <span class="stat-dot" aria-hidden="true">·</span>
-            <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
-            <span class="stat-dot" aria-hidden="true">·</span>
-            <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
-          </p>
         </div>
       </section>
 
+      <p class="career-stats" aria-label="Years in each role">
+        <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
+        <span class="stat-dot" aria-hidden="true">·</span>
+        <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
+        <span class="stat-dot" aria-hidden="true">·</span>
+        <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
+      </p>
       <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 8 edits · 6 thoughts</span></p>
       <div class="prompt-box">
         <a class="prompt-link" href="mailto:phongvcao@gmail.com">
@@ -335,7 +384,8 @@
           ["--topbar-h", document.querySelector(".pl-top")],
           ["--prompt-h", document.querySelector(".prompt-box")],
           ["--status-h", document.querySelector(".prompt-status")],
-          ["--activity-h", document.querySelector(".prompt-activity")]
+          ["--activity-h", document.querySelector(".prompt-activity")],
+          ["--career-h", document.querySelector(".career-stats")]
         ];
         pairs.forEach(function (pair) {
           var el = pair[1];
