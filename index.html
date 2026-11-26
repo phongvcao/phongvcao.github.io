@@ -702,14 +702,15 @@
         });
         var body = item.querySelector(".exp-body");
         if (body) {
-          body.addEventListener("click", function () {
-            if (!item.dataset.pinned) {
-              item.dataset.pinned = "1";
-              savePins();
-            }
+          body.addEventListener("click", function (event) {
+            if (event.target.closest && event.target.closest("a")) return;
+            delete item.dataset.pinned;
+            item.open = false;
+            savePins();
           });
         }
         summary.addEventListener("click", function (event) {
+          if (event.target.closest && event.target.closest("a")) return;
           if (item.dataset.pinned) {
             delete item.dataset.pinned;
           } else {

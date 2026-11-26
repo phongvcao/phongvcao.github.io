@@ -25,7 +25,7 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 - [x] About line: `Firmware engineer in Austin, TX · 11+ yrs exp · husband · father · builder`.
 - [x] Professional years computed from June 2015, repainted hourly.
 - [x] Keep the moving scanner; its words are now true.
-- [ ] Unit test: no fake telemetry strings remain (check_site2.py covers this).
+- [x] Unit test: no fake telemetry strings remain (check_site2.py covers this).
 
 ## 2. Hero
 
@@ -81,6 +81,7 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 - [x] Content pushes following content; no overlay.
 - [x] Print opens every row (`beforeprint` / `afterprint`).
 - [x] Works without JavaScript.
+- [x] Link clicks leave the row untouched; plain body clicks collapse it.
 - [~] Playwright: hover, pin, unpin, expand-all, collapse-all, keyboard, touch, print.
 
 ## 7. Theme default
