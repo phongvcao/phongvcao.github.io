@@ -328,7 +328,7 @@ code {
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: normal;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .decision-body dd {
