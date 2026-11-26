@@ -81,18 +81,16 @@
 <body>
   <header class="pl-bar pl-top" aria-label="Runtime status">
     <div class="pl-group pl-left">
-      <span class="pl-seg pl-blue"><span class="pl-icon" aria-hidden="true">&gt;_</span>opencode</span>
-      <span class="pl-seg pl-dark pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#8962;</span>phongvcao.com</span>
-      <span class="pl-seg pl-light pl-hide-sm"><span class="pl-icon" aria-hidden="true">~</span>phongvcao</span>
+      <span class="pl-seg pl-light"><svg class="pl-pin" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 0.6C3.7 0.6 1.9 2.4 1.9 4.7c0 3.1 4.1 6.7 4.1 6.7s4.1-3.6 4.1-6.7C10.1 2.4 8.3 0.6 6 0.6zm0 5.6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2z" fill="currentColor"/></svg>Austin, TX</span>
+      <span class="pl-seg pl-blue" aria-hidden="true">&gt;_</span>
+      <span class="pl-seg pl-dir pl-hide-sm"><span class="pl-icon" aria-hidden="true">~</span>site</span>
       <span class="pl-seg pl-green"><span class="pl-icon" aria-hidden="true">git</span>main</span>
-      <span class="pl-seg pl-yellow"><span class="pl-icon" aria-hidden="true">&#9636;</span>resume.pdf</span>
+      <span class="pl-seg pl-status"><span class="pl-icon" aria-hidden="true">&#10004;</span>resume.pdf</span>
     </div>
+    <span class="pl-fill" aria-hidden="true"></span>
     <div class="pl-group pl-right">
-      <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">@</span>Austin, TX</span>
-      <span class="pl-seg pl-dark pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#9680;</span>Solarized</span>
-      <span class="pl-seg pl-light pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#9635;</span><time id="clock-date" datetime="2026-11-26T10:39:58-06:00">Thu Nov 26 2026</time></span>
-      <span class="pl-seg pl-dark"><span class="pl-icon" aria-hidden="true">&#9719;</span><time id="clock-time" datetime="2026-11-26T10:39:58-06:00">10:39:58 AM CST</time></span>
-      <span class="pl-seg pl-light">© 2026 Phong V. Cao</span>
+      <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">&#9635;</span><time id="clock-date" datetime="2026-11-26T10:39:58-06:00">Nov 26 2026</time></span>
+      <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">&#9719;</span><time id="clock-time" datetime="2026-11-26T10:39:58-06:00">10:39:58 AM CST</time></span>
     </div>
   </header>
 
@@ -115,6 +113,109 @@
         <a class="button" href="https://www.linkedin.com/in/phcao" target="_blank" rel="noopener"><span class="badge" aria-hidden="true">in</span>LinkedIn</a>
         <a class="button" href="mailto:phongvcao@gmail.com"><span class="badge" aria-hidden="true">@</span>Email</a>
       </nav>
+
+      <section class="section" aria-labelledby="experience-title">
+        <h2 id="experience-title"><span class="mark" aria-hidden="true">## </span>Experience</h2>
+        <div class="experience-list">
+          <details class="exp-item" open>
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role">Senior Software Engineer</h3>
+              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
+              <span class="exp-dates">Aug 2025 — <span class="now">Now</span></span>
+            </summary>
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>Owned resolutions of release-blocking GPU board failures, with LAN-over-USB fixes shipped across <a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">Nvidia HGX platforms</a>.</li>
+                <li>Owned <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener">Redfish</a> reference schemas and conformance for <a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">HGX Rubin NVL8</a> gating partner-bound firmware releases.</li>
+                <li>Established physical-slot GPU naming conventions on <a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">HGX Rubin NVL8</a> through cross-team RFC.</li>
+                <li>Drove firmware fixes in <a class="term-link" href="https://github.com/openbmc/bmcweb" target="_blank" rel="noopener"><code>bmcweb</code></a>, <a class="term-link" href="https://github.com/openbmc/entity-manager" target="_blank" rel="noopener"><code>entity-manager</code></a> and the <a class="term-link" href="https://github.com/openbmc/telemetry" target="_blank" rel="noopener">telemetry daemon</a>, shipped in 3 <a class="company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a> products.</li>
+                <li>Partnered with NIC firmware team to address PCIe firmware defect via raw MCTP tests.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="exp-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role">Senior Software Engineer</h3>
+              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
+              <span class="exp-dates">May 2024 — Aug 2025</span>
+            </summary>
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>Owned power shelf controller firmware for <a class="term-link" href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noopener">GB200 NVL72</a> fleet, enforcing rack power limits and AC-loss recovery.</li>
+                <li>Owned <a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener"><code>OpenBMC</code></a>-on-<a class="term-link" href="https://www.qemu.org/" target="_blank" rel="noopener"><code>QEMU</code></a> emulation for the <a class="term-link" href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noopener">GB200 NVL72</a>, enabling pre-hardware validation and regression testing.</li>
+                <li>Architected the power shelf <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><code>Redfish</code></a> API that vendors adopted and <a class="company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a>'s customer telemetry guide now uses.</li>
+                <li>Built the C++ rack power service (<a class="term-link" href="https://www.freedesktop.org/wiki/Software/dbus/" target="_blank" rel="noopener"><code>D-Bus</code></a>/<a class="term-link" href="https://github.com/openbmc/sdbusplus" target="_blank" rel="noopener"><code>sdbusplus</code></a>) as one <a class="company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a> control path for power shelves from multiple vendors.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="exp-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role">Senior Software Engineer</h3>
+              <a class="exp-company company-link" href="https://www.tesla.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">T</span>Tesla</a>
+              <span class="exp-dates">May 2023 — Feb 2024</span>
+            </summary>
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>Led design and delivery of key features for <a class="company-link" href="https://www.tesla.com/" target="_blank" rel="noopener">Tesla</a>'s factory Material Flow System (<code>Go</code>, <code>JavaScript</code>, <code>Python</code>, <code>SQL</code>, <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a>).</li>
+                <li>Drove factory material flow throughput up ~21% with pickup and drop-off prioritization.</li>
+                <li>Improved <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a> performance ~33% through topic partitioning and message compression.</li>
+                <li>Mentored interns and new engineers through structured onboarding.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="exp-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role">Software Engineer</h3>
+              <a class="exp-company company-link" href="https://www.google.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">G</span>Google</a>
+              <span class="exp-dates">Nov 2021 — Mar 2023</span>
+            </summary>
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>Built features for <a class="company-link" href="https://abc.xyz/" target="_blank" rel="noopener">Alphabet</a>'s automated security-risk system, rating each device by hardware profile and user behavior.</li>
+                <li>Cut data pipeline latency ~15% with parallel and concurrent processing (<code>Go</code>, <code>C++</code>, <a class="term-link" href="https://kubernetes.io/" target="_blank" rel="noopener"><code>Kubernetes</code></a>).</li>
+                <li>Raised database performance ~11% with <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a> sharding (<code>SQL</code>, <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a>).</li>
+                <li>Assigned security risk levels automatically from hardware security key data and flagged devices with modified firmware.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="exp-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role">Software Engineer</h3>
+              <a class="exp-company company-link" href="https://www.google.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">G</span>Google</a>
+              <span class="exp-dates">Dec 2019 — Nov 2021</span>
+            </summary>
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>Built test libraries and one common hardware-access API for many server types in <a class="term-link" href="https://www.google.com/about/datacenters/" target="_blank" rel="noopener">Google data centers</a> (<code>Go</code>, <code>C++</code>, <code>Python</code>).</li>
+                <li>Wrote tests detecting CPU and memory security weaknesses (<code>Rowhammer</code>) on <a class="company-link" href="https://www.intel.com/" target="_blank" rel="noopener">Intel</a> and <a class="company-link" href="https://www.amd.com/" target="_blank" rel="noopener">AMD</a> servers.</li>
+                <li>Raised service level availability ~0.5% by redesigning server hardware tests.</li>
+                <li>Improved test infrastructure API performance ~5% with heuristic analysis tools (<code>Go</code>, <code>Python</code>, <code>C++</code>).</li>
+              </ul>
+            </div>
+          </details>
+          <details class="exp-item">
+            <summary class="exp-summary">
+              <span class="exp-toggle" aria-hidden="true"></span>
+              <h3 class="exp-role">Software Engineer</h3>
+              <a class="exp-company company-link" href="https://www.arista.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">A</span>Arista Networks</a>
+              <span class="exp-dates">Jun 2015 — Dec 2019</span>
+            </summary>
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>Wrote Linux kernel modules and switch-chip drivers for <a class="term-link" href="https://www.arista.com/en/products/eos" target="_blank" rel="noopener"><code>Arista EOS</code></a> on thousands of switches in cloud data centers.</li>
+                <li>Raised data transfer rates across switches and routers ~19% by refactoring kernel drivers.</li>
+                <li>Led switch-chip driver library work that cut product cost ~10% (<code>C++</code>).</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        <p class="section-note"><a href="assets/phong-cao-resume.pdf"><span class="dollar" aria-hidden="true">$</span>open resume.pdf</a></p>
+      </section>
 
       <section class="section" aria-labelledby="work-title">
         <h2 id="work-title"><span class="mark" aria-hidden="true">## </span>Projects</h2>
@@ -150,99 +251,47 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="experience-title">
-        <h2 id="experience-title"><span class="mark" aria-hidden="true">## </span>Experience</h2>
-        <div class="experience-list">
-          <details class="exp-item" open>
-            <summary class="exp-summary">
-              <span class="exp-toggle" aria-hidden="true"></span>
-              <h3 class="exp-role">Senior Software Engineer</h3>
-              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
-              <span class="exp-dates">2025 — Present</span>
-            </summary>
-            <div class="exp-body">
-              <ul class="exp-bullets">
-                <li>Owned resolutions of release-blocking GPU board failures, with LAN-over-USB fixes shipped across <a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">Nvidia HGX platforms</a>.</li>
-                <li>Owned <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener">Redfish</a> reference schemas and conformance for <a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">HGX Rubin NVL8</a> gating partner-bound firmware releases.</li>
-                <li>Established physical-slot GPU naming conventions on <a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">HGX Rubin NVL8</a> through cross-team RFC.</li>
-                <li>Drove firmware fixes in <a class="term-link" href="https://github.com/openbmc/bmcweb" target="_blank" rel="noopener"><code>bmcweb</code></a>, <a class="term-link" href="https://github.com/openbmc/entity-manager" target="_blank" rel="noopener"><code>entity-manager</code></a> and the <a class="term-link" href="https://github.com/openbmc/telemetry" target="_blank" rel="noopener">telemetry daemon</a>, shipped in 3 <a class="company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a> products.</li>
-                <li>Partnered with NIC firmware team to address PCIe firmware defect via raw MCTP tests.</li>
-              </ul>
-            </div>
-          </details>
-          <details class="exp-item">
-            <summary class="exp-summary">
-              <span class="exp-toggle" aria-hidden="true"></span>
-              <h3 class="exp-role">Senior Software Engineer</h3>
-              <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">N</span>Nvidia</a>
-              <span class="exp-dates">2024 — 2025</span>
-            </summary>
-            <div class="exp-body">
-              <ul class="exp-bullets">
-                <li>Owned power shelf controller firmware for <a class="term-link" href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noopener">GB200 NVL72</a> fleet, enforcing rack power limits and AC-loss recovery.</li>
-                <li>Owned <a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener"><code>OpenBMC</code></a>-on-<a class="term-link" href="https://www.qemu.org/" target="_blank" rel="noopener"><code>QEMU</code></a> emulation for the <a class="term-link" href="https://www.nvidia.com/en-us/data-center/gb200-nvl72/" target="_blank" rel="noopener">GB200 NVL72</a>, enabling pre-hardware validation and regression testing.</li>
-                <li>Architected the power shelf <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><code>Redfish</code></a> API that vendors adopted and <a class="company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a>'s customer telemetry guide now uses.</li>
-                <li>Built the C++ rack power service (<a class="term-link" href="https://www.freedesktop.org/wiki/Software/dbus/" target="_blank" rel="noopener"><code>D-Bus</code></a>/<a class="term-link" href="https://github.com/openbmc/sdbusplus" target="_blank" rel="noopener"><code>sdbusplus</code></a>) as one <a class="company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener">Nvidia</a> control path for power shelves from multiple vendors.</li>
-              </ul>
-            </div>
-          </details>
-          <details class="exp-item">
-            <summary class="exp-summary">
-              <span class="exp-toggle" aria-hidden="true"></span>
-              <h3 class="exp-role">Senior Software Engineer</h3>
-              <a class="exp-company company-link" href="https://www.tesla.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">T</span>Tesla</a>
-              <span class="exp-dates">2023 — 2024</span>
-            </summary>
-            <div class="exp-body">
-              <ul class="exp-bullets">
-                <li>Led design and delivery of key features for <a class="company-link" href="https://www.tesla.com/" target="_blank" rel="noopener">Tesla</a>'s factory Material Flow System (<code>Go</code>, <code>JavaScript</code>, <code>Python</code>, <code>SQL</code>, <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a>).</li>
-                <li>Drove factory material flow throughput up ~21% with pickup and drop-off prioritization.</li>
-                <li>Improved <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a> performance ~33% through topic partitioning and message compression.</li>
-                <li>Mentored interns and new engineers through structured onboarding.</li>
-              </ul>
-            </div>
-          </details>
-          <details class="exp-item">
-            <summary class="exp-summary">
-              <span class="exp-toggle" aria-hidden="true"></span>
-              <h3 class="exp-role">Software Engineer</h3>
-              <a class="exp-company company-link" href="https://www.google.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">G</span>Google</a>
-              <span class="exp-dates">2019 — 2023</span>
-            </summary>
-            <div class="exp-body">
-              <p class="exp-period">2021 — 2023</p>
-              <ul class="exp-bullets">
-                <li>Built features for <a class="company-link" href="https://abc.xyz/" target="_blank" rel="noopener">Alphabet</a>'s automated security-risk system, rating each device by hardware profile and user behavior.</li>
-                <li>Cut data pipeline latency ~15% with parallel and concurrent processing (<code>Go</code>, <code>C++</code>, <a class="term-link" href="https://kubernetes.io/" target="_blank" rel="noopener"><code>Kubernetes</code></a>).</li>
-                <li>Raised database performance ~11% with <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a> sharding (<code>SQL</code>, <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a>).</li>
-                <li>Assigned security risk levels automatically from hardware security key data and flagged devices with modified firmware.</li>
-              </ul>
-              <p class="exp-period">2019 — 2021</p>
-              <ul class="exp-bullets">
-                <li>Built test libraries and one common hardware-access API for many server types in <a class="term-link" href="https://www.google.com/about/datacenters/" target="_blank" rel="noopener">Google data centers</a> (<code>Go</code>, <code>C++</code>, <code>Python</code>).</li>
-                <li>Wrote tests detecting CPU and memory security weaknesses (<code>Rowhammer</code>) on <a class="company-link" href="https://www.intel.com/" target="_blank" rel="noopener">Intel</a> and <a class="company-link" href="https://www.amd.com/" target="_blank" rel="noopener">AMD</a> servers.</li>
-                <li>Raised service level availability ~0.5% by redesigning server hardware tests.</li>
-                <li>Improved test infrastructure API performance ~5% with heuristic analysis tools (<code>Go</code>, <code>Python</code>, <code>C++</code>).</li>
-              </ul>
-            </div>
-          </details>
-          <details class="exp-item">
-            <summary class="exp-summary">
-              <span class="exp-toggle" aria-hidden="true"></span>
-              <h3 class="exp-role">Software Engineer</h3>
-              <a class="exp-company company-link" href="https://www.arista.com/" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">A</span>Arista Networks</a>
-              <span class="exp-dates">2015 — 2019</span>
-            </summary>
-            <div class="exp-body">
-              <ul class="exp-bullets">
-                <li>Wrote Linux kernel modules and switch-chip drivers for <a class="term-link" href="https://www.arista.com/en/products/eos" target="_blank" rel="noopener"><code>Arista EOS</code></a> on thousands of switches in cloud data centers.</li>
-                <li>Raised data transfer rates across switches and routers ~19% by refactoring kernel drivers.</li>
-                <li>Led switch-chip driver library work that cut product cost ~10% (<code>C++</code>).</li>
-              </ul>
-            </div>
-          </details>
+      <section class="section" aria-labelledby="open-source-title">
+        <h2 id="open-source-title"><span class="mark" aria-hidden="true">## </span>Open Source</h2>
+        <p class="open-source"><a class="work-link" href="https://github.com/phongvcao/vim-stardict" target="_blank" rel="noopener">vim-stardict</a>: dictionary-lookup plugin for the Vim editor, with Bash and Zsh support (<code>Python</code>, <code>VimL</code>).</p>
+      </section>
+
+      <section class="section" aria-labelledby="skills-title">
+        <h2 id="skills-title"><span class="mark" aria-hidden="true">## </span>Skills</h2>
+        <dl class="skills">
+          <div class="skill-row">
+            <dt>Languages</dt>
+            <dd><code>C++</code>, <code>C</code>, <code>Python</code>, <code>Go</code>, <code>JavaScript</code>, <code>SQL</code>, <code>Bash</code></dd>
+          </div>
+          <div class="skill-row">
+            <dt>Firmware</dt>
+            <dd><a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener"><code>OpenBMC</code></a> (<code>bmcweb</code>, <code>entity-manager</code>, <code>sdbusplus</code>), Embedded Linux, Linux Drivers, <code>U-Boot</code>, <code>Yocto</code>, <code>BitBake</code></dd>
+          </div>
+          <div class="skill-row">
+            <dt>Protocols</dt>
+            <dd><a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener">DMTF Redfish</a> (CSDL, JSON Schema, Service Validator), <code>MCTP</code>, <code>PLDM</code>, <code>SPDM</code>, <code>IPMI</code>, <code>USB</code>, <code>PCIe</code>, <code>I2C</code></dd>
+          </div>
+          <div class="skill-row">
+            <dt>Validation</dt>
+            <dd><code>pytest</code>, <code>Playwright</code>, <a class="term-link" href="https://www.qemu.org/" target="_blank" rel="noopener"><code>QEMU</code></a> (ASPEED AST2600), board bring-up, DMTF validator runs, soak tests</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Backend</dt>
+            <dd><a class="term-link" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener"><code>FastAPI</code></a>, <a class="term-link" href="https://www.docker.com/" target="_blank" rel="noopener"><code>Docker</code></a>, <code>Jenkins</code>, <code>GitLab</code>, <a class="term-link" href="https://kafka.apache.org/" target="_blank" rel="noopener"><code>Kafka</code></a>, <a class="term-link" href="https://cloud.google.com/spanner" target="_blank" rel="noopener"><code>Spanner</code></a>, <a class="term-link" href="https://kubernetes.io/" target="_blank" rel="noopener"><code>Kubernetes</code></a>, Claude, Codex, DeepSeek, AI Agents</dd>
+          </div>
+          <div class="skill-row">
+            <dt>Hardware</dt>
+            <dd><a class="term-link" href="https://www.nvidia.com/en-us/data-center/hgx/" target="_blank" rel="noopener">Nvidia HGX GPU Baseboards</a>, Rack Power Shelf, ASPEED AST2600 BMC, Broadcom Tomahawk/Trident ASICs</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section" aria-labelledby="education-title">
+        <h2 id="education-title"><span class="mark" aria-hidden="true">## </span>Education</h2>
+        <div class="education">
+          <p class="edu-school"><a class="company-link" href="https://www.stonybrook.edu/" target="_blank" rel="noopener">Stony Brook University</a><span class="edu-sep" aria-hidden="true">·</span><span class="edu-place">Stony Brook, NY</span><span class="edu-sep" aria-hidden="true">·</span><span class="edu-dates">May 2015</span></p>
+          <p class="edu-degree">Bachelor of Science in Computer Science</p>
         </div>
-        <p class="section-note"><a href="assets/phong-cao-resume.pdf"><span class="dollar" aria-hidden="true">$</span>open resume.pdf</a></p>
       </section>
 
       <section class="section" aria-labelledby="elsewhere-title">
@@ -259,12 +308,11 @@
           <span>phongvcao@gmail.com</span>
           <span class="cursor cursor-small" aria-hidden="true">▌</span>
         </a>
-        <p class="prompt-meta"><span>Ultracode auto · DeepSeek V4.1 Flash 1017 (Ollama) · </span><span class="model-max">max</span></p>
-        <p class="prompt-note">Built with plain HTML</p>
+        <p class="prompt-meta"><span class="model-agent">Ultracode</span> <span class="model-auto">auto</span> <span class="model-dim">·</span> <span class="model-name">DeepSeek V4.1 Flash 1017 (Ollama)</span> <span class="model-provider">Ollama Cloud</span> <span class="model-dim">·</span> <span class="model-max">max</span></p>
       </div>
       <div class="prompt-status" aria-label="Session status">
-        <span class="status-left"><span class="status-pulse" aria-hidden="true">▪</span><span class="status-dots" aria-hidden="true"><span>·</span><span>·</span><span>·</span><span>·</span><span>·</span></span><span>esc interrupt</span></span>
-        <span class="status-right"><span>700K (65%)</span><span>·</span><span>$66.88</span><span>·</span><span>6 subagents</span><span>·</span><span>ctrl+x commands</span></span>
+        <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span class="status-hint"><span class="status-key">esc</span> interrupt</span></span>
+        <span class="status-right"><span class="status-usage">700K (65%)</span><span>·</span><span class="status-cost">$66.88</span><span>·</span><span class="status-agents">6 subagents</span><span>·</span><span class="status-keys">ctrl+x commands</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
       </div>
     </article>
   </main>
@@ -300,7 +348,7 @@
         var now = new Date();
         var d = parts(dateFmt, now);
         var t = parts(timeFmt, now);
-        dateEl.textContent = d.weekday + " " + d.month + " " + d.day + " " + d.year;
+        dateEl.textContent = d.month + " " + d.day + " " + d.year;
         timeEl.textContent = t.hour + ":" + t.minute + ":" + t.second + " " + t.dayPeriod + " " + t.timeZoneName;
         var iso = now.toISOString();
         dateEl.setAttribute("datetime", iso);
