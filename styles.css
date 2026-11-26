@@ -218,7 +218,7 @@ code {
   padding: 0 12px;
   border: 1px solid var(--base01);
   border-radius: 0;
-  color: var(--base2);
+  color: var(--base1);
   background: transparent;
   font-family: inherit;
   font-size: 0.9375rem;
@@ -231,7 +231,7 @@ code {
 .button:hover {
   border-color: var(--base1);
   background: var(--base02);
-  color: var(--base3);
+  color: var(--base2);
 }
 
 .button:focus-visible {
