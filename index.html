@@ -311,10 +311,11 @@
           <span class="cursor cursor-small" aria-hidden="true"></span>
         </a>
         <p class="prompt-meta"><span class="model-agent">Ultracode</span> <span class="model-auto">auto</span> <span class="model-dim">·</span> <span class="model-name">DeepSeek V4.1 Flash 1017</span> <span class="model-dim">·</span> <span class="model-max">max</span></p>
+        <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 2 edits · 4 thoughts</span></p>
       </div>
       <div class="prompt-status" aria-label="Session status">
         <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span class="status-hint"><span class="status-key">esc</span> interrupt</span></span>
-        <span class="status-right"><span class="status-usage">700K (65%)</span><span class="status-dot">·</span><span class="status-cost">$66.88</span><span class="status-dot">·</span><span class="status-agents">6 subagents</span><span class="status-dot">·</span><span class="status-keys">ctrl+x commands</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
+        <span class="status-right"><span class="status-stat">11+ yrs exp</span><span class="status-dot">·</span><span class="status-stat">2+ yrs firmware</span><span class="status-dot">·</span><span class="status-stat">2+ yrs AI</span><span class="status-dot">·</span><span class="status-stat">vibe-code 2026</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
       </div>
     </article>
   </main>
@@ -375,6 +376,16 @@
       }
       tick();
       setInterval(tick, 1000);
+
+      var spinnerEl = document.querySelector(".spinner");
+      if (spinnerEl && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        var frames = ["\u2598", "\u259d", "\u2597", "\u2596"];
+        var frame = 0;
+        setInterval(function () {
+          frame = (frame + 1) % frames.length;
+          spinnerEl.textContent = frames[frame];
+        }, 140);
+      }
     })();
   </script>
 </body>

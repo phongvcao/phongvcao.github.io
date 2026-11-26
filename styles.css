@@ -97,7 +97,7 @@ a:hover {
   flex: 1;
   width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
-  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h));
+  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h) + 48px);
 }
 
 .user-message {
@@ -645,6 +645,20 @@ code {
   font-weight: 700;
 }
 
+.prompt-activity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 0;
+  color: var(--base01);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.spinner {
+  color: var(--base0);
+}
+
 .prompt-status {
   position: fixed;
   left: 0;
@@ -681,7 +695,7 @@ code {
 .status-bar {
   position: relative;
   display: inline-block;
-  width: 8ch;
+  width: 10ch;
   height: 1em;
   margin-right: 1ch;
   overflow: hidden;
@@ -695,7 +709,7 @@ code {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
-  background-size: 8ch 100%;
+  background-size: 10ch 100%;
   -webkit-mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
   -webkit-mask-size: 1ch 0.55em;
   -webkit-mask-position: 0 50%;
@@ -709,10 +723,14 @@ code {
 .scan-fwd {
   background-image: linear-gradient(
     90deg,
-    transparent 0 5ch,
-    rgb(38 139 210 / 0.22) 5ch 6ch,
-    rgb(38 139 210 / 0.55) 6ch 7ch,
-    var(--blue) 7ch 8ch
+    transparent 0 3ch,
+    rgb(38 139 210 / 0.1) 3ch 4ch,
+    rgb(38 139 210 / 0.22) 4ch 5ch,
+    rgb(38 139 210 / 0.38) 5ch 6ch,
+    rgb(38 139 210 / 0.58) 6ch 7ch,
+    rgb(38 139 210 / 0.78) 7ch 8ch,
+    rgb(38 139 210 / 0.92) 8ch 9ch,
+    var(--blue) 9ch 10ch
   );
   animation: scan-fwd 3.2s linear infinite;
 }
@@ -721,9 +739,13 @@ code {
   background-image: linear-gradient(
     90deg,
     var(--blue) 0 1ch,
-    rgb(38 139 210 / 0.55) 1ch 2ch,
-    rgb(38 139 210 / 0.22) 2ch 3ch,
-    transparent 3ch 8ch
+    rgb(38 139 210 / 0.92) 1ch 2ch,
+    rgb(38 139 210 / 0.78) 2ch 3ch,
+    rgb(38 139 210 / 0.58) 3ch 4ch,
+    rgb(38 139 210 / 0.38) 4ch 5ch,
+    rgb(38 139 210 / 0.22) 5ch 6ch,
+    rgb(38 139 210 / 0.1) 6ch 7ch,
+    transparent 7ch 10ch
   );
   animation: scan-back 3.2s linear infinite;
 }
@@ -747,10 +769,10 @@ code {
 
 @keyframes scan-fwd {
   0% {
-    transform: translateX(-7ch);
+    transform: translateX(-9ch);
   }
   12% {
-    transform: translateX(-7ch);
+    transform: translateX(-9ch);
   }
   46% {
     transform: translateX(0);
@@ -759,22 +781,22 @@ code {
     transform: translateX(0);
   }
   54.01% {
-    transform: translateX(8ch);
+    transform: translateX(10ch);
   }
   100% {
-    transform: translateX(8ch);
+    transform: translateX(10ch);
   }
 }
 
 @keyframes scan-back {
   0% {
-    transform: translateX(-8ch);
+    transform: translateX(-10ch);
   }
   54% {
-    transform: translateX(-8ch);
+    transform: translateX(-10ch);
   }
   54.01% {
-    transform: translateX(7ch);
+    transform: translateX(9ch);
   }
   88% {
     transform: translateX(0);
@@ -944,10 +966,10 @@ code {
   --seg-fg: var(--base1);
 }
 
-/* Right side: darkest on the left, lightest at the right edge. */
+/* Right side: grey steps, darkest grey on the left, lightest at the edge. */
 .pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(1) {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base2);
+  --seg-bg: var(--base0);
+  --seg-fg: var(--base03);
 }
 
 .pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(2) {
@@ -956,17 +978,17 @@ code {
 }
 
 .pl-line-social .pl-seg:nth-child(1) {
-  --seg-bg: transparent;
-  --seg-fg: var(--base1);
+  --seg-bg: var(--base0);
+  --seg-fg: var(--base03);
 }
 
 .pl-line-social .pl-seg:nth-child(2) {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base2);
+  --seg-bg: var(--base1);
+  --seg-fg: var(--base03);
 }
 
 .pl-line-social .pl-seg:nth-child(3) {
-  --seg-bg: var(--base1);
+  --seg-bg: var(--base2);
   --seg-fg: var(--base03);
 }
 
@@ -1100,12 +1122,7 @@ code {
     justify-content: flex-end;
   }
 
-  .status-agents {
-    display: none;
-  }
-
-  .status-cost,
-  .status-keys {
+  .status-stat:not(:first-of-type) {
     display: none;
   }
 
