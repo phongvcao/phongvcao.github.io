@@ -640,6 +640,11 @@ code {
   display: none;
 }
 
+.tip.is-over-open {
+  background: var(--base03);
+  border-color: var(--base1);
+}
+
 .prompt-stack {
   position: sticky;
   margin-top: 24px;

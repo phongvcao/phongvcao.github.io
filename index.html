@@ -506,6 +506,10 @@
       function showTip(event) {
         var tip = document.getElementById("pin-tip");
         if (!tip) return;
+        var row = event.currentTarget && event.currentTarget.closest
+          ? event.currentTarget.closest(".exp-item")
+          : null;
+        tip.classList.toggle("is-over-open", Boolean(row && row.open));
         tip.hidden = false;
         placeTip(event);
       }
