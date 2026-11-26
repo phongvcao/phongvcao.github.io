@@ -129,3 +129,4 @@ Source: "OpenCode fix — phongvcao.com — combined: page title + Experience/in
 - [x] Task 5b: required strings all present.
 - [x] Task 5c: 7 experience entries (5 and 4 bullets), 3 decisions, 8 projects, title and JSON-LD consistent.
 - [ ] Deploy and report the commit hash.
+- [x] Accessibility re-run after run 2: 11/11 pass. No-JS 18/18 summaries open with Enter, 0 empty names, tooltip wired to all 18, reduced motion honoured, print opens all 18 bodies. Contrast: body 5.61 dark / 4.99 light, status 5.61 / 4.99, headings 3.26 / 4.27 at 24px/700. Prompt box padding-top 24 px, meta gap 18 px.
