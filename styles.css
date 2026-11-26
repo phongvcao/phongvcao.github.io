@@ -981,6 +981,11 @@ code {
   padding-right: 10px;
 }
 
+.pl-metric {
+  --seg-bg: var(--base01);
+  --seg-fg: var(--base1);
+}
+
 .pl-theme-btn {
   --seg-bg: var(--base02);
   --seg-fg: var(--base0);
