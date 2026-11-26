@@ -313,11 +313,7 @@ code {
   white-space: normal;
 }
 
-@media (min-width: 721px) {
-  .work-item .exp-summary {
-    grid-template-columns: 2em minmax(0, 1.2fr) minmax(0, 0.9fr) 16em;
-  }
-}
+
 
 .decision-body {
   display: grid;
@@ -544,7 +540,7 @@ code {
 
 .exp-summary {
   display: grid;
-  grid-template-columns: 2em minmax(0, 1.4fr) minmax(0, 1fr) 12em;
+  grid-template-columns: 2em minmax(0, 1.2fr) minmax(0, 0.9fr) 16em;
   align-items: baseline;
   gap: 12px;
   padding: 11px 16px 11px 0;
