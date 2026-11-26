@@ -547,13 +547,14 @@ code {
 
 .skills {
   display: grid;
-  gap: 6px;
+  gap: 10px;
   margin: 0;
 }
 
 .skill-row {
   display: grid;
   grid-template-columns: 8.5em minmax(0, 1fr);
+  align-items: baseline;
   gap: 12px;
   font-size: 0.9375rem;
 }
