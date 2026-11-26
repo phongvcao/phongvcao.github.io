@@ -95,15 +95,17 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 
 - [x] Content check `check_site2.py`: 0 failures (counts, claims, links, forbidden strings).
 - [~] Unit-style content tests run in CI-less mode (Playwright + Python).
-- [~] System test: layout at 320 / 375 / 390 / 768 / 820 / 1024 / 1280 / 1440, no horizontal scroll.
+- [x] System test: 320 / 375 / 390 / 768 / 820 / 1024 / 1280 / 1440, no horizontal scroll.
+- [x] Column alignment: company x=602 and date/tag x=986 in all 18 rows across the three sections.
 - [x] UI/UX test in Playwright: 10 of 12 pass; the two failures were per-row pin expectations that the section-wide toggle replaced.
 - [x] Accessibility pass: 18/18 summaries keyboard operable, 143 names non-empty, focus rings visible, contrast lifted to base1 (dark 5.61, light 4.99).
-- [~] Link audit: every external link resolves (browser User-Agent; note unrelated 403s).
+- [~] Link audit: delegated to the claims agent; awaiting the report.
 - [~] Print media emulation: all rows expanded, no clipped text.
 
 ## 9. Deploy
 
 - [x] Commit the content pass.
-- [ ] Push to `origin` (phongvcao.github.io) and `legacy` (phongvcaocom).
-- [ ] Verify the Pages build for the pushed commit.
+- [x] Push to `origin` (phongvcao.github.io): `66c142e`, `d10a56f`, `09278a8`, `3036f91`, `aee5bd6`, `671cee5`, `d42b7b9`.
+- [x] Mirror to `legacy` (phongvcaocom) at `6c1637d` before the content pass; the branch `legacy-django-2014` keeps the old tree.
+- [x] Pages build verified as `built` after each push.
 - [ ] Report the build id and anything still `NOT VERIFIED`.
