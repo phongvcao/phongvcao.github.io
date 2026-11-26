@@ -476,6 +476,10 @@ code {
   font-weight: 700;
 }
 
+.exp-toggle {
+  padding-left: 12px;
+}
+
 .exp-item[open] .exp-toggle::before {
   content: "−";
 }
@@ -979,11 +983,6 @@ code {
 
 .pl-right .pl-seg:last-child {
   padding-right: 10px;
-}
-
-.pl-metric {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base1);
 }
 
 .pl-theme-btn {
