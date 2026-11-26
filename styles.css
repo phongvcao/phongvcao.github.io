@@ -276,7 +276,7 @@ code {
 
 .work-link {
   color: var(--cyan);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: currentColor;
   text-underline-offset: 4px;
@@ -293,14 +293,8 @@ code {
   outline-offset: 2px;
 }
 
-.work-item h3 a {
-  text-decoration: underline;
-  text-decoration-color: currentColor;
-  text-underline-offset: 4px;
-}
-
-.work-item h3 .work-link {
-  font-weight: inherit;
+.open-source .work-link {
+  font-size: 1rem;
 }
 
 .inline-link {
