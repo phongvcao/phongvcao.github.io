@@ -73,7 +73,8 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 
 - [x] Summaries visible on load; details collapsed.
 - [x] Hover opens, leave closes unless pinned.
-- [x] Click pins; click again releases.
+- [x] A row click expands the whole section; a second click collapses it (pins all rows while expanded).
+- [x] A click on any link inside a row leaves the row untouched.
 - [x] Touch: first tap pins the row.
 - [x] Expand all / Collapse all per section (Experience, Decisions, Projects).
 - [x] Native `<details>`/`<summary>`: Enter and Space work, focus is visible.
@@ -96,7 +97,7 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 - [~] Unit-style content tests run in CI-less mode (Playwright + Python).
 - [~] System test: layout at 320 / 375 / 390 / 768 / 820 / 1024 / 1280 / 1440, no horizontal scroll.
 - [~] UI/UX test in Playwright: default view, expanded experience, expanded project, expanded decision, mobile, dark and light.
-- [~] Accessibility pass: names, `aria-describedby` on summaries, control buttons, focus rings.
+- [x] Accessibility pass: 18/18 summaries keyboard operable, 143 names non-empty, focus rings visible, contrast lifted to base1 (dark 5.61, light 4.99).
 - [~] Link audit: every external link resolves (browser User-Agent; note unrelated 403s).
 - [~] Print media emulation: all rows expanded, no clipped text.
 

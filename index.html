@@ -650,6 +650,19 @@
         });
         writeState({ pins: pins });
       }
+
+      function setRows(list, open) {
+        if (!list) return;
+        list.querySelectorAll(".exp-item").forEach(function (row) {
+          row.open = open;
+          if (open) {
+            row.dataset.pinned = "1";
+          } else {
+            delete row.dataset.pinned;
+          }
+        });
+        savePins();
+      }
       function placeTip(event) {
         var tip = document.getElementById("pin-tip");
         if (!tip) return;
@@ -704,22 +717,17 @@
         if (body) {
           body.addEventListener("click", function (event) {
             if (event.target.closest && event.target.closest("a")) return;
-            delete item.dataset.pinned;
-            item.open = false;
-            savePins();
+            setRows(item.closest(".experience-list, .work-list"), false);
           });
         }
         summary.addEventListener("click", function (event) {
           if (event.target.closest && event.target.closest("a")) return;
-          if (item.dataset.pinned) {
-            delete item.dataset.pinned;
-          } else {
-            if (item.open) {
-              event.preventDefault();
-            }
-            item.dataset.pinned = "1";
-          }
-          savePins();
+          event.preventDefault();
+          var list = item.closest(".experience-list, .work-list");
+          var expanded = list && [...list.querySelectorAll(".exp-item")].some(function (row) {
+            return row.dataset.pinned;
+          });
+          setRows(list, !expanded);
         });
       });
       document.querySelectorAll("[data-expand], [data-collapse]").forEach(function (button) {
@@ -729,11 +737,7 @@
             button.getAttribute(open ? "data-expand" : "data-collapse")
           );
           if (!target) return;
-          target.querySelectorAll(".exp-item").forEach(function (item) {
-            item.open = open;
-            if (!open) delete item.dataset.pinned;
-          });
-          if (!open) savePins();
+          setRows(target, open);
         });
       });
 

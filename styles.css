@@ -851,7 +851,7 @@ code {
   padding: 4px 16px;
   border-top: 1px solid var(--base01);
   background: var(--base03);
-  color: var(--base0);
+  color: var(--base1);
   font-size: 0.9375rem;
   line-height: 1.3;
 }
@@ -874,7 +874,7 @@ code {
 }
 
 .status-left {
-  color: var(--base01);
+  color: var(--base1);
 }
 
 .status-bar {
@@ -937,11 +937,11 @@ code {
 
 .status-copy {
   margin-left: 8px;
-  color: var(--base01);
+  color: var(--base1);
 }
 
 .status-hint {
-  color: var(--base01);
+  color: var(--base1);
 }
 
 .status-key {
