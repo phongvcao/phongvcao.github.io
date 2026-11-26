@@ -246,16 +246,16 @@ code {
 }
 
 .button-primary {
-  border-color: var(--green);
-  background: var(--green);
-  color: #002b36;
+  border-color: var(--cyan);
+  background: #002b36;
+  color: var(--cyan);
 }
 
 .button-primary:hover {
-  border-color: var(--green);
-  background: var(--green);
-  color: #002b36;
-  filter: brightness(1.12);
+  border-color: var(--cyan);
+  background: #002b36;
+  color: var(--cyan);
+  filter: brightness(1.15);
 }
 
 .bracket {
