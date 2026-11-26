@@ -80,17 +80,29 @@
 </head>
 <body>
   <header class="pl-bar pl-top" aria-label="Runtime status">
-    <div class="pl-group pl-left">
-      <span class="pl-seg pl-light"><svg class="pl-pin" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 0.6C3.7 0.6 1.9 2.4 1.9 4.7c0 3.1 4.1 6.7 4.1 6.7s4.1-3.6 4.1-6.7C10.1 2.4 8.3 0.6 6 0.6zm0 5.6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2z" fill="currentColor"/></svg>Austin, TX</span>
-      <span class="pl-seg pl-blue" aria-hidden="true">&gt;_</span>
-      <span class="pl-seg pl-dir pl-hide-sm"><span class="pl-icon" aria-hidden="true">~</span>site</span>
-      <span class="pl-seg pl-green"><span class="pl-icon" aria-hidden="true">git</span>main</span>
-      <span class="pl-seg pl-status"><span class="pl-icon" aria-hidden="true">&#10004;</span>resume.pdf</span>
+    <div class="pl-line">
+      <div class="pl-group pl-left">
+        <span class="pl-seg pl-light"><svg class="pl-pin" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M6 0.6C3.7 0.6 1.9 2.4 1.9 4.7c0 3.1 4.1 6.7 4.1 6.7s4.1-3.6 4.1-6.7C10.1 2.4 8.3 0.6 6 0.6zm0 5.6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2z" fill="currentColor"/></svg>Austin, TX</span>
+        <span class="pl-seg pl-blue" aria-hidden="true">&#xF17C;</span>
+        <span class="pl-seg pl-vim pl-hide-sm" aria-hidden="true">&#xE62B;</span>
+        <span class="pl-seg pl-dir pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#xF07B;</span>Senior SWE</span>
+        <span class="pl-seg pl-vcs"><span class="pl-icon" aria-hidden="true">&#xF126;</span>Nvidia</span>
+        <span class="pl-seg pl-context">11+ yrs</span>
+        <span class="pl-seg pl-status pl-hide-sm"><span class="pl-icon" aria-hidden="true">&#xF00C;</span>resume.pdf</span>
+      </div>
+      <span class="pl-fill" aria-hidden="true"></span>
+      <div class="pl-group pl-right">
+        <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">&#xF073;</span><time id="clock-date" datetime="2026-11-26T10:39:58-06:00">Nov 26 2026</time></span>
+        <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">&#xF017;</span><time id="clock-time" datetime="2026-11-26T10:39:58-06:00">10:39:58 AM CST</time></span>
+      </div>
     </div>
-    <span class="pl-fill" aria-hidden="true"></span>
-    <div class="pl-group pl-right">
-      <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">&#9635;</span><time id="clock-date" datetime="2026-11-26T10:39:58-06:00">Nov 26 2026</time></span>
-      <span class="pl-seg pl-light"><span class="pl-icon" aria-hidden="true">&#9719;</span><time id="clock-time" datetime="2026-11-26T10:39:58-06:00">10:39:58 AM CST</time></span>
+    <div class="pl-line pl-line-social">
+      <span class="pl-fill" aria-hidden="true"></span>
+      <div class="pl-group pl-right">
+        <a class="pl-seg pl-social" href="https://github.com/phongvcao" target="_blank" rel="noopener"><span class="pl-badge" aria-hidden="true">gh</span>GitHub</a>
+        <a class="pl-seg pl-social" href="https://www.linkedin.com/in/phcao" target="_blank" rel="noopener"><span class="pl-badge" aria-hidden="true">in</span>LinkedIn</a>
+        <a class="pl-seg pl-social" href="mailto:phongvcao@gmail.com"><span class="pl-badge" aria-hidden="true">@</span>Email</a>
+      </div>
     </div>
   </header>
 
@@ -100,7 +112,6 @@
     </section>
 
     <article class="response">
-      <p class="tool-line"><span aria-hidden="true">+ </span>resume.md</p>
       <p class="command-line"><span class="host">phong@phongvcao</span><span class="dim">:~$</span> <span class="cmd">cat resume.md</span></p>
 
       <h1>Phong V. Cao<span class="cursor" aria-hidden="true"></span></h1>
@@ -294,15 +305,6 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="elsewhere-title">
-        <h2 id="elsewhere-title"><span class="mark" aria-hidden="true">## </span>Elsewhere</h2>
-        <ul class="elsewhere">
-          <li><a href="https://github.com/phongvcao" target="_blank" rel="noopener"><span class="dollar" aria-hidden="true">$</span><span class="badge" aria-hidden="true">gh</span>github.com/phongvcao</a></li>
-          <li><a href="https://www.linkedin.com/in/phcao" target="_blank" rel="noopener"><span class="dollar" aria-hidden="true">$</span><span class="badge" aria-hidden="true">in</span>linkedin.com/in/phcao</a></li>
-          <li><a href="mailto:phongvcao@gmail.com"><span class="dollar" aria-hidden="true">$</span><span class="badge" aria-hidden="true">@</span>phongvcao@gmail.com</a></li>
-        </ul>
-      </section>
-
       <div class="prompt-box">
         <a class="prompt-link" href="mailto:phongvcao@gmail.com">
           <span>phongvcao@gmail.com</span>
@@ -319,6 +321,23 @@
 
   <script>
     (function () {
+      var root = document.documentElement;
+      function fitChrome() {
+        var pairs = [
+          ["--topbar-h", document.querySelector(".pl-top")],
+          ["--prompt-h", document.querySelector(".prompt-box")],
+          ["--status-h", document.querySelector(".prompt-status")]
+        ];
+        pairs.forEach(function (pair) {
+          var el = pair[1];
+          if (el) root.style.setProperty(pair[0], el.getBoundingClientRect().height + "px");
+        });
+      }
+      fitChrome();
+      window.addEventListener("resize", fitChrome);
+      window.addEventListener("load", fitChrome);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitChrome);
+
       var dateEl = document.getElementById("clock-date");
       var timeEl = document.getElementById("clock-time");
       if (!dateEl || !timeEl) return;
