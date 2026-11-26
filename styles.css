@@ -235,6 +235,17 @@ code {
   color: #002b36;
 }
 
+/* In light the chip borrows the page cream and keeps the cyan ink. */
+:root[data-theme="light"] .button-primary {
+  background: var(--base03);
+  color: var(--cyan);
+}
+
+:root[data-theme="light"] .button-primary:hover {
+  background: var(--base03);
+  color: var(--cyan);
+}
+
 .button-primary:hover {
   border-color: var(--cyan);
   background: var(--cyan);
