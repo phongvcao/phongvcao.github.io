@@ -1106,6 +1106,17 @@ code {
   cursor: pointer;
 }
 
+/* Each button shows the page colour of the theme it selects. */
+.pl-theme-btn[data-theme-set="dark"] {
+  --seg-bg: #002b36;
+  --seg-fg: #fdf6e3;
+}
+
+.pl-theme-btn[data-theme-set="light"] {
+  --seg-bg: #fdf6e3;
+  --seg-fg: #002b36;
+}
+
 .pl-theme-btn.is-active {
   --seg-bg: var(--blue);
   --seg-fg: var(--base03);
