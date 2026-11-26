@@ -385,6 +385,64 @@
       tick();
       setInterval(tick, 1000);
 
+      var EXP_KEY = "phongvcao-exp-pinned";
+      var expItems = document.querySelectorAll(".exp-item");
+      function savedPins() {
+        try {
+          return JSON.parse(localStorage.getItem(EXP_KEY) || "[]");
+        } catch (error) {
+          return [];
+        }
+      }
+      function savePins() {
+        var pins = [];
+        expItems.forEach(function (item, index) {
+          if (item.dataset.pinned) pins.push(index);
+        });
+        try {
+          localStorage.setItem(EXP_KEY, JSON.stringify(pins));
+        } catch (error) {
+          /* private mode: stay in memory */
+        }
+      }
+      expItems.forEach(function (item) {
+        var summary = item.querySelector(".exp-summary");
+        if (!summary) return;
+        item.addEventListener("pointerenter", function () {
+          item.open = true;
+        });
+        item.addEventListener("pointerleave", function () {
+          if (!item.dataset.pinned) {
+            item.open = false;
+          }
+        });
+        summary.addEventListener("click", function (event) {
+          if (item.dataset.pinned) {
+            delete item.dataset.pinned;
+          } else {
+            if (item.open) {
+              event.preventDefault();
+            }
+            item.dataset.pinned = "1";
+          }
+          savePins();
+        });
+      });
+      var pins = savedPins();
+      if (pins.length) {
+        expItems.forEach(function (item) {
+          item.open = false;
+          delete item.dataset.pinned;
+        });
+        pins.forEach(function (index) {
+          var item = expItems[index];
+          if (item) {
+            item.open = true;
+            item.dataset.pinned = "1";
+          }
+        });
+      }
+
       function yearsSince(iso) {
         var start = new Date(iso);
         var now = new Date();

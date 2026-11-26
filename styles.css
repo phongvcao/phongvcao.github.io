@@ -207,6 +207,7 @@ code {
   background: transparent;
   font-family: inherit;
   font-size: 0.9375rem;
+  font-weight: 700;
   line-height: 1;
   text-decoration: none;
   transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
