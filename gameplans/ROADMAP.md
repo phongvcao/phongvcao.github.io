@@ -112,3 +112,20 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 - [ ] Report the build id and anything still `NOT VERIFIED`.
 - [ ] DNS: `phongvcao.com` still answers `15.197.148.33` / `3.33.130.190`, not the GitHub Pages A records. The site is live on the Pages edge and the local preview only.
 - [ ] The linked resume PDF carries the phone number; the HTML carries none.
+
+## 10. Run 2 — page title and internal-number scrub
+
+Source: "OpenCode fix — phongvcao.com — combined: page title + Experience/internal-number scrub".
+
+- [x] Task 1: `<title>`, `og:title`, `twitter:title` and the JSON-LD `name` read `Phong V. Cao — Senior Software Engineer, BMC & OpenBMC Firmware`; `jobTitle` stays `Senior Software Engineer`; zero `Senior Firmware Engineer` hits in the repo.
+- [x] Task 2: Experience matches the public resume, seven entries; the reviewer bullet and the security-review bullet are deleted; Hire4Real carries `(Plausible)`.
+- [x] Task 3.1: GPU card no longer prints `300 of 300` or `112 of 112`.
+- [x] Task 3.2: Redfish conformance card no longer prints `130 FastAPI` or `over 1,200`.
+- [x] Task 3.3: Decision 1 says `reviewed across teams`.
+- [x] Task 3.4: Decision 2 trade-off is the request-boundary sentence.
+- [x] Task 3.5: Decision 3 is titled `AI Loop Engineering · Redfish Validation`; the long-master test count is gone; the guardrail paragraph is intact.
+- [x] Task 4: linked PDF is the public resume (email and phone present, no internal strings).
+- [x] Task 5a: banned-string greps all return zero.
+- [x] Task 5b: required strings all present.
+- [x] Task 5c: 7 experience entries (5 and 4 bullets), 3 decisions, 8 projects, title and JSON-LD consistent.
+- [ ] Deploy and report the commit hash.

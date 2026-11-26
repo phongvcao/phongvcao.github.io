@@ -752,7 +752,7 @@ code {
   z-index: 100;
   width: min(var(--page-w), calc(100% - 48px));
   margin: 0 auto;
-  padding: 14px 16px;
+  padding: 24px 16px 20px;
   border: 1px solid var(--base01);
   border-left: 2px solid var(--blue);
   background: var(--base02);
@@ -781,7 +781,7 @@ code {
 }
 
 .prompt-meta {
-  margin: 8px 0 0;
+  margin: 18px 0 0;
   color: var(--base0);
   font-size: 1.0625rem;
   line-height: 1.5;
