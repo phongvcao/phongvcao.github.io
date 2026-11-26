@@ -513,6 +513,11 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  color: var(--base2);
+}
+
+.exp-company.company-link:hover {
+  color: var(--base3);
 }
 
 .now {
@@ -521,7 +526,7 @@ code {
 }
 
 .exp-dates {
-  color: var(--base0);
+  color: var(--base2);
   text-align: left;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
