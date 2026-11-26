@@ -153,25 +153,6 @@ a:hover {
   padding-top: 28px;
 }
 
-.command-line {
-  margin: 0 0 20px;
-  color: var(--base1);
-  font-size: 0.875rem;
-  overflow-wrap: anywhere;
-}
-
-.command-line .host {
-  color: var(--base0);
-}
-
-.command-line .dim {
-  color: var(--base01);
-}
-
-.command-line .cmd {
-  color: var(--vim-cyan);
-}
-
 h1 {
   margin: 0 0 8px;
   color: var(--base2);
@@ -281,6 +262,104 @@ code {
 
 .section {
   margin-top: 40px;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin: 0 0 18px;
+}
+
+.section-head h2 {
+  margin: 0;
+}
+
+.section-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.mini {
+  padding: 2px 8px;
+  border: 1px solid var(--base01);
+  background: transparent;
+  color: var(--base0);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.mini:hover {
+  border-color: var(--base1);
+  color: var(--base2);
+}
+
+.mini:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.row-line {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding-left: 2em;
+  color: var(--base1);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  white-space: normal;
+}
+
+@media (min-width: 721px) {
+  .work-item .exp-summary {
+    grid-template-columns: 2em minmax(0, 1.2fr) minmax(0, 0.9fr) 16em;
+  }
+}
+
+.decision-body {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+}
+
+.decision-body dt {
+  margin-top: 8px;
+  color: var(--base2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.decision-body dd {
+  margin: 0;
+  color: var(--base1);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.status-link {
+  color: var(--base0);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.status-link:hover {
+  color: var(--base2);
+}
+
+@media print {
+  .pl-top,
+  .prompt-stack {
+    position: static;
+  }
+
+  .exp-item .exp-body {
+    display: block !important;
+  }
 }
 
 .section h2 {
@@ -1033,6 +1112,14 @@ code {
 .pl-theme-btn:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: -2px;
+}
+
+.pl-seg[href] {
+  transition: filter 120ms ease;
+}
+
+.pl-seg[href]:hover {
+  filter: brightness(1.15);
 }
 
 .pl-icon {
