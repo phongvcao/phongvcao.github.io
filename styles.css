@@ -767,6 +767,10 @@ code {
   color: inherit;
 }
 
+h1 .cursor {
+  margin-left: 0.25em;
+}
+
 .prompt-meta {
   margin: 18px 0 0;
   color: var(--base0);
