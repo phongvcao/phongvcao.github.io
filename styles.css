@@ -958,8 +958,8 @@ code {
 }
 
 .pl-light {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--base1);
+  --seg-bg: var(--base1);
+  --seg-fg: var(--base03);
 }
 
 
@@ -969,7 +969,7 @@ code {
 }
 
 .pl-vcs {
-  --seg-bg: var(--green);
+  --seg-bg: var(--yellow);
   --seg-fg: var(--base03);
 }
 
@@ -988,15 +988,20 @@ code {
   --seg-fg: var(--base1);
 }
 
-/* Right side: dark steps, base02 under base01, text stays muted. */
+/* Right side, p10k order: base02, base00, base1. */
 .pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(1) {
   --seg-bg: var(--base02);
   --seg-fg: var(--base1);
 }
 
 .pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(2) {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base1);
+  --seg-bg: var(--base00);
+  --seg-fg: var(--base03);
+}
+
+.pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(3) {
+  --seg-bg: var(--base1);
+  --seg-fg: var(--base03);
 }
 
 .pl-line-social .pl-seg:nth-child(1) {
@@ -1005,13 +1010,13 @@ code {
 }
 
 .pl-line-social .pl-seg:nth-child(2) {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base1);
+  --seg-bg: var(--base00);
+  --seg-fg: var(--base03);
 }
 
 .pl-line-social .pl-seg:nth-child(3) {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--base1);
+  --seg-bg: var(--base1);
+  --seg-fg: var(--base03);
 }
 
 .pl-badge {
@@ -1028,8 +1033,8 @@ code {
 }
 
 .pl-context {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base1);
+  --seg-bg: var(--base0);
+  --seg-fg: var(--base03);
 }
 
 @media (max-width: 720px) {
