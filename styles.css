@@ -12,7 +12,8 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("DejaVuSansM Nerd Font"), local("DejaVuSansMono Nerd Font"),
+  src: local("DejaVuSansM Nerd Font Bold"), local("DejaVuSansMNerdFont-Bold"),
+    local("DejaVuSansMono Nerd Font Bold"), local("DejaVuSansMonoNerdFont-Bold"),
     url("assets/dejavu-sans-mono-bold.woff2") format("woff2");
 }
 
