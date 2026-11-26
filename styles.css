@@ -17,7 +17,19 @@
   --blue-link: #4fa3d9;
   --cyan: #2aa198;
   --green: #859900;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --vim-cyan: #2aa198;
+  --vim-cyan-bright: #5fc7bc;
+  --vim-blue: #268bd2;
+  --vim-blue-link: #4fa3d9;
+  --vim-green: #859900;
+  --vim-yellow: #b58900;
+  --vim-yellow-bright: #d9a800;
+  --vim-violet: #6c71c4;
+  --vim-violet-link: #a78bfa;
+  --vim-violet-bright: #c4b5fd;
+  --vim-orange: #cb4b16;
+  --vim-orange-light: #f0a07a;
+  --mono: "DejaVuSansMono Nerd Font", "DejaVu Sans Mono Nerd Font", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -84,7 +96,7 @@ a {
 }
 
 .tool-line span {
-  color: var(--green);
+  color: var(--vim-blue);
 }
 
 .command-line {
@@ -103,7 +115,7 @@ a {
 }
 
 .command-line .cmd {
-  color: var(--green);
+  color: var(--vim-cyan);
 }
 
 h1 {
@@ -118,7 +130,7 @@ h1 {
 .cursor {
   display: inline-block;
   margin-left: 0.08em;
-  color: var(--blue);
+  color: var(--vim-blue);
   animation: blink 1.15s steps(2, start) infinite;
 }
 
@@ -148,7 +160,7 @@ h1 {
 }
 
 code {
-  color: var(--green);
+  color: var(--vim-cyan);
   font: inherit;
 }
 
@@ -163,6 +175,7 @@ code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-height: 44px;
   padding: 0 12px;
   border: 1px solid var(--base01);
@@ -188,8 +201,8 @@ code {
 }
 
 .button-primary {
-  border-color: var(--blue-link);
-  background: var(--blue-link);
+  border-color: var(--vim-blue-link);
+  background: var(--vim-blue-link);
   color: var(--base03);
 }
 
@@ -209,15 +222,16 @@ code {
 
 .section h2 {
   margin: 0 0 16px;
-  color: var(--base2);
+  color: var(--vim-orange-light);
   font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .section h2 .mark {
-  color: var(--base01);
+  color: var(--vim-orange-light);
   font-weight: 400;
+  opacity: 0.7;
 }
 
 .work-list {
@@ -227,25 +241,25 @@ code {
 
 .work-item h3 {
   margin: 0 0 4px;
-  color: var(--base2);
+  color: var(--vim-orange-light);
   font-size: 1rem;
   font-weight: 600;
 }
 
 .work-item h3 .plus {
-  color: var(--green);
+  color: var(--vim-blue);
 }
 
 .work-link {
-  color: inherit;
+  color: var(--vim-violet-link);
   text-decoration: underline;
-  text-decoration-color: var(--base01);
+  text-decoration-color: var(--vim-violet);
   text-underline-offset: 4px;
   transition: color 120ms ease, text-decoration-color 120ms ease;
 }
 
 .work-link:hover {
-  color: var(--blue-bright);
+  color: var(--vim-violet-bright);
   text-decoration-color: currentColor;
 }
 
@@ -255,14 +269,15 @@ code {
 }
 
 .inline-link {
-  color: var(--blue-link);
+  color: var(--vim-violet-link);
   text-decoration: underline;
-  text-decoration-color: currentColor;
+  text-decoration-color: var(--vim-violet);
   text-underline-offset: 2px;
 }
 
 .inline-link:hover {
-  color: var(--blue-bright);
+  color: var(--vim-violet-bright);
+  text-decoration-color: currentColor;
 }
 
 .inline-link:focus-visible {
@@ -290,43 +305,153 @@ code {
   border: 0 !important;
 }
 
-.experience {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9375rem;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1em;
+  padding: 0 4px;
+  border: 1px solid currentColor;
+  font-size: 0.72em;
+  line-height: 1.5;
+  letter-spacing: 0;
+  opacity: 0.8;
 }
 
-.experience th {
-  padding: 0 16px 8px 0;
-  border-bottom: 1px solid var(--base01);
-  color: var(--base0);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-align: left;
-  text-transform: uppercase;
+.company-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7em;
+  height: 1.7em;
+  border: 1px solid currentColor;
+  font-size: 0.72em;
+  line-height: 1;
+  opacity: 0.75;
 }
 
-.experience td {
-  padding: 11px 16px 11px 0;
+.experience-list {
+  display: grid;
+  gap: 0;
+}
+
+.exp-item {
   border-bottom: 1px solid var(--base02);
-  color: var(--base1);
-  vertical-align: top;
 }
 
-.experience tr:last-child td {
-  border-bottom: 0;
+.exp-item:first-child {
+  border-top: 1px solid var(--base01);
 }
 
-.experience .role-cell {
+.exp-summary {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.exp-summary::-webkit-details-marker {
+  display: none;
+}
+
+.exp-summary:hover {
+  background: var(--base02);
+}
+
+.exp-summary:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.exp-toggle::before {
+  content: "+";
+  color: var(--vim-blue);
+  font-weight: 700;
+}
+
+.exp-item[open] .exp-toggle::before {
+  content: "−";
+}
+
+.exp-role {
   color: var(--base2);
   font-weight: 600;
 }
 
-.experience .dates {
+.exp-company {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--base1);
+}
+
+.exp-dates {
   color: var(--base0);
   text-align: right;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.exp-body {
+  max-width: 78ch;
+  padding: 0 0 14px 2em;
+}
+
+.exp-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.exp-bullets li {
+  position: relative;
+  padding-left: 1.5em;
+  color: var(--base1);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.exp-bullets li + li {
+  margin-top: 4px;
+}
+
+.exp-bullets li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: var(--vim-blue);
+}
+
+.section-note {
+  margin: 16px 0 0;
+  font-size: 0.9375rem;
+}
+
+.section-note a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--vim-cyan);
+  text-decoration: underline;
+  text-decoration-color: var(--vim-cyan);
+  text-underline-offset: 3px;
+}
+
+.section-note a:hover {
+  color: var(--vim-cyan-bright);
+  text-decoration-color: currentColor;
+}
+
+.section-note a:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.section-note .dollar {
+  color: var(--vim-blue);
 }
 
 .elsewhere {
@@ -338,17 +463,19 @@ code {
 }
 
 .elsewhere a {
-  display: inline-block;
-  color: var(--blue-link);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--vim-cyan);
   font-size: 1rem;
   text-decoration: underline;
-  text-decoration-color: transparent;
+  text-decoration-color: var(--vim-cyan);
   text-underline-offset: 3px;
   transition: color 120ms ease, text-decoration-color 120ms ease;
 }
 
 .elsewhere a:hover {
-  color: var(--blue-bright);
+  color: var(--vim-cyan-bright);
   text-decoration-color: currentColor;
 }
 
@@ -358,7 +485,7 @@ code {
 }
 
 .elsewhere .dollar {
-  color: var(--green);
+  color: var(--vim-blue);
 }
 
 .prompt-box {
@@ -388,39 +515,125 @@ code {
 }
 
 .cursor-small {
-  color: var(--orange);
+  color: var(--vim-orange);
 }
 
 .prompt-meta {
   margin: 8px 0 0;
   color: var(--base1);
   font-size: 0.75rem;
+  line-height: 1.5;
 }
 
-.status {
+.model-max {
+  color: var(--vim-orange-light);
+}
+
+.pl-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--base03);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.pl-top {
+  padding: 0 12px;
+  border-bottom: 1px solid var(--base01);
+}
+
+.pl-bottom {
+  padding: 0 12px;
+  border-top: 1px solid var(--base01);
+}
+
+.pl-group {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.pl-right {
+  margin-left: auto;
+}
+
+.pl-seg {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  margin-left: -10px;
+  padding: 0 16px 0 20px;
+  background: var(--seg-bg);
+  color: var(--seg-fg);
+  white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%, 10px 50%);
+}
+
+.pl-seg:first-child {
+  margin-left: 0;
+  padding-left: 12px;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+}
+
+.pl-seg:last-child {
+  padding-right: 12px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 10px 50%);
+}
+
+.pl-seg:only-child {
+  margin-left: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  clip-path: none;
+}
+
+.pl-icon {
+  font-size: 0.95em;
+}
+
+.pl-blue {
+  --seg-bg: var(--vim-blue-link);
+  --seg-fg: var(--base03);
+}
+
+.pl-dark {
+  --seg-bg: var(--base02);
+  --seg-fg: var(--base1);
+}
+
+.pl-light {
+  --seg-bg: var(--base1);
+  --seg-fg: var(--base03);
+}
+
+.pl-green {
+  --seg-bg: var(--vim-green);
+  --seg-fg: var(--base03);
+}
+
+.pl-yellow {
+  --seg-bg: var(--vim-yellow-bright);
+  --seg-fg: var(--base03);
+}
+
+.site-footer {
   margin-top: 48px;
 }
 
-.status-row {
-  border-top: 1px solid var(--base01);
-  background: var(--base02);
-  color: var(--base1);
-  font-size: 0.75rem;
-}
-
-.status-row-bottom {
-  background: var(--base1);
-  color: var(--base03);
-}
-
-.status-inner {
+.pl-footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 4px 20px;
-  width: min(1280px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 8px 0;
+  gap: 6px 16px;
+  padding: 6px 12px;
+  border-top: 1px solid var(--base02);
+  color: var(--base0);
+  background: var(--base03);
+  font-size: 0.6875rem;
 }
 
 @media (max-width: 720px) {
@@ -460,63 +673,82 @@ code {
     margin-left: 0;
   }
 
-  .experience thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  .exp-summary {
+    grid-template-columns: 1.5em 1fr auto;
+    gap: 4px 8px;
+    padding: 10px 0;
   }
 
-  .experience,
-  .experience tbody,
-  .experience tr,
-  .experience td {
-    display: block;
-    width: 100%;
+  .exp-role {
+    grid-column: 2 / -1;
   }
 
-  .experience tr {
-    padding: 11px 0;
-    border-bottom: 1px solid var(--base02);
+  .exp-company {
+    grid-column: 2;
   }
 
-  .experience tr:last-child {
-    border-bottom: 0;
+  .exp-dates {
+    grid-column: 3;
+    text-align: right;
   }
 
-  .experience td {
-    padding: 0;
-    border: 0;
-  }
-
-  .experience td + td {
-    margin-top: 1px;
-  }
-
-  .experience .dates {
-    text-align: left;
-  }
-
-  .experience td::before {
-    content: attr(data-label) ": ";
-    color: var(--base0);
+  .exp-body {
+    padding-left: 1.5em;
   }
 
   .prompt-box {
     margin-top: 32px;
   }
 
-  .status {
-    margin-top: 36px;
+  .site-footer {
+    margin-top: 32px;
   }
 
-  .status-inner {
-    padding: 7px 0;
+  .pl-top {
+    padding: 0 6px;
+  }
+
+  .pl-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 4px 6px;
+  }
+
+  .pl-bottom .pl-right {
+    align-self: flex-end;
+  }
+
+  .pl-hide-sm {
+    display: none;
+  }
+
+  .pl-seg {
+    height: 24px;
+    margin-left: -8px;
+    padding: 0 10px 0 16px;
+    font-size: 0.65rem;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%, 8px 50%);
+  }
+
+  .pl-seg:first-child {
+    padding-left: 8px;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+  }
+
+  .pl-seg:last-child {
+    padding-right: 8px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 8px 50%);
+  }
+
+  .pl-seg:only-child {
+    padding-left: 8px;
+    padding-right: 8px;
+    clip-path: none;
+  }
+
+  .pl-footer {
+    padding: 6px;
   }
 }
 
