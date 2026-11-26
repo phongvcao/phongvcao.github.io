@@ -599,10 +599,6 @@ code {
   border-bottom: 1px solid var(--base02);
 }
 
-.exp-item:first-child {
-  border-top: 1px solid var(--base01);
-}
-
 .exp-item[data-pinned] {
   background: var(--base02);
   box-shadow: inset 2px 0 0 var(--blue);
@@ -924,7 +920,6 @@ h1 .cursor {
   width: min(var(--page-w), calc(100% - 48px));
   margin: 0 auto;
   padding: 4px 16px;
-  border-top: 1px solid var(--base01);
   background: var(--base03);
   color: var(--base1);
   font-size: 0.9375rem;
