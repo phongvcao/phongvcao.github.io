@@ -1033,7 +1033,7 @@ code {
 }
 
 .pl-context {
-  --seg-bg: var(--base0);
+  --seg-bg: var(--green);
   --seg-fg: var(--base03);
 }
 
