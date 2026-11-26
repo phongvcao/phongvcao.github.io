@@ -134,22 +134,6 @@ a:hover {
   padding: var(--topbar-h) 0 24px;
 }
 
-.user-message {
-  position: sticky;
-  top: var(--topbar-h);
-  z-index: 50;
-  padding: 16px 20px;
-  border-left: 2px solid var(--blue);
-  background: var(--base02);
-}
-
-.user-message p {
-  margin: 0;
-  color: var(--blue-bright);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
 .response {
   padding-top: 28px;
 }
@@ -1097,6 +1081,11 @@ code {
   padding-right: 10px;
 }
 
+.pl-question {
+  --seg-bg: var(--base02);
+  --seg-fg: var(--cyan);
+}
+
 .pl-theme-btn {
   --seg-bg: var(--base02);
   --seg-fg: var(--base0);
@@ -1210,8 +1199,8 @@ code {
 }
 
 .pl-line-social .pl-right .pl-seg:nth-child(1) {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--base1);
+  --seg-bg: var(--green);
+  --seg-fg: var(--base03);
 }
 
 .pl-line-social .pl-right .pl-seg:nth-child(2) {
@@ -1253,11 +1242,7 @@ code {
     font-size: 16px;
   }
 
-  .user-message {
-    padding: 12px 14px;
-  }
-
-  h1 {
+    h1 {
     font-size: 2.5rem;
   }
 
