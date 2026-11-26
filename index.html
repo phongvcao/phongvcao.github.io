@@ -537,9 +537,10 @@
         var body = item.querySelector(".exp-body");
         if (body) {
           body.addEventListener("click", function () {
-            delete item.dataset.pinned;
-            item.open = false;
-            savePins();
+            if (!item.dataset.pinned) {
+              item.dataset.pinned = "1";
+              savePins();
+            }
           });
         }
         summary.addEventListener("click", function (event) {
