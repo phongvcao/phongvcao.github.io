@@ -113,7 +113,7 @@ a:hover {
   flex: 1;
   width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
-  padding: var(--topbar-h) 0 calc(var(--prompt-h) + var(--status-h) + var(--activity-h) + var(--career-h) + 12px);
+  padding: var(--topbar-h) 0 24px;
 }
 
 .user-message {
@@ -595,6 +595,43 @@ code {
   margin: 0;
   color: var(--base1);
   font-size: 0.9375rem;
+}
+
+.tip {
+  position: fixed;
+  z-index: 200;
+  padding: 4px 8px;
+  border: 1px solid var(--base01);
+  background: var(--base02);
+  color: var(--base1);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tip[hidden] {
+  display: none;
+}
+
+.prompt-stack {
+  position: sticky;
+  margin-top: 24px;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: var(--base03);
+}
+
+.prompt-stack > * {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  width: auto;
+  margin: 0;
 }
 
 .career-stats {

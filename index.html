@@ -358,43 +358,38 @@
         </div>
       </section>
 
-      <p class="career-stats" aria-label="Years in each role">
-        <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
-        <span class="stat-dot" aria-hidden="true">·</span>
-        <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
-        <span class="stat-dot" aria-hidden="true">·</span>
-        <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
-      </p>
-      <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 8 edits · 6 thoughts</span></p>
-      <div class="prompt-box">
-        <a class="prompt-link" href="mailto:phongvcao@gmail.com">
-          <span>phongvcao@gmail.com</span>
-          <span class="cursor cursor-small" aria-hidden="true"></span>
-        </a>
-        <p class="prompt-meta"><span class="model-agent">Ultracode</span> <span class="model-auto">auto</span> <span class="model-dim">·</span> <span class="model-name">DeepSeek V4.1 Flash 1017</span> <span class="model-dim">·</span> <span class="model-max">max</span></p>
+      <div class="prompt-stack">
+        <p class="career-stats" aria-label="Years in each role">
+          <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
+          <span class="stat-dot" aria-hidden="true">·</span>
+          <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
+          <span class="stat-dot" aria-hidden="true">·</span>
+          <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
+        </p>
+        <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 8 edits · 6 thoughts</span></p>
+        <div class="prompt-box">
+          <a class="prompt-link" href="mailto:phongvcao@gmail.com">
+            <span>phongvcao@gmail.com</span>
+            <span class="cursor cursor-small" aria-hidden="true"></span>
+          </a>
+          <p class="prompt-meta"><span class="model-agent">Ultracode</span> <span class="model-auto">auto</span> <span class="model-dim">·</span> <span class="model-name">DeepSeek V4.1 Flash 1017</span> <span class="model-dim">·</span> <span class="model-max">max</span></p>
+        </div>
+        <div class="prompt-status" aria-label="Session status">
+          <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span class="status-hint"><span class="status-key">esc</span> interrupt</span></span>
+          <span class="status-right"><span>668K+ (68%)</span><span class="status-dot">·</span><span>$66.88</span><span class="status-dot">·</span><span class="status-agents">6 subagents</span><span class="status-dot">·</span><span>ctrl+x commands</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
       </div>
-      <div class="prompt-status" aria-label="Session status">
-        <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span class="status-hint"><span class="status-key">esc</span> interrupt</span></span>
-        <span class="status-right"><span>668K+ (68%)</span><span class="status-dot">·</span><span>$66.88</span><span class="status-dot">·</span><span class="status-agents">6 subagents</span><span class="status-dot">·</span><span>ctrl+x commands</span><span class="status-copy">© 2026 Phong V. Cao</span></span>
       </div>
     </article>
   </main>
+
+  <div class="tip" id="pin-tip" role="tooltip" hidden>Click to pin open · click again to close</div>
 
   <script>
     (function () {
       var root = document.documentElement;
       function fitChrome() {
-        var pairs = [
-          ["--topbar-h", document.querySelector(".pl-top")],
-          ["--prompt-h", document.querySelector(".prompt-box")],
-          ["--status-h", document.querySelector(".prompt-status")],
-          ["--activity-h", document.querySelector(".prompt-activity")],
-          ["--career-h", document.querySelector(".career-stats")]
-        ];
-        pairs.forEach(function (pair) {
-          var el = pair[1];
-          if (el) root.style.setProperty(pair[0], el.getBoundingClientRect().height + "px");
-        });
+        var bar = document.querySelector(".pl-top");
+        if (bar) root.style.setProperty("--topbar-h", bar.getBoundingClientRect().height + "px");
       }
       fitChrome();
       window.addEventListener("resize", fitChrome);
@@ -493,7 +488,35 @@
       expItems.forEach(function (item) {
         var summary = item.querySelector(".exp-summary");
         if (!summary) return;
-        summary.setAttribute("title", "Hover to peek, click to keep this row open");
+        summary.setAttribute("title", "Click to pin open · click again to close");
+        summary.setAttribute("aria-describedby", "pin-tip");
+        function placeTip(event) {
+          var tip = document.getElementById("pin-tip");
+          var x = event.clientX + 14;
+          var y = event.clientY + 18;
+          x = Math.min(x, window.innerWidth - tip.offsetWidth - 10);
+          y = Math.min(y, window.innerHeight - tip.offsetHeight - 10);
+          tip.style.left = Math.max(10, x) + "px";
+          tip.style.top = Math.max(10, y) + "px";
+        }
+        function showTip(event) {
+          var tip = document.getElementById("pin-tip");
+          if (!tip) return;
+          tip.hidden = false;
+          placeTip(event);
+        }
+        function hideTip() {
+          var tip = document.getElementById("pin-tip");
+          if (tip) tip.hidden = true;
+        }
+        summary.addEventListener("pointerenter", showTip);
+        summary.addEventListener("pointermove", placeTip);
+        summary.addEventListener("pointerleave", hideTip);
+        summary.addEventListener("focus", function () {
+          var box = summary.getBoundingClientRect();
+          showTip({ clientX: box.left + 24, clientY: box.bottom - 4 });
+        });
+        summary.addEventListener("blur", hideTip);
         item.addEventListener("pointerenter", function () {
           item.open = true;
         });
