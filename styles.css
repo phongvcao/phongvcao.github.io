@@ -625,24 +625,6 @@ code {
   background: var(--base03);
 }
 
-.career-stats {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: calc(var(--status-h) + var(--prompt-h) + var(--activity-h));
-  z-index: 100;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  width: min(1100px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 0 16px 6px;
-  background: var(--base03);
-  color: var(--base0);
-  font-size: 0.9375rem;
-  line-height: 1.5;
-}
 
 .stat-dot {
   color: var(--base01);
@@ -756,7 +738,14 @@ code {
 }
 
 .spinner {
-  color: var(--base0);
+  color: var(--base01);
+}
+
+.activity-line {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
 }
 
 .prompt-status {

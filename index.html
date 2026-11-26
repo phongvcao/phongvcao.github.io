@@ -359,14 +359,16 @@
       </section>
 
       <div class="prompt-stack">
-        <p class="career-stats" aria-label="Years in each role">
-          <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
-          <span class="stat-dot" aria-hidden="true">·</span>
-          <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
-          <span class="stat-dot" aria-hidden="true">·</span>
-          <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
+        <p class="prompt-activity" aria-label="Years in each role">
+          <span class="spinner" aria-hidden="true">▘</span>
+          <span class="activity-line">
+            <span data-since="2015-06-01" data-template="{n}+ yrs exp">11+ yrs exp</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2018-01-01" data-template="{n} yrs husband">8 yrs husband</span>
+            <span class="stat-dot" aria-hidden="true">·</span>
+            <span data-since="2021-01-01" data-template="{n} yrs father">5 yrs father</span>
+          </span>
         </p>
-        <p class="prompt-activity"><span class="spinner" aria-hidden="true">▘</span><span>6 commands · 8 edits · 6 thoughts</span></p>
         <div class="prompt-box">
           <a class="prompt-link" href="mailto:phongvcao@gmail.com">
             <span>phongvcao@gmail.com</span>
@@ -488,7 +490,6 @@
       expItems.forEach(function (item) {
         var summary = item.querySelector(".exp-summary");
         if (!summary) return;
-        summary.setAttribute("title", "Click to pin open · click again to close");
         summary.setAttribute("aria-describedby", "pin-tip");
         function placeTip(event) {
           var tip = document.getElementById("pin-tip");
