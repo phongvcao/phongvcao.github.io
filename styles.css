@@ -222,7 +222,7 @@ code {
   background: transparent;
   font-family: inherit;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
   text-decoration: none;
   transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
