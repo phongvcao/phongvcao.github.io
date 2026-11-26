@@ -540,9 +540,9 @@ code {
 
 .exp-summary {
   display: grid;
-  grid-template-columns: 2em minmax(0, 1.2fr) minmax(0, 0.9fr) 16em;
+  grid-template-columns: 2em minmax(0, 1.2fr) minmax(0, 0.9fr) 14em;
   align-items: baseline;
-  gap: 12px;
+  gap: 24px;
   padding: 11px 16px 11px 0;
   cursor: pointer;
   list-style: none;
