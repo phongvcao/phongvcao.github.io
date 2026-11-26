@@ -190,11 +190,23 @@ h1 {
 }
 
 .role-logo {
-  width: 0.82em;
-  height: 0.82em;
+  height: 1em;
+  width: auto;
   margin-right: 0.3em;
   fill: currentColor;
-  vertical-align: -0.04em;
+  vertical-align: -0.12em;
+}
+
+/* Separator: the same disc the theme buttons use, muted, sitting in its own
+   slice of the monospace grid. */
+.role-dot {
+  display: inline-block;
+  width: 2.4em;
+  color: var(--base0);
+  font-size: 0.5em;
+  line-height: 1;
+  text-align: center;
+  vertical-align: 0.12em;
 }
 
 .role .mark {
@@ -252,14 +264,14 @@ code {
 
 .button .icon {
   margin-right: 0.35em;
-  font-size: 1.15em;
+  font-size: 1.3em;
   line-height: 1;
 }
 
 /* Brand plates (the PDF mark) are drawn small inside their em box, so they
    need a nudge to sit at the same optical weight as the outline icons. */
 .button .icon.icon-plate {
-  font-size: 1.3em;
+  font-size: 1.45em;
 }
 
 .button-primary {
@@ -492,36 +504,27 @@ code {
   opacity: 0.8;
 }
 
+/* Company mark column. Every sprite viewBox is trimmed to its ink, so one
+   CSS height gives all five logos the same rendered height: taller than the
+   cap height of the text beside them (DejaVu Sans Mono caps at 0.73em). */
 .company-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.3em;
-  height: 1.3em;
-  border: 1px solid currentColor;
-  font-size: 1em;
-  font-weight: 700;
-  line-height: 1;
+  flex: none;
+  width: 1.9em;
+  height: 1.45em;
   opacity: 0.8;
 }
 
-/* Real brand marks: no monogram frame, drawn in the text colour so they sit
-   in the Solarized palette instead of importing the company's own colour. */
 .company-mark.is-logo {
   border: 0;
-  padding: 0.1em;
-}
-
-/* A wide mark (Arista) takes a wider box so its ink matches the height of the
-   square marks; the negative margin keeps the company names on one column. */
-.company-mark.is-wide {
-  width: 1.5em;
-  margin-right: -0.2em;
+  padding: 0;
 }
 
 .company-mark svg {
-  width: 100%;
-  height: 100%;
+  height: 1.05em;
+  width: auto;
   fill: currentColor;
 }
 
@@ -1188,19 +1191,19 @@ h1 .cursor {
 
 .pl-icon {
   margin-right: 0.28em;
-  font-size: 0.95em;
+  font-size: 1.1em;
 }
 
 .pl-icon svg {
   display: inline-block;
-  width: 0.95em;
-  height: 0.95em;
+  height: 1em;
+  width: auto;
   fill: currentColor;
-  vertical-align: -0.12em;
+  vertical-align: -0.18em;
 }
 
 .pl-icon.icon-plate {
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 
 .pl-pin {
