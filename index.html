@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Senior software engineer working on BMC and OpenBMC firmware, Redfish APIs, embedded Linux, security automation and validation for data center hardware.">
   <meta name="twitter:image" content="https://phongvcao.com/assets/og-image.png">
   <meta name="twitter:image:alt" content="Phong V. Cao — Senior Software Engineer, BMC and OpenBMC firmware">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" id="favicon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -464,6 +464,13 @@
         var meta = document.querySelector('meta[name="theme-color"]');
         if (meta) {
           meta.setAttribute("content", name === "light" ? "#fdf6e3" : "#002b36");
+        }
+        var icon = document.getElementById("favicon");
+        if (icon) {
+          icon.setAttribute(
+            "href",
+            name === "light" ? "assets/favicon-light.svg" : "assets/favicon.svg"
+          );
         }
         themeButtons.forEach(function (button) {
           var active = button.getAttribute("data-theme-set") === name;
