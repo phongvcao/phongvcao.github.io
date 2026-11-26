@@ -948,7 +948,7 @@ code {
   :root {
     --topbar-h: 57px;
     --prompt-h: 111px;
-    --status-h: 26px;
+    --status-h: 47px;
   }
 
   body {
@@ -1044,8 +1044,13 @@ code {
     font-size: 0.8125rem;
   }
 
-  .status-right > span:nth-child(even) {
+  .status-dot {
     display: none;
+  }
+
+  .status-right {
+    margin-left: auto;
+    justify-content: flex-end;
   }
 
   .status-agents {
@@ -1124,12 +1129,6 @@ code {
   .pl-status,
   .pl-right .pl-seg:nth-child(n + 2) {
     display: none;
-  }
-}
-
-@media (max-width: 340px) {
-  :root {
-    --status-h: 47px;
   }
 }
 
