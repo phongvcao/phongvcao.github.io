@@ -495,32 +495,39 @@
         });
         writeState({ pins: pins });
       }
+      function placeTip(event) {
+        var tip = document.getElementById("pin-tip");
+        if (!tip) return;
+        var x = event.clientX + 14;
+        var y = event.clientY + 18;
+        x = Math.min(x, window.innerWidth - tip.offsetWidth - 10);
+        y = Math.min(y, window.innerHeight - tip.offsetHeight - 10);
+        tip.style.left = Math.max(10, x) + "px";
+        tip.style.top = Math.max(10, y) + "px";
+      }
+      function showTip(event) {
+        var tip = document.getElementById("pin-tip");
+        if (!tip) return;
+        tip.hidden = false;
+        placeTip(event);
+      }
+      function hideTip() {
+        var tip = document.getElementById("pin-tip");
+        if (tip) tip.hidden = true;
+      }
+      function bindTip(el) {
+        if (!el) return;
+        el.addEventListener("pointerenter", showTip);
+        el.addEventListener("pointermove", placeTip);
+        el.addEventListener("pointerleave", hideTip);
+      }
+
       expItems.forEach(function (item) {
         var summary = item.querySelector(".exp-summary");
         if (!summary) return;
         summary.setAttribute("aria-describedby", "pin-tip");
-        function placeTip(event) {
-          var tip = document.getElementById("pin-tip");
-          var x = event.clientX + 14;
-          var y = event.clientY + 18;
-          x = Math.min(x, window.innerWidth - tip.offsetWidth - 10);
-          y = Math.min(y, window.innerHeight - tip.offsetHeight - 10);
-          tip.style.left = Math.max(10, x) + "px";
-          tip.style.top = Math.max(10, y) + "px";
-        }
-        function showTip(event) {
-          var tip = document.getElementById("pin-tip");
-          if (!tip) return;
-          tip.hidden = false;
-          placeTip(event);
-        }
-        function hideTip() {
-          var tip = document.getElementById("pin-tip");
-          if (tip) tip.hidden = true;
-        }
-        summary.addEventListener("pointerenter", showTip);
-        summary.addEventListener("pointermove", placeTip);
-        summary.addEventListener("pointerleave", hideTip);
+        bindTip(summary);
+        bindTip(item.querySelector(".exp-body"));
         summary.addEventListener("focus", function () {
           var box = summary.getBoundingClientRect();
           showTip({ clientX: box.left + 24, clientY: box.bottom - 4 });

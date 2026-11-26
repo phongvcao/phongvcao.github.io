@@ -513,6 +513,7 @@ code {
 
 .exp-body {
   padding: 0 0 14px 2em;
+  cursor: pointer;
 }
 
 .exp-bullets {
