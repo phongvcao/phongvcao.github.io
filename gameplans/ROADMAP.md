@@ -99,7 +99,8 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 - [x] Column alignment: company x=602 and date/tag x=986 in all 18 rows across the three sections.
 - [x] UI/UX test in Playwright: 10 of 12 pass; the two failures were per-row pin expectations that the section-wide toggle replaced.
 - [x] Accessibility pass: 18/18 summaries keyboard operable, 143 names non-empty, focus rings visible, contrast lifted to base1 (dark 5.61, light 4.99).
-- [~] Link audit: delegated to the claims agent; awaiting the report.
+- [x] Link audit: 41 external hosts, 34 answer 200, the rest are bot walls (403/406/429/999), 0 of 37 deep links is a 404.
+- [x] Claims audit: 49 of 51 pass. The two failures were my own forbidden-list entries; the brief approves the DeepSeek credit. Vendor claim made singular.
 - [~] Print media emulation: all rows expanded, no clipped text.
 
 ## 9. Deploy
@@ -109,3 +110,5 @@ Status key: `[ ]` todo · `[~]` doing · `[x]` done.
 - [x] Mirror to `legacy` (phongvcaocom) at `6c1637d` before the content pass; the branch `legacy-django-2014` keeps the old tree.
 - [x] Pages build verified as `built` after each push.
 - [ ] Report the build id and anything still `NOT VERIFIED`.
+- [ ] DNS: `phongvcao.com` still answers `15.197.148.33` / `3.33.130.190`, not the GitHub Pages A records. The site is live on the Pages edge and the local preview only.
+- [ ] The linked resume PDF carries the phone number; the HTML carries none.
