@@ -944,13 +944,30 @@ code {
   --seg-fg: var(--base1);
 }
 
-.pl-line-social .pl-seg:nth-child(2) {
+/* Right side: darkest on the left, lightest at the right edge. */
+.pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(1) {
+  --seg-bg: var(--base01);
+  --seg-fg: var(--base2);
+}
+
+.pl-line:not(.pl-line-social) .pl-right .pl-seg:nth-child(2) {
   --seg-bg: var(--base1);
   --seg-fg: var(--base03);
 }
 
-.pl-line-social .pl-seg:hover {
+.pl-line-social .pl-seg:nth-child(1) {
+  --seg-bg: transparent;
+  --seg-fg: var(--base1);
+}
+
+.pl-line-social .pl-seg:nth-child(2) {
+  --seg-bg: var(--base01);
   --seg-fg: var(--base2);
+}
+
+.pl-line-social .pl-seg:nth-child(3) {
+  --seg-bg: var(--base1);
+  --seg-fg: var(--base03);
 }
 
 .pl-badge {
