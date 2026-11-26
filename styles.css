@@ -54,6 +54,22 @@
   --mono: "Site Mono", "DejaVuSansM Nerd Font", "DejaVuSansM Nerd Font Mono", "DejaVuSansMono Nerd Font", "DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* Solarized light: every monotone slot swaps with its mirror value. */
+:root[data-theme="light"] {
+  --base03: #fdf6e3;
+  --base02: #eee8d5;
+  --base01: #93a1a1;
+  --base00: #839496;
+  --base0: #657b83;
+  --base1: #586e75;
+  --base2: #073642;
+  --base3: #002b36;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
 *,
 *::before,
 *::after {
@@ -272,10 +288,18 @@ code {
 
 .work-item h3 {
   margin: 0;
-  color: var(--vim-orange-light);
+  color: var(--base2);
   font-size: 1.0625rem;
   font-weight: 600;
   line-height: inherit;
+}
+
+.work-item h3 a {
+  color: inherit;
+}
+
+.work-item h3 a:hover {
+  color: var(--base3);
 }
 
 .work-item h3 .plus {
@@ -302,7 +326,12 @@ code {
 }
 
 .open-source .work-link {
+  color: var(--base2);
   font-size: 1rem;
+}
+
+.open-source .work-link:hover {
+  color: var(--base3);
 }
 
 .inline-link {
@@ -714,7 +743,7 @@ code {
   padding: 4px 16px;
   border-top: 1px solid var(--base01);
   background: var(--base03);
-  color: var(--base01);
+  color: var(--base0);
   font-size: 0.9375rem;
   line-height: 1.3;
 }
@@ -948,6 +977,26 @@ code {
   padding-right: 10px;
 }
 
+.pl-theme-btn {
+  --seg-bg: var(--base02);
+  --seg-fg: var(--base0);
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pl-theme-btn.is-active {
+  --seg-bg: var(--blue);
+  --seg-fg: var(--base03);
+}
+
+.pl-theme-btn:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: -2px;
+}
+
 .pl-icon {
   margin-right: 0.28em;
   font-size: 0.95em;
@@ -1021,17 +1070,17 @@ code {
   --seg-fg: var(--base03);
 }
 
-.pl-line-social .pl-seg:nth-child(1) {
+.pl-line-social .pl-right .pl-seg:nth-child(1) {
   --seg-bg: var(--base02);
   --seg-fg: var(--base1);
 }
 
-.pl-line-social .pl-seg:nth-child(2) {
+.pl-line-social .pl-right .pl-seg:nth-child(2) {
   --seg-bg: var(--base00);
   --seg-fg: var(--base03);
 }
 
-.pl-line-social .pl-seg:nth-child(3) {
+.pl-line-social .pl-right .pl-seg:nth-child(3) {
   --seg-bg: var(--base1);
   --seg-fg: var(--base03);
 }

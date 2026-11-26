@@ -97,6 +97,10 @@
       </div>
     </div>
     <div class="pl-line pl-line-social">
+      <div class="pl-group pl-left pl-theme" role="group" aria-label="Colour theme">
+        <button type="button" class="pl-seg pl-theme-btn is-active" data-theme-set="dark" aria-pressed="true"><span class="pl-icon" aria-hidden="true">&#x25CF;</span>dark</button>
+        <button type="button" class="pl-seg pl-theme-btn" data-theme-set="light" aria-pressed="false"><span class="pl-icon" aria-hidden="true">&#x25CB;</span>light</button>
+      </div>
       <span class="pl-fill" aria-hidden="true"></span>
       <div class="pl-group pl-right">
         <a class="pl-seg pl-social" href="https://github.com/phongvcao" target="_blank" rel="noopener"><span class="pl-badge" aria-hidden="true">gh</span>GitHub</a>
@@ -300,7 +304,7 @@
           <details class="exp-item work-item">
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
-              <h3 class="exp-role work-role">hire4real.fyi</h3>
+              <h3 class="exp-role work-role"><a class="work-link" href="https://hire4real.fyi" target="_blank" rel="noopener">hire4real.fyi</a></h3>
               <a class="exp-company company-link" href="https://hire4real.fyi" target="_blank" rel="noopener"><span class="company-mark" aria-hidden="true">H</span>Hire4Real</a>
               <span class="exp-dates work-tags">Python, AI agents</span>
             </summary>
@@ -435,25 +439,56 @@
       tick();
       setInterval(tick, 1000);
 
-      var EXP_KEY = "phongvcao-exp-pinned";
-      var expItems = document.querySelectorAll(".exp-item");
-      function savedPins() {
+      var STATE_KEY = "phongvcao-state";
+      function readState() {
         try {
-          return JSON.parse(localStorage.getItem(EXP_KEY) || "[]");
+          return JSON.parse(localStorage.getItem(STATE_KEY) || "{}") || {};
         } catch (error) {
-          return [];
+          return {};
         }
       }
+      function writeState(patch) {
+        var next = readState();
+        Object.keys(patch).forEach(function (key) {
+          next[key] = patch[key];
+        });
+        try {
+          localStorage.setItem(STATE_KEY, JSON.stringify(next));
+        } catch (error) {
+          /* private mode: memory only */
+        }
+      }
+      var state = readState();
+
+      var themeButtons = document.querySelectorAll("[data-theme-set]");
+      function paintTheme(name) {
+        document.documentElement.setAttribute("data-theme", name);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+          meta.setAttribute("content", name === "light" ? "#fdf6e3" : "#002b36");
+        }
+        themeButtons.forEach(function (button) {
+          var active = button.getAttribute("data-theme-set") === name;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+      }
+      paintTheme(state.theme === "light" ? "light" : "dark");
+      themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var name = button.getAttribute("data-theme-set");
+          paintTheme(name);
+          writeState({ theme: name });
+        });
+      });
+
+      var expItems = document.querySelectorAll(".exp-item");
       function savePins() {
         var pins = [];
         expItems.forEach(function (item, index) {
           if (item.dataset.pinned) pins.push(index);
         });
-        try {
-          localStorage.setItem(EXP_KEY, JSON.stringify(pins));
-        } catch (error) {
-          /* private mode: stay in memory */
-        }
+        writeState({ pins: pins });
       }
       expItems.forEach(function (item) {
         var summary = item.querySelector(".exp-summary");
@@ -478,7 +513,7 @@
           savePins();
         });
       });
-      var pins = savedPins();
+      var pins = state.pins || [];
       if (pins.length) {
         expItems.forEach(function (item) {
           item.open = false;
