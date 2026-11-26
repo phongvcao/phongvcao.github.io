@@ -1131,16 +1131,6 @@ code {
   --seg-fg: var(--base03);
 }
 
-.pl-context-alt {
-  --seg-bg: var(--base01);
-  --seg-fg: var(--base1);
-}
-
-.pl-context-dark {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--base1);
-}
-
 @media (max-width: 720px) {
   :root {
     --topbar-h: 57px;
@@ -1330,8 +1320,6 @@ code {
   .pl-status,
   .pl-vim,
   .pl-context,
-  .pl-context-alt,
-  .pl-context-dark,
   .pl-right .pl-seg:nth-child(n + 2) {
     display: none;
   }
