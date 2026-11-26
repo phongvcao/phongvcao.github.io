@@ -442,6 +442,7 @@ code {
 }
 
 .exp-item[data-pinned] {
+  background: var(--base02);
   box-shadow: inset 2px 0 0 var(--blue);
 }
 
@@ -628,33 +629,6 @@ code {
 
 .stat-dot {
   color: var(--base01);
-}
-
-.section-note {
-  margin: 16px 0 0;
-  font-size: 0.9375rem;
-}
-
-.section-note a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--cyan);
-  text-decoration: none;
-  transition: color 120ms ease;
-}
-
-.section-note a:hover {
-  color: var(--base2);
-}
-
-.section-note a:focus-visible {
-  outline: 2px solid var(--yellow);
-  outline-offset: 2px;
-}
-
-.section-note .dollar {
-  color: var(--vim-blue);
 }
 
 .prompt-box {

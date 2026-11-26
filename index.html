@@ -229,7 +229,6 @@
             </div>
           </details>
         </div>
-        <p class="section-note"><a href="assets/phong-cao-resume.pdf"><span class="dollar" aria-hidden="true">$</span>open resume.pdf</a></p>
       </section>
 
       <section class="section" aria-labelledby="work-title">
@@ -526,6 +525,14 @@
             item.open = false;
           }
         });
+        var body = item.querySelector(".exp-body");
+        if (body) {
+          body.addEventListener("click", function () {
+            delete item.dataset.pinned;
+            item.open = false;
+            savePins();
+          });
+        }
         summary.addEventListener("click", function (event) {
           if (item.dataset.pinned) {
             delete item.dataset.pinned;
