@@ -649,6 +649,15 @@
         writeState({ pins: pins });
       }
 
+      var hoverLocked = false;
+      document.addEventListener(
+        "pointermove",
+        function () {
+          hoverLocked = false;
+        },
+        { passive: true }
+      );
+
       function setRows(list, open) {
         if (!list) return;
         list.querySelectorAll(".exp-item").forEach(function (row) {
@@ -659,6 +668,9 @@
             delete row.dataset.pinned;
           }
         });
+        if (!open) {
+          hoverLocked = true;
+        }
         savePins();
       }
       function placeTip(event) {
@@ -703,7 +715,8 @@
           showTip({ clientX: box.left + 24, clientY: box.bottom - 4 });
         });
         summary.addEventListener("blur", hideTip);
-        item.addEventListener("pointerenter", function () {
+        item.addEventListener("pointerenter", function (event) {
+          if (hoverLocked && event.pointerType === "mouse") return;
           item.open = true;
         });
         item.addEventListener("pointerleave", function () {

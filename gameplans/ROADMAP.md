@@ -130,3 +130,6 @@ Source: "OpenCode fix — phongvcao.com — combined: page title + Experience/in
 - [x] Task 5c: 7 experience entries (5 and 4 bullets), 3 decisions, 8 projects, title and JSON-LD consistent.
 - [ ] Deploy and report the commit hash.
 - [x] Accessibility re-run after run 2: 11/11 pass. No-JS 18/18 summaries open with Enter, 0 empty names, tooltip wired to all 18, reduced motion honoured, print opens all 18 bodies. Contrast: body 5.61 dark / 4.99 light, status 5.61 / 4.99, headings 3.26 / 4.27 at 24px/700. Prompt box padding-top 24 px, meta gap 18 px.
+- [x] UI matrix after run 2: 13/15, then 15/15 once the hover lock landed. Company and date columns at x=602 and x=986 in all 18 rows; prompt box padding 24 px and meta gap 18 px.
+- [x] Hover lock: a collapse no longer reopens the row that lands under a stationary pointer; the peek returns on the next pointer move.
+- [x] Claims re-audit: 90/92 with 7 skips. Both failures were the stale run-1 DeepSeek rule, which the brief approves; every run-2 assertion passes.
