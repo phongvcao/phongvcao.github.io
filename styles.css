@@ -141,7 +141,7 @@ a:hover {
   top: var(--topbar-h);
   z-index: 40;
   padding: 12px 16px;
-  border: 1px solid var(--base01);
+  border: 0;
   border-left: 2px solid var(--blue);
   background: var(--base02);
 }
@@ -197,16 +197,16 @@ h1 {
   vertical-align: -0.12em;
 }
 
-/* Separator: the same disc the theme buttons use, muted, sitting in its own
-   slice of the monospace grid. */
+/* Separator: the same disc the theme buttons use, in the link colour, sitting
+   in a slice of the monospace grid about two cells wide on each side. */
 .role-dot {
   display: inline-block;
-  width: 2.4em;
-  color: var(--base0);
-  font-size: 0.5em;
+  width: 2.3em;
+  color: var(--cyan);
+  font-size: 0.65em;
   line-height: 1;
   text-align: center;
-  vertical-align: 0.12em;
+  vertical-align: 0.3em;
 }
 
 .role .mark {
