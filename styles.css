@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Site Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("DejaVuSansM Nerd Font"), local("DejaVuSansMono Nerd Font"),
+    url("assets/dejavu-sans-mono-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Site Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("DejaVuSansM Nerd Font"), local("DejaVuSansMono Nerd Font"),
+    url("assets/dejavu-sans-mono-bold.woff2") format("woff2");
+}
+
 :root {
   --base03: #002b36;
   --base02: #073642;
@@ -33,7 +51,7 @@
   --prompt-h: 92px;
   --status-h: 29px;
 
-  --mono: "DejaVuSansMono Nerd Font", "DejaVu Sans Mono Nerd Font", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --mono: "Site Mono", "DejaVuSansM Nerd Font", "DejaVuSansM Nerd Font Mono", "DejaVuSansMono Nerd Font", "DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -136,8 +154,11 @@ h1 {
 
 .cursor {
   display: inline-block;
-  margin-left: 0.08em;
-  color: inherit;
+  width: 0.62em;
+  height: 1.15em;
+  margin-left: 0.06em;
+  vertical-align: -0.15em;
+  background: currentColor;
   animation: blink 1.15s steps(2, start) infinite;
 }
 
@@ -327,8 +348,8 @@ code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.35em;
-  height: 1.35em;
+  width: 1.15em;
+  height: 1.15em;
   border: 1px solid currentColor;
   font-size: 1em;
   line-height: 1;
@@ -387,7 +408,7 @@ code {
 
 .exp-summary {
   display: grid;
-  grid-template-columns: 2em minmax(0, 1.4fr) minmax(0, 1fr) auto;
+  grid-template-columns: 2em minmax(0, 1.4fr) minmax(0, 1fr) 12em;
   align-items: baseline;
   gap: 12px;
   padding: 11px 0;
@@ -429,7 +450,7 @@ code {
 
 .exp-company {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 7px;
   color: var(--base1);
 }
@@ -702,8 +723,8 @@ code {
   height: 1em;
   margin-right: 1ch;
   overflow: hidden;
-  background-image: linear-gradient(90deg, rgb(38 139 210 / 0.5) 0 0.62ch, transparent 0.62ch 1ch);
-  background-size: 1ch 0.62em;
+  background-image: radial-gradient(circle, rgb(38 139 210 / 0.45) 0.07em, transparent 0.075em);
+  background-size: 1ch 1em;
   background-position: 0 50%;
   background-repeat: repeat-x;
 }
@@ -714,11 +735,11 @@ code {
   background-repeat: no-repeat;
   background-size: 8ch 100%;
   -webkit-mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
-  -webkit-mask-size: 1ch 0.62em;
+  -webkit-mask-size: 1ch 0.55em;
   -webkit-mask-position: 0 50%;
   -webkit-mask-repeat: repeat-x;
   mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
-  mask-size: 1ch 0.62em;
+  mask-size: 1ch 0.55em;
   mask-position: 0 50%;
   mask-repeat: repeat-x;
 }
@@ -726,30 +747,23 @@ code {
 .scan-fwd {
   background-image: linear-gradient(
     90deg,
-    transparent 0 1ch,
-    rgb(38 139 210 / 0.1) 1ch 2ch,
-    rgb(38 139 210 / 0.2) 2ch 3ch,
-    rgb(38 139 210 / 0.36) 3ch 4ch,
-    rgb(38 139 210 / 0.55) 4ch 5ch,
-    rgb(38 139 210 / 0.78) 5ch 6ch,
-    var(--blue) 6ch 7ch,
-    transparent 7ch 8ch
+    transparent 0 5ch,
+    rgb(38 139 210 / 0.22) 5ch 6ch,
+    rgb(38 139 210 / 0.55) 6ch 7ch,
+    var(--blue) 7ch 8ch
   );
-  animation: scan-fwd 4.4s steps(1) infinite;
+  animation: scan-fwd 3.2s linear infinite;
 }
 
 .scan-back {
   background-image: linear-gradient(
     90deg,
     var(--blue) 0 1ch,
-    rgb(38 139 210 / 0.78) 1ch 2ch,
-    rgb(38 139 210 / 0.55) 2ch 3ch,
-    rgb(38 139 210 / 0.36) 3ch 4ch,
-    rgb(38 139 210 / 0.2) 4ch 5ch,
-    rgb(38 139 210 / 0.1) 5ch 6ch,
-    transparent 6ch 8ch
+    rgb(38 139 210 / 0.55) 1ch 2ch,
+    rgb(38 139 210 / 0.22) 2ch 3ch,
+    transparent 3ch 8ch
   );
-  animation: scan-back 4.4s steps(1) infinite;
+  animation: scan-back 3.2s linear infinite;
 }
 
 .status-copy {
@@ -772,15 +786,17 @@ code {
 @keyframes scan-fwd {
   0% {
     transform: translateX(-7ch);
-    animation-timing-function: steps(8, jump-none);
   }
-  14.81% {
+  12% {
+    transform: translateX(-7ch);
+  }
+  46% {
     transform: translateX(0);
   }
-  31.48% {
+  54% {
     transform: translateX(0);
   }
-  31.49% {
+  54.01% {
     transform: translateX(8ch);
   }
   100% {
@@ -792,14 +808,13 @@ code {
   0% {
     transform: translateX(-8ch);
   }
-  31.48% {
+  54% {
     transform: translateX(-8ch);
   }
-  31.49% {
+  54.01% {
     transform: translateX(7ch);
-    animation-timing-function: steps(8, jump-none);
   }
-  46.3% {
+  88% {
     transform: translateX(0);
   }
   100% {
@@ -947,7 +962,7 @@ code {
 @media (max-width: 720px) {
   :root {
     --topbar-h: 57px;
-    --prompt-h: 111px;
+    --prompt-h: 89px;
     --status-h: 47px;
   }
 
@@ -1118,6 +1133,12 @@ code {
 
   .pl-right .pl-seg:last-child {
     padding-right: 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  :root {
+    --prompt-h: 111px;
   }
 }
 
