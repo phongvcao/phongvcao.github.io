@@ -190,12 +190,15 @@ h1 {
   line-height: 1.4;
 }
 
-.role-logo {
-  height: 1.102em;
-  width: auto;
-  margin-right: 0.3em;
-  fill: currentColor;
-  vertical-align: -0.12em;
+.pl-icon svg {
+  display: inline-block;
+  vertical-align: -0.18em;
+}
+
+/* The glyph sizes above are tuned per Nerd Font mark; an SVG mark wants the
+   plain text size back so 1.102em is measured against the bar's text. */
+.pl-icon.i-mark {
+  font-size: 1em;
 }
 
 /* Separator: the same disc the theme buttons use, in the link colour. The
@@ -541,11 +544,25 @@ code {
   padding: 0;
 }
 
-.company-mark svg {
+.company-mark svg,
+.pl-icon svg,
+.role-logo {
   height: 1.102em;
   width: auto;
+  flex: none;
+  margin-right: 0.45em;
   fill: currentColor;
+  vertical-align: -0.12em;
 }
+
+/* The outer <svg> has no viewBox, so the symbol fills whatever box CSS gives
+   it. Widths are the trimmed ratio times the 1.102em height: a square box
+   would letterbox the wide marks back down to nothing. */
+svg.lg-nvidia { width: 1.667em; }   /* 24 / 15.87 */
+svg.lg-tesla { width: 1.102em; }
+svg.lg-google { width: 1.074em; }   /* 23.39 / 24 */
+svg.lg-arista { width: 1.486em; }   /* 24 / 17.8 */
+svg.lg-hire4real { width: 1.102em; }
 
 .logo-sprite {
   position: absolute;
@@ -1205,14 +1222,6 @@ h1 .cursor {
 
 .pl-icon {
   margin-right: 0.28em;
-}
-
-.pl-icon svg {
-  display: inline-block;
-  height: 1.102em;
-  width: auto;
-  fill: currentColor;
-  vertical-align: -0.18em;
 }
 
 
