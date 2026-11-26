@@ -84,7 +84,13 @@ body {
 }
 
 a {
-  color: var(--blue-link);
+  color: var(--violet);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+a:hover {
+  color: var(--base2);
 }
 
 .page {
@@ -278,15 +284,16 @@ code {
 }
 
 .work-link {
-  color: var(--vim-violet-link);
+  color: var(--violet);
+  font-weight: 700;
   text-decoration: underline;
-  text-decoration-color: var(--vim-violet);
+  text-decoration-color: var(--violet);
   text-underline-offset: 4px;
   transition: color 120ms ease, text-decoration-color 120ms ease;
 }
 
 .work-link:hover {
-  color: var(--vim-violet-bright);
+  color: var(--base2);
   text-decoration-color: currentColor;
 }
 
@@ -295,16 +302,23 @@ code {
   outline-offset: 2px;
 }
 
-.inline-link {
-  color: var(--vim-violet-link);
+.work-item h3 a {
   text-decoration: underline;
-  text-decoration-color: var(--vim-violet);
-  text-underline-offset: 2px;
+  text-decoration-color: currentColor;
+  text-underline-offset: 4px;
+}
+
+.work-item h3 .work-link {
+  font-weight: inherit;
+}
+
+.inline-link {
+  color: var(--violet);
+  text-decoration: none;
 }
 
 .inline-link:hover {
-  color: var(--vim-violet-bright);
-  text-decoration-color: currentColor;
+  color: var(--base2);
 }
 
 .inline-link:focus-visible {
@@ -357,13 +371,12 @@ code {
 }
 
 .term-link {
-  color: inherit;
+  color: var(--violet);
   text-decoration: none;
 }
 
 .term-link:hover {
-  color: var(--vim-cyan-bright);
-  background: var(--base02);
+  color: var(--base2);
 }
 
 .term-link:focus-visible {
@@ -372,15 +385,15 @@ code {
 }
 
 .term-link code {
-  color: var(--vim-cyan);
+  color: inherit;
 }
 
 .term-link:hover code {
-  color: var(--vim-cyan-bright);
+  color: inherit;
 }
 
 .company-link {
-  color: inherit;
+  color: var(--violet);
   text-decoration: none;
 }
 
@@ -452,7 +465,6 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--base1);
 }
 
 .now {
@@ -516,7 +528,8 @@ code {
 }
 
 .skill-row dt {
-  color: var(--base0);
+  color: var(--base2);
+  font-weight: 700;
 }
 
 .skill-row dd {
@@ -567,15 +580,13 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--vim-cyan);
-  text-decoration: underline;
-  text-decoration-color: var(--vim-cyan);
-  text-underline-offset: 3px;
+  color: var(--violet);
+  text-decoration: none;
+  transition: color 120ms ease;
 }
 
 .section-note a:hover {
-  color: var(--vim-cyan-bright);
-  text-decoration-color: currentColor;
+  color: var(--base2);
 }
 
 .section-note a:focus-visible {
@@ -599,17 +610,14 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--vim-cyan);
+  color: var(--violet);
   font-size: 1rem;
-  text-decoration: underline;
-  text-decoration-color: var(--vim-cyan);
-  text-underline-offset: 3px;
-  transition: color 120ms ease, text-decoration-color 120ms ease;
+  text-decoration: none;
+  transition: color 120ms ease;
 }
 
 .elsewhere a:hover {
-  color: var(--vim-cyan-bright);
-  text-decoration-color: currentColor;
+  color: var(--base2);
 }
 
 .elsewhere a:focus-visible {
