@@ -847,8 +847,7 @@ svg.lg-hire4real { width: 1.102em; }
   height: 1.49em;
 }
 
-.skill-logo[src$="dmtf.svg"],
-.skill-logo[src$="aspeed.svg"] {
+.skill-logo[src$="dmtf.svg"] {
   height: 1.235em;
 }
 
