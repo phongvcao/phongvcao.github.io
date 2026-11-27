@@ -780,7 +780,7 @@ svg.lg-hire4real { width: 1.102em; }
 
 .exp-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) 14em;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) 16em;
   align-items: baseline;
   gap: 12px;
   padding: 11px 16px 11px 0;
@@ -1752,9 +1752,19 @@ h1 .cursor {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: baseline;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 0 2px;
+    flex: 1 0 100%;
+    margin-left: 0;
+    padding-left: 29px;
+  }
+
+  /* The company starts on the role text column; the date or tags end at
+     the right edge, so every row header lines up. The dates take the tag
+     size on a phone so long ranges stay on one line with the company. */
+  .exp-meta .exp-dates {
     margin-left: auto;
+    font-size: 0.875rem;
   }
 
   .exp-meta .exp-dates::before {
