@@ -868,13 +868,14 @@ code {
 }
 
 /* Company rows use text chips. One size, one shape, one colour per company;
-   the border is the text colour at 35%. */
+   the border is the text colour at 35%. The chip text is the headliner
+   size (1.0625rem = 17px) wherever the chip sits. */
 .chip {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
   font-family: var(--mono);
-  font-size: 1em; /* the chip text is the headliner text size */
+  font-size: 1.0625rem; /* the headliner text size, wherever the chip sits */
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -1136,7 +1137,9 @@ a.logo-link.tech-word,
 
 .edu-degree {
   margin: 0;
-  padding-left: calc(0.5em + 2px);
+  /* The school chip pads half its own 1.0625rem text plus the 2px border;
+     the degree line starts on the chip's text, not its border. */
+  padding-left: calc(0.53125rem + 2px);
   color: var(--base1);
   font-size: 0.9375rem;
 }
@@ -1374,6 +1377,10 @@ h1 .cursor {
 
 .pl-right {
   margin-left: auto;
+}
+
+.pl-seg .chip {
+  font-size: 1em; /* the bar keeps its own text size */
 }
 
 .pl-seg {
