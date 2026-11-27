@@ -199,6 +199,11 @@ h1 {
    plain text size back so 1.102em is measured against the bar's text. */
 .pl-icon.i-mark {
   font-size: 1em;
+  margin-right: 0.35em;
+}
+
+.pl-icon.i-mark svg {
+  margin-right: 0;
 }
 
 /* Separator: the same disc the theme buttons use, in the link colour. The
@@ -304,7 +309,8 @@ code {
   flex: none;
 }
 
-.pl-cal {
+.pl-cal,
+.pl-clock {
   width: 1em;
   height: 1em;
   flex: none;
@@ -936,6 +942,18 @@ html[data-theme="light"] .logo-usb-on-dark {
 .work-link:hover img,
 .company-link:hover img {
   filter: brightness(1.3);
+}
+
+/* Project tag links take the same cyan ink. */
+.logo-link.tag {
+  color: var(--cyan);
+}
+
+/* In-body technology words take the cyan link ink, like the bullet
+   technology links. AMD keeps its red word. */
+a.logo-link.tech-word:not(.amd-word),
+.tech-word a.logo-link {
+  color: var(--cyan);
 }
 
 /* Keep each inline tech mark glued to its word. */
