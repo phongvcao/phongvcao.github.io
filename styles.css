@@ -294,6 +294,18 @@ code {
 .button .icon.i-pdf,
 .pl-icon.i-pdf {
   --icon-size: 1.65em; /* pdf plate inks 0.668em */
+  color: #B30B00;      /* PDF file-icon dark red */
+}
+
+.pl-icon.i-in,
+.button .icon.i-in {
+  color: #0A66C2;
+}
+
+.pl-cal {
+  width: 1em;
+  height: 1em;
+  flex: none;
 }
 
 .button-primary {
