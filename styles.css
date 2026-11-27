@@ -890,6 +890,33 @@ html[data-theme="light"] .logo-usb-on-dark {
   margin-right: 0.3em;
 }
 
+/* Go is just GO in the Go blue, in our own font. */
+a[href="https://go.dev/"] {
+  color: #00ADD8;
+}
+
+.go-word {
+  color: #00ADD8;
+}
+
+/* Inline company names carry their brand ink. Intel and AMD are just the
+   words in our own font, no extra mark. */
+.exp-bullets .company-link[href^="https://www.intel.com"] {
+  color: #0071C5;
+}
+
+.exp-bullets .company-link[href^="https://www.amd.com"] {
+  color: #ED1C24;
+}
+
+.exp-bullets .company-link[href^="https://www.tesla.com"] {
+  color: var(--red);
+}
+
+.exp-bullets .company-link[href^="https://www.nvidia.com"] {
+  color: var(--green);
+}
+
 .role-skill {
   margin-right: 0.3em;
   vertical-align: -0.22em;
