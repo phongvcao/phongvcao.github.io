@@ -64,7 +64,7 @@ const adjust = (hex, bg, label, theme) => {
 };
 
 const rows = [
-  ['NVIDIA', '#76b900', '#073642', '#eee8d5'],
+  ['Nvidia', '#76b900', '#073642', '#eee8d5'],
   ['Google', '#268bd2', '#073642', '#eee8d5'],
   ['Tesla', '#dc322f', '#073642', '#eee8d5'],
   ['Arista Networks', '#2aa198', '#073642', '#eee8d5'],
