@@ -1383,6 +1383,16 @@ h1 .cursor {
   font-size: 1em; /* the bar keeps its own text size */
 }
 
+/* tmuxline's separator for two areas that share a background: U+E0B1, the
+   thin right arrow, in the segment text colour. */
+.pl-thin {
+  flex: none;
+  width: 14px;
+  height: 28px;
+  margin: 0 5px 0 0;
+  fill: var(--base1);
+}
+
 /* The hero chip follows the hero line, so its box matches the words
    around it. */
 .role .chip {
