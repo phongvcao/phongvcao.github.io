@@ -308,7 +308,7 @@
           </details>
           <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
-              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span><img class="tech-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish Contract · <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">GB200 NVL72</h3>
+              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span><img class="tech-logo icon-exception" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish Contract · <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">GB200 NVL72</h3>
               <span class="exp-meta">
                 <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-nvidia" focusable="false"><use href="#logo-nvidia"/></svg></span>Nvidia</a>
                 <span class="exp-dates">API Design</span>
@@ -385,12 +385,12 @@
                 <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-nvidia" focusable="false"><use href="#logo-nvidia"/></svg></span>Nvidia</a>
                 <span class="exp-dates work-tags"><span class="tag"><img class="tag-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span>, <span class="tag"><img class="tag-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true">OpenBMC</span>, <span class="tag"><img class="tag-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish</span></span>
               </span>
-              <span class="row-line">Owned release-blocking GPU-baseboard fixes across <code>bmcweb</code>, <code>entity-manager</code> and telemetry, with changes shipped in 3 Nvidia products.</span>
+              <span class="row-line">Owned release-blocking GPU-baseboard fixes across <span class="tech-word"><img class="tech-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true"><code>bmcweb</code></span>, <span class="tech-word"><img class="tech-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true"><code>entity-manager</code></span> and telemetry, with changes shipped in 3 <span class="tech-word"><img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">Nvidia products</span>.</span>
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
-                <li>Cross-layer work: hardened USB link recovery, corrected inventory and telemetry behavior, and established physical-slot GPU naming through a cross-team RFC.</li>
-                <li>Verification covered AC power-cycle recovery for the USB link fix and boundary unit tests before the fixes shipped.</li>
+                <li>Cross-layer work: hardened <span class="tech-word"><img class="tech-logo logo-usb-on-dark" src="assets/logos/usb-cream.svg" alt="" aria-hidden="true"><img class="tech-logo logo-usb-on-light" src="assets/logos/usb-dark.svg" alt="" aria-hidden="true">USB link recovery</span>, corrected inventory and telemetry behavior, and established physical-slot GPU naming through a cross-team RFC.</li>
+                <li>Verification covered AC power-cycle recovery for the <span class="tech-word"><img class="tech-logo logo-usb-on-dark" src="assets/logos/usb-cream.svg" alt="" aria-hidden="true"><img class="tech-logo logo-usb-on-light" src="assets/logos/usb-dark.svg" alt="" aria-hidden="true">USB link fix</span> and boundary unit tests before the fixes shipped.</li>
                 <li>The naming work is written up under Technical Decisions.</li>
               </ul>
             </div>
@@ -402,12 +402,12 @@
                 <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-nvidia" focusable="false"><use href="#logo-nvidia"/></svg></span>Nvidia</a>
                 <span class="exp-dates work-tags"><span class="tag"><img class="tag-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span>, <span class="tag"><img class="tag-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true">sdbusplus</span>, <span class="tag"><img class="tag-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish</span></span>
               </span>
-              <span class="row-line">Designed the GB200 NVL72 rack-power API and C++ D-Bus service so tools can read and set power policy across shelf vendors.</span>
+              <span class="row-line">Designed the <span class="tech-word"><img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">GB200 NVL72</span> rack-power API and <span class="tech-word"><img class="tech-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span> D-Bus service so tools can read and set power policy across shelf vendors.</span>
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
                 <li>A power shelf vendor adopted the policy and AC-loss portions; <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">Nvidia's customer telemetry guide uses the power-state names.</li>
-                <li>Built OpenBMC-on-QEMU test infrastructure before production hardware was available, including networking and simulated I2C FRU EEPROMs.</li>
+                <li>Built <span class="tech-word"><img class="tech-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true">OpenBMC-on-<img class="tech-logo" src="assets/logos/qemu.svg" alt="" aria-hidden="true">QEMU</span> test infrastructure before production hardware was available, including networking and simulated <span class="tech-word"><img class="tech-logo" src="assets/logos/i2c.svg" alt="" aria-hidden="true">I2C</span> FRU EEPROMs.</li>
                 <li>The API design is written up under Technical Decisions.</li>
               </ul>
             </div>
@@ -436,12 +436,12 @@
                 <a class="exp-company company-link" href="https://www.google.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-google" focusable="false"><use href="#logo-google"/></svg></span><span class="google-word"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></span></a>
                 <span class="exp-dates work-tags"><span class="tag go-word"><img class="tag-logo" src="assets/logos/go.svg" alt="" aria-hidden="true">Go</span>, <span class="tag"><img class="tag-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span>, <span class="tag"><img class="tag-logo" src="assets/logos/spanner.svg" alt="" aria-hidden="true">Spanner</span></span>
               </span>
-              <span class="row-line">Automated device risk decisions using hardware security-key data and modified-firmware signals, cutting pipeline latency about 15% and improving Spanner performance about 11%.</span>
+              <span class="row-line">Automated device risk decisions using hardware security-key data and modified-firmware signals, cutting pipeline latency about 15% and improving <span class="tech-word"><img class="tech-logo" src="assets/logos/spanner.svg" alt="" aria-hidden="true">Spanner performance</span> about 11%.</span>
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
                 <li>Built features for Alphabet's automated security-risk system, rating devices by hardware profile and user behavior.</li>
-                <li>Used parallel and concurrent processing with Go, C++ and Kubernetes, and Spanner sharding with SQL.</li>
+                <li>Used parallel and concurrent processing with <span class="tech-word go-word"><img class="tech-logo" src="assets/logos/go.svg" alt="" aria-hidden="true">Go</span>, <span class="tech-word"><img class="tech-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span> and <span class="tech-word"><img class="tech-logo" src="assets/logos/kubernetes.svg" alt="" aria-hidden="true">Kubernetes</span>, and <span class="tech-word"><img class="tech-logo" src="assets/logos/spanner.svg" alt="" aria-hidden="true">Spanner</span> sharding with <span class="tech-word"><img class="tech-logo" src="assets/logos/sqlite.svg" alt="" aria-hidden="true">SQL</span>.</li>
               </ul>
             </div>
           </details>
@@ -452,11 +452,11 @@
                 <a class="exp-company company-link" href="https://www.google.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-google" focusable="false"><use href="#logo-google"/></svg></span><span class="google-word"><span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span></span></a>
                 <span class="exp-dates work-tags"><span class="tag go-word"><img class="tag-logo" src="assets/logos/go.svg" alt="" aria-hidden="true">Go</span>, <span class="tag"><img class="tag-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span>, <span class="tag"><img class="tag-logo" src="assets/logos/python.svg" alt="" aria-hidden="true">Python</span></span>
               </span>
-              <span class="row-line">Built common hardware-access API across many server types and tests for CPU and memory weaknesses on Intel and AMD fleets.</span>
+              <span class="row-line">Built common hardware-access API across many server types and tests for CPU and memory weaknesses on <span class="tech-word intel-word">Intel</span> and <span class="tech-word amd-word">AMD<img class="amd-mark" src="assets/logos/amd-arrow.svg" alt="" aria-hidden="true"></span> fleets.</span>
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
-                <li>Wrote tests detecting weaknesses such as Rowhammer on Intel and AMD servers.</li>
+                <li>Wrote tests detecting weaknesses such as Rowhammer on <span class="tech-word intel-word">Intel</span> and <span class="tech-word amd-word">AMD<img class="amd-mark" src="assets/logos/amd-arrow.svg" alt="" aria-hidden="true"></span> servers.</li>
                 <li>Redesigned server hardware tests, raising service-level availability about 0.5%.</li>
                 <li>Improved test-infrastructure API performance about 5% with heuristic analysis tools.</li>
               </ul>
@@ -469,12 +469,12 @@
                 <a class="exp-company company-link" href="https://www.tesla.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-tesla" focusable="false"><use href="#logo-tesla"/></svg></span>Tesla</a>
                 <span class="exp-dates work-tags"><span class="tag go-word"><img class="tag-logo" src="assets/logos/go.svg" alt="" aria-hidden="true">Go</span>, <span class="tag"><img class="tag-logo" src="assets/logos/kafka.svg" alt="" aria-hidden="true">Kafka</span></span>
               </span>
-              <span class="row-line">Led factory Material Flow features and pickup/drop-off prioritization, lifting throughput about 21% and Kafka performance about 33%.</span>
+              <span class="row-line">Led factory Material Flow features and pickup/drop-off prioritization, lifting throughput about 21% and <span class="tech-word"><img class="tech-logo" src="assets/logos/kafka.svg" alt="" aria-hidden="true">Kafka performance</span> about 33%.</span>
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
-                <li>Led design across Go, JavaScript, Python, SQL and Kafka.</li>
-                <li>Improved Kafka through topic partitioning and message compression.</li>
+                <li>Led design across <span class="tech-word go-word"><img class="tech-logo" src="assets/logos/go.svg" alt="" aria-hidden="true">Go</span>, <span class="tech-word"><img class="tech-logo" src="assets/logos/javascript.svg" alt="" aria-hidden="true">JavaScript</span>, <span class="tech-word"><img class="tech-logo" src="assets/logos/python.svg" alt="" aria-hidden="true">Python</span>, <span class="tech-word"><img class="tech-logo" src="assets/logos/sqlite.svg" alt="" aria-hidden="true">SQL</span> and <span class="tech-word"><img class="tech-logo" src="assets/logos/kafka.svg" alt="" aria-hidden="true">Kafka</span>.</li>
+                <li>Improved <span class="tech-word"><img class="tech-logo" src="assets/logos/kafka.svg" alt="" aria-hidden="true">Kafka</span> through topic partitioning and message compression.</li>
                 <li>Mentored interns and new engineers through structured onboarding.</li>
               </ul>
             </div>
@@ -486,11 +486,11 @@
                 <a class="exp-company company-link" href="https://www.arista.com/" target="_blank" rel="noopener"><span class="company-mark is-logo is-wide" aria-hidden="true"><svg class="lg-arista" focusable="false"><use href="#logo-arista"/></svg></span>Arista Networks</a>
                 <span class="exp-dates work-tags"><span class="tag"><img class="tag-logo" src="assets/logos/c.svg" alt="" aria-hidden="true">C</span>, <span class="tag"><img class="tag-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++</span>, <span class="tag"><img class="tag-logo" src="assets/logos/linux.svg" alt="" aria-hidden="true">Linux</span></span>
               </span>
-              <span class="row-line">Developed kernel modules and switch-chip drivers for Arista EOS on thousands of cloud data-center switches, improving transfer rates about 19%.</span>
+              <span class="row-line">Developed kernel modules and switch-chip drivers for <span class="tech-word"><img class="tech-logo" src="assets/logos/arista.svg" alt="" aria-hidden="true">Arista EOS</span> on thousands of cloud data-center switches, improving transfer rates about 19%.</span>
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
-                <li>Brought new whitebox switch hardware onto Arista EOS through drivers and adapter layers.</li>
+                <li>Brought new whitebox switch hardware onto <span class="tech-word"><img class="tech-logo" src="assets/logos/arista.svg" alt="" aria-hidden="true">Arista EOS</span> through drivers and adapter layers.</li>
                 <li>Led switch-chip driver library work that cut product cost about 10%.</li>
               </ul>
             </div>
@@ -506,8 +506,8 @@
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
-                <li>Traffic is measured with Plausible. The typed parsing core is open source under MIT, with pytest and CI. <a class="inline-link" href="https://hire4real.fyi/" target="_blank" rel="noopener"><img class="tech-logo" src="assets/logos/hire4real.svg" alt="" aria-hidden="true">Product</a>.</li>
-                <li>Owned the platform end to end with AI coding agents (Claude, DeepSeek), from data parsing through deployment. <a class="inline-link" href="https://github.com/hire4real" target="_blank" rel="noopener">Source organization</a>.</li>
+                <li>Traffic is measured with Plausible. The typed parsing core is open source under MIT, with <span class="tech-word"><img class="tech-logo" src="assets/logos/pytest.svg" alt="" aria-hidden="true">pytest</span> and CI. <a class="inline-link" href="https://hire4real.fyi/" target="_blank" rel="noopener"><img class="tech-logo" src="assets/logos/hire4real.svg" alt="" aria-hidden="true">Product</a>.</li>
+                <li>Owned the platform end to end with AI coding agents (<span class="tech-word"><img class="tech-logo" src="assets/logos/claude.svg" alt="" aria-hidden="true">Claude</span>, <span class="tech-word"><img class="tech-logo" src="assets/logos/deepseek.svg" alt="" aria-hidden="true">DeepSeek</span>), from data parsing through deployment. <a class="inline-link" href="https://github.com/hire4real" target="_blank" rel="noopener">Source organization</a>.</li>
               </ul>
             </div>
           </details>

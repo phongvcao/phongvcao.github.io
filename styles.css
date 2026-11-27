@@ -904,6 +904,11 @@ html[data-theme="light"] .logo-usb-on-dark {
   margin-right: 0.3em;
 }
 
+/* Explicit opt-out: this mark is in the markup but not shown. */
+.tech-logo.icon-exception {
+  display: none;
+}
+
 /* Go is just GO in the Go blue, in our own font. */
 a[href="https://go.dev/"] {
   color: #00ADD8;
@@ -913,6 +918,25 @@ a[href="https://go.dev/"] {
 .go-word {
   color: #00ADD8;
   font-weight: 700;
+}
+
+/* Keep each inline tech mark glued to its word. */
+.tech-word {
+  white-space: nowrap;
+}
+
+.intel-word {
+  color: #0071C5;
+}
+
+.amd-word {
+  color: #ED1C24;
+  font-weight: 700;
+}
+
+.tech-logo[src$="usb-cream.svg"],
+.tech-logo[src$="usb-dark.svg"] {
+  height: 1.394em;
 }
 
 /* Inline company names carry their brand ink. Intel and AMD are just the
