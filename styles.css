@@ -819,6 +819,39 @@ svg.lg-hire4real { width: 1.102em; }
   margin: 0;
 }
 
+/* One official mark per linked skill, 1.5x the cap height of its 15px text. */
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  vertical-align: middle;
+}
+
+.skill-logo {
+  height: 1.2em;
+  width: auto;
+  flex: none;
+}
+
+/* These three sources carry transparent padding; scale the box so the
+   visible ink still measures 18px (1.5x the 12px cap height). */
+.skill-logo[src$="usb.svg"] {
+  height: 1.394em;
+}
+
+.skill-logo[src$="pcie.svg"] {
+  height: 1.271em;
+}
+
+.skill-logo[src$="i2c.svg"] {
+  height: 1.49em;
+}
+
+.skill-logo[src$="dmtf.svg"],
+.skill-logo[src$="aspeed.svg"] {
+  height: 1.235em;
+}
+
 .skill-row {
   display: grid;
   grid-template-columns: 8.5em minmax(0, 1fr);
@@ -853,15 +886,22 @@ svg.lg-hire4real { width: 1.102em; }
   font-size: 0.9375rem;
 }
 
-/* The university name and shield take the Stony Brook red. */
+/* The university name is bold red; the shield is a sibling so the text
+   baseline matches Stony Brook, NY and May 2015. */
 .edu-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
   color: var(--red);
+  font-weight: 700;
 }
 
-svg.lg-sbu { width: 0.935em; }   /* 28 / 33 */
+.edu-school .company-mark {
+  align-self: center;
+  opacity: 1;
+}
+
+svg.lg-sbu {
+  height: 1.2em;   /* 1.5x the cap height of the 15px text */
+  width: 1.018em;  /* 28 / 33 ratio */
+}
 
 .edu-sep {
   color: var(--base01);
