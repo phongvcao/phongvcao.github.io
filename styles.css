@@ -1212,7 +1212,7 @@ h1 .cursor {
 .prompt-meta {
   margin: 18px 0 0;
   color: var(--base0);
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   line-height: 1.5;
 }
 
@@ -1270,7 +1270,7 @@ h1 .cursor {
 }
 
 .activity-glyph {
-  margin-right: 0.15em;
+  margin-right: 0.35em;
 }
 
 .prompt-status {
@@ -1484,6 +1484,10 @@ h1 .cursor {
 
 .pl-icon {
   margin-right: 0.28em;
+}
+
+.pl-icon.i-loc {
+  margin-right: 0.45em;
 }
 
 .social-icon {
