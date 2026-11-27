@@ -59,7 +59,7 @@
   --c-school: #dc322f; /* SBU red */
   --c-go: #00add8; /* Go brand cyan */
 
-  --page-w: 1200px;
+  --page-w: 1100px;
   --mono: "Site Mono", "DejaVuSansM Nerd Font", "DejaVuSansM Nerd Font Mono", "DejaVuSansMono Nerd Font", "DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -898,9 +898,12 @@ code {
   font-weight: 600;
 }
 
+/* Dates and tech stacks end on the page's right margin. With the logos gone
+   the text is shorter than the column, so the column is anchored right
+   instead of leaving a hole after the words. */
 .exp-dates {
   color: var(--base2);
-  text-align: left;
+  text-align: right;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
