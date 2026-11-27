@@ -1,0 +1,151 @@
+--- text-before.txt
++++ text-after.txt
+@@ -1,11 +1,8 @@
+ 
+-  
+-    
+-  
+-  
+-    
+-      
+-        Austin, TX
++    
++    
++      
++        Austin, TX
+         
+         
+         🧑‍💻Senior SWE
+@@ -64,7 +61,7 @@
+             
+               Senior Software Engineer
+               
+-                Nvidia
++                NVIDIA
+                 Aug 2025 — Now
+               
+             
+@@ -82,7 +79,7 @@
+             
+               Senior Software Engineer
+               
+-                Nvidia
++                NVIDIA
+                 May 2024 — Aug 2025
+               
+             
+@@ -99,13 +96,13 @@
+             
+               Senior Software Engineer
+               
+-                TESLA
++                Tesla
+                 May 2023 — Feb 2024
+               
+             
+             
+               
+-                Led design of key features for the TESLA factory Material Flow System (Go, JavaScript, Python, SQL, Kafka).
++                Led design of key features for the Tesla factory Material Flow System (Go, JavaScript, Python, SQL, Kafka).
+                 Drove factory material flow throughput up ~21% with pickup and drop-off prioritization.
+                 Improved Kafka performance ~33% through topic partitioning and message compression.
+                 Mentored interns and new engineers through structured onboarding.
+@@ -166,7 +163,7 @@
+             
+               Creator
+               
+-                Hire4Real
++                Hire4Real.fyi
+                 Aug 2026 — Now
+               
+             
+@@ -195,7 +192,7 @@
+             
+               GPU Naming · HGX Rubin NVL8
+               
+-                Nvidia
++                NVIDIA
+                 Cross-Team RFC
+               
+               Standardized GPU names by physical slot through a cross-team RFC so firmware logs identify the hardware a technician must service.
+@@ -225,7 +222,7 @@
+             
+               Redfish Contract · GB200 NVL72
+               
+-                Nvidia
++                NVIDIA
+                 API Design
+               
+               Designed one rack-power API across power shelf vendors; vendors adopted it and Nvidia's customer telemetry guide uses its power-state names.
+@@ -255,7 +252,7 @@
+             
+               AI Loop Engineering · Redfish Validation
+               
+-                Nvidia
++                NVIDIA
+                 Validation Design
+               
+               Made one live-board capture feed multiple validators and model comparisons, with automated checks instead of hand-entered conclusions.
+@@ -297,7 +294,7 @@
+             
+               GPU Management Controller Firmware
+               
+-                Nvidia
++                NVIDIA
+                 C++, OpenBMC, Redfish
+               
+               Owned release-blocking GPU-baseboard fixes across bmcweb, entity-manager and telemetry, with changes shipped in 3 Nvidia products.
+@@ -314,7 +311,7 @@
+             
+               Rack Power Management
+               
+-                Nvidia
++                NVIDIA
+                 C++, sdbusplus, Redfish
+               
+               Designed the GB200 NVL72 rack-power API and C++ D-Bus service so tools can read and set power policy across shelf vendors.
+@@ -331,7 +328,7 @@
+             
+               Redfish Conformance Automation
+               
+-                Nvidia
++                NVIDIA
+                 Python, FastAPI, Docker
+               
+               Built a repeatable Redfish Conformance workflow that checks release images against real hardware using one shared capture across validators.
+@@ -381,7 +378,7 @@
+             
+               Factory Material Flow
+               
+-                TESLA
++                Tesla
+                 Go, Kafka
+               
+               Led factory Material Flow features and pickup/drop-off prioritization, lifting throughput about 21% and Kafka performance about 33%.
+@@ -414,7 +411,7 @@
+             
+               Hire4Real.fyi
+               
+-                Hire4Real
++                Hire4Real.fyi
+                 Python, AI agents
+               
+               Built and operates a public index of 11M+ US Department of Labor filings across 333K+ employers, serving 700K+ unique visitors per month.
+@@ -476,7 +473,7 @@
+         
+           ▖
+           
+-            Firmware engineer in Austin, TX
++            Firmware engineer in Austin, TX
+             ·
+             11+ YOE
+             ·
+@@ -492,7 +489,7 @@
+             phongvcao@gmail.com
+             
+           
+-          Built with OpenCode · DeepSeek V4.1 Flash 1017
++          Built with OpenCode · DeepSeek V4.1 Flash 1017 · static site · no live session
+         
+         
+         © 2026 Phong V. Cao

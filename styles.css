@@ -51,6 +51,12 @@
   --topbar-h: 57px;
   --prompt-h: 92px;
   --status-h: 29px;
+  --c-nvidia: #76b900;
+  --c-google: #51a5df;
+  --c-tesla: #e97d7b;
+  --c-arista: #2eafa5;
+  --c-hire4real: #ec8053;
+  --c-school: #93a1a1;
 
   --page-w: 1200px;
   --mono: "Site Mono", "DejaVuSansM Nerd Font", "DejaVuSansM Nerd Font Mono", "DejaVuSansMono Nerd Font", "DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -66,6 +72,12 @@
   --base1: #586e75;
   --base2: #073642;
   --base3: #002b36;
+  --c-nvidia: #476f00;
+  --c-google: #1d699e;
+  --c-tesla: #c22321;
+  --c-arista: #1d706a;
+  --c-hire4real: #af4113;
+  --c-school: #617070;
 }
 
 html[data-theme="light"] {
@@ -714,54 +726,9 @@ code {
   opacity: 0.8;
 }
 
-/* Company mark column. Every sprite viewBox is trimmed to its ink, so one
-   CSS height gives all five logos the same rendered height: taller than the
-   cap height of the text beside them (DejaVu Sans Mono caps at 0.73em). */
-.company-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  width: 1.9em;
-  height: 1.45em;
-  opacity: 0.8;
-}
-
-.company-mark.is-logo {
-  border: 0;
-  padding: 0;
-}
-
-.company-mark svg,
-.pl-icon svg,
-.role-logo {
-  height: 1.102em;
-  width: auto;
-  flex: none;
-  margin-right: 0.45em;
-  fill: currentColor;
-  vertical-align: -0.12em;
-}
-
 /* The outer <svg> has no viewBox, so the symbol fills whatever box CSS gives
    it. Widths are the trimmed ratio times the 1.102em height: a square box
    would letterbox the wide marks back down to nothing. */
-/* The fixed box keeps the names aligned; the mark is centred in it, so
-   every headliner logo shares the same centre line. */
-.company-mark svg {
-  height: 1.147em; /* 19.5px at the 17px header: 1.5x the 13px name cap */
-  margin-right: 0;
-}
-
-svg.lg-hire4real { width: 1.147em; }
-
-.logo-sprite {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
 .term-link {
   color: var(--cyan);
   text-decoration: none;
@@ -890,6 +857,32 @@ svg.lg-hire4real { width: 1.147em; }
 .exp-company.company-link:hover {
   color: var(--base3);
 }
+
+/* Company rows use text chips. One size, one shape, one colour per company;
+   the border is the text colour at 35%. */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.2;
+  padding: 0.15em 0.5em;
+  border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+  border-radius: 4px;
+  background: transparent;
+}
+
+.chip--nvidia { color: var(--c-nvidia); }
+.chip--google { color: var(--c-google); }
+.chip--tesla { color: var(--c-tesla); }
+.chip--arista { color: var(--c-arista); }
+.chip--hire4real { color: var(--c-hire4real); }
+.chip--school { color: var(--c-school); }
+
 
 /* The old wordmark reads with a half-letter gap between letters. */
 .now {
@@ -1120,9 +1113,8 @@ a.logo-link.tech-word,
   font-weight: 700;
 }
 
-.edu-school .company-mark {
-  align-self: center;
-  opacity: 1;
+.edu-link.chip--school {
+  color: var(--c-school);
 }
 
 .edu-sep {
@@ -1281,6 +1273,10 @@ h1 .cursor {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+}
+
+.activity-glyph {
+  margin-right: 0.15em;
 }
 
 .prompt-status {
@@ -1496,14 +1492,27 @@ h1 .cursor {
   margin-right: 0.28em;
 }
 
-
-
-.pl-map {
+.social-icon {
   height: 1.2em;
   width: auto;
-  margin-right: 0.16em;
   flex: none;
+  margin-right: 0.3em;
+  vertical-align: -0.22em;
 }
+
+.pl-seg .social-icon {
+  margin-right: 0.28em;
+}
+
+html[data-theme="dark"] .button .gh-black {
+  display: none;
+}
+
+html[data-theme="light"] .button .gh-white {
+  display: none;
+}
+
+
 
 .place-map {
   height: 1.2em;

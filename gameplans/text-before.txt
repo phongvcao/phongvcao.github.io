@@ -1,0 +1,779 @@
+
+  
+    
+  
+  
+    
+      
+        Austin, TX
+        
+        
+        🧑‍💻Senior SWE
+        Nvidia
+        11+ YOE
+      
+      
+      
+        CLOCK
+        CLOCK
+        Email
+      
+    
+    
+      
+        dark
+        light
+      
+      
+      
+        Resume
+        GitHub
+        LinkedIn
+      
+    
+  
+
+  
+    
+      tell me about yourself
+    
+
+    
+
+      Phong V. Cao
+      > 🧑‍💻Senior SWE●Nvidia●OpenBMC / BMC Firmware
+      I work where firmware meets the rest of the data center: OpenBMC controllers, Redfish contracts and production validation. Recent work includes release-blocking GPU firmware fixes, a vendor-adopted rack power API, physical-slot GPU naming through a cross-team RFC, and validation used to gate partner-bound releases.
+
+      
+        Resume (PDF)
+        github.com/phongvcao
+        linkedin.com/in/phcao
+        phongvcao@gmail.com
+      
+
+      
+        
+          ## Experience(11+ YOE)
+          
+            Expand all
+            Collapse all
+          
+        
+        
+          
+            
+              Senior Software Engineer
+              
+                Nvidia
+                Aug 2025 — Now
+              
+            
+            
+              
+                Owned resolutions of release-blocking GPU board failures, with LAN-over-USB fixes shipped across Nvidia HGX platforms.
+                Owned Redfish reference schemas and conformance for HGX Rubin NVL8 gating partner-bound firmware releases.
+                Established physical-slot GPU naming conventions on HGX Rubin NVL8 through cross-team RFC.
+                Drove firmware fixes in bmcweb, entity-manager and the telemetry daemon, shipped in 3 Nvidia products.
+                Partnered with NIC firmware team to address PCIe firmware defect via raw MCTP tests.
+              
+            
+          
+          
+            
+              Senior Software Engineer
+              
+                Nvidia
+                May 2024 — Aug 2025
+              
+            
+            
+              
+                Owned power shelf controller firmware for GB200 NVL72 fleet, enforcing rack power limits and AC-loss recovery.
+                Owned OpenBMC-on-QEMU emulation for the GB200 NVL72, enabling pre-hardware validation and regression testing.
+                Architected the power shelf Redfish API that power shelf vendors adopted and Nvidia's customer telemetry guide now uses.
+                Built the C++ rack power service (D-Bus/sdbusplus) as one Nvidia control path for power shelves from multiple vendors.
+              
+            
+          
+          
+            
+              Senior Software Engineer
+              
+                TESLA
+                May 2023 — Feb 2024
+              
+            
+            
+              
+                Led design of key features for the TESLA factory Material Flow System (Go, JavaScript, Python, SQL, Kafka).
+                Drove factory material flow throughput up ~21% with pickup and drop-off prioritization.
+                Improved Kafka performance ~33% through topic partitioning and message compression.
+                Mentored interns and new engineers through structured onboarding.
+              
+            
+          
+          
+            
+              Software Engineer
+              
+                Google
+                Nov 2021 — Mar 2023
+              
+            
+            
+              
+                Built features for Alphabet's automated security-risk system, rating each device by hardware profile and user behavior.
+                Cut data pipeline latency ~15% with parallel and concurrent processing (Go, C++, Kubernetes).
+                Raised database performance ~11% with Spanner sharding (SQL, Spanner).
+                Assigned security risk levels automatically from hardware security key data and flagged devices with modified firmware.
+              
+            
+          
+          
+            
+              Software Engineer
+              
+                Google
+                Dec 2019 — Nov 2021
+              
+            
+            
+              
+                Built test libraries and common hardware-access API for many server types in Google data centers (Go, C++, Python).
+                Wrote tests detecting CPU and memory security weaknesses (Rowhammer) on Intel and AMD servers.
+                Raised service level availability ~0.5% by redesigning server hardware tests.
+                Improved test infrastructure API performance ~5% with heuristic analysis tools (Go, Python, C++).
+              
+            
+          
+          
+            
+              Software Engineer
+              
+                Arista Networks
+                Jun 2015 — Dec 2019
+              
+            
+            
+              
+                Wrote Linux kernel modules and switch-chip drivers for Arista EOS on thousands of switches in cloud data centers.
+                Raised data transfer rates across switches and routers ~19% by refactoring kernel drivers.
+                Led switch-chip driver library work that cut product cost ~10% (C++).
+              
+            
+          
+          
+            
+              Creator
+              
+                Hire4Real
+                Aug 2026 — Now
+              
+            
+            
+              
+                Built and runs hire4real.fyi, a free public index of 11M+ US Department of Labor filings across 333K+ employers.
+                700K+ unique visitors per month (Plausible), with the typed parsing core open source (MIT) under pytest and CI.
+                Built and operated the platform end to end with AI coding agents (Claude, DeepSeek), from data parsing to deployment.
+              
+            
+          
+        
+      
+
+
+      
+        
+          ## Technical Decisions
+          
+            Expand all
+            Collapse all
+          
+        
+        
+          
+            
+              GPU Naming · HGX Rubin NVL8
+              
+                Nvidia
+                Cross-Team RFC
+              
+              Standardized GPU names by physical slot through a cross-team RFC so firmware logs identify the hardware a technician must service.
+            
+            
+              
+                
+                  Problem
+                  Firmware and the OS numbered the same GPUs differently, creating a risk of servicing the wrong unit.
+                
+                
+                  Decision
+                  Use physical-slot GPU names in firmware event logs. The proposal was reviewed across teams.
+                
+                
+                  Adopted
+                  Physical-slot naming was established on HGX Rubin NVL8.
+                
+                
+                  Trade-off
+                  BMC-driven per-slot locate LEDs were also proposed through the Redfish locate-indicator property, but the LED hardware part was not adopted. The naming improvement shipped without requiring that hardware change.
+                
+              
+            
+          
+          
+            
+              Redfish Contract · GB200 NVL72
+              
+                Nvidia
+                API Design
+              
+              Designed one rack-power API across power shelf vendors; vendors adopted it and Nvidia's customer telemetry guide uses its power-state names.
+            
+            
+              
+                
+                  Problem
+                  Power shelves from multiple vendors needed one Nvidia layout for rack power state, limits, policies and AC-loss behavior.
+                
+                
+                  Decision
+                  Design the Redfish/CSDL and JSON Schema contract, then implement the OEM resources and actions in bmcweb with a C++ sdbusplus service.
+                
+                
+                  Adopted
+                  Power shelf vendors adopted the policy and AC-loss portions; Nvidia's customer telemetry guide uses the power-state names.
+                
+                
+                  Trade-off
+                  Firmware controlling a rack's power needs a strict boundary around what each request may do; the API was designed with that boundary from the start.
+                
+              
+            
+          
+          
+            
+              AI Loop Engineering · Redfish Validation
+              
+                Nvidia
+                Validation Design
+              
+              Made one live-board capture feed multiple validators and model comparisons, with automated checks instead of hand-entered conclusions.
+            
+            
+              
+                
+                  Problem
+                  Release validation repeatedly exercised scarce live hardware and made results difficult to compare across tools.
+                
+                
+                  Decision
+                  Use one live-board capture as the shared input for DMTF and in-house validators plus model comparisons.
+                
+                
+                  Guardrail
+                  An LLM may route failure triage, but it cannot invent a resource or hide a failed check. Rule-based fixers work on a disposable copy; a validator re-run must prove every change.
+                
+                
+                  Result
+                  A release image can be checked against real hardware before it ships using one repeatable workflow.
+                
+              
+            
+          
+        
+      
+
+      
+        
+          ## Projects(Over 11+ Yrs)
+          
+            Expand all
+            Collapse all
+          
+        
+        
+          
+            
+              GPU Management Controller Firmware
+              
+                Nvidia
+                C++, OpenBMC, Redfish
+              
+              Owned release-blocking GPU-baseboard fixes across bmcweb, entity-manager and telemetry, with changes shipped in 3 Nvidia products.
+            
+            
+              
+                Cross-layer work: hardened USB link recovery, corrected inventory and telemetry behavior, and established physical-slot GPU naming through a cross-team RFC.
+                Verification covered AC power-cycle recovery for the USB link fix and boundary unit tests before the fixes shipped.
+                The naming work is written up under Technical Decisions.
+              
+            
+          
+          
+            
+              Rack Power Management
+              
+                Nvidia
+                C++, sdbusplus, Redfish
+              
+              Designed the GB200 NVL72 rack-power API and C++ D-Bus service so tools can read and set power policy across shelf vendors.
+            
+            
+              
+                Power shelf vendors adopted the policy and AC-loss portions; Nvidia's customer telemetry guide uses the power-state names.
+                Built OpenBMC-on-QEMU test infrastructure before production hardware was available, including networking and simulated I2C FRU EEPROMs.
+                The API design is written up under Technical Decisions.
+              
+            
+          
+          
+            
+              Redfish Conformance Automation
+              
+                Nvidia
+                Python, FastAPI, Docker
+              
+              Built a repeatable Redfish Conformance workflow that checks release images against real hardware using one shared capture across validators.
+            
+            
+              
+                The station exposes a REST API and runs an automated test suite, so a release image is checked end to end.
+                Designed a setup wizard, safe mode, input lock, live status and owner-ordered reports so other firmware engineers can run checks without the author.
+                The capture and triage design is written up under Technical Decisions.
+              
+            
+          
+          
+            
+              Security Risk Automation
+              
+                Google
+                Go, C++, Spanner
+              
+              Automated device risk decisions using hardware security-key data and modified-firmware signals, cutting pipeline latency about 15% and improving Spanner performance about 11%.
+            
+            
+              
+                Built features for Alphabet's automated security-risk system, rating devices by hardware profile and user behavior.
+                Used parallel and concurrent processing with Go, C++ and Kubernetes, and Spanner sharding with SQL.
+              
+            
+          
+          
+            
+              Server Hardware Testing
+              
+                Google
+                Go, C++, Python
+              
+              Built common hardware-access API across many server types and tests for CPU and memory weaknesses on Intel and AMD fleets.
+            
+            
+              
+                Wrote tests detecting weaknesses such as Rowhammer on Intel and AMD servers.
+                Redesigned server hardware tests, raising service-level availability about 0.5%.
+                Improved test-infrastructure API performance about 5% with heuristic analysis tools.
+              
+            
+          
+          
+            
+              Factory Material Flow
+              
+                TESLA
+                Go, Kafka
+              
+              Led factory Material Flow features and pickup/drop-off prioritization, lifting throughput about 21% and Kafka performance about 33%.
+            
+            
+              
+                Led design across Go, JavaScript, Python, SQL and Kafka.
+                Improved Kafka through topic partitioning and message compression.
+                Mentored interns and new engineers through structured onboarding.
+              
+            
+          
+          
+            
+              Switch-Chip Drivers
+              
+                Arista Networks
+                C, C++, Linux
+              
+              Developed kernel modules and switch-chip drivers for Arista EOS on thousands of cloud data-center switches, improving transfer rates about 19%.
+            
+            
+              
+                Brought new whitebox switch hardware onto Arista EOS through drivers and adapter layers.
+                Led switch-chip driver library work that cut product cost about 10%.
+              
+            
+          
+          
+            
+              Hire4Real.fyi
+              
+                Hire4Real
+                Python, AI agents
+              
+              Built and operates a public index of 11M+ US Department of Labor filings across 333K+ employers, serving 700K+ unique visitors per month.
+            
+            
+              
+                Traffic is measured with Plausible. The typed parsing core is open source under MIT, with pytest and CI. Product.
+                Owned the platform end to end with AI coding agents (Claude, DeepSeek), from data parsing through deployment. Source organization.
+              
+            
+          
+        
+      
+
+      
+        ## Open Source
+        vim-stardict: dictionary-lookup plugin for the Vim editor, with Bash and Zsh support (Python, VimL).
+      
+
+      
+        ## Skills
+        
+          
+            Languages
+            C++, C, Python, Go, JavaScript, SQL, Bash
+          
+          
+            Firmware
+            OpenBMC (bmcweb, entity-manager, sdbusplus), Embedded Linux, Linux Drivers, U-Boot, Yocto, BitBake
+          
+          
+            Protocols
+            DMTF Redfish (CSDL, Schema), MCTP, PLDM, SPDM, IPMI, USB, PCIe, I2C
+          
+          
+            Validation
+            pytest, Playwright, QEMU (ASPEED AST2600), DMTF validator runs, board bring-up, soak tests
+          
+          
+            Backend
+            FastAPI, Docker, Jenkins, GitLab, Kafka, Spanner, Kubernetes, Claude, Codex, DeepSeek
+          
+          
+            Hardware
+            Nvidia HGX GPU Baseboards, Rack Power Shelf, ASPEED AST2600 BMC, Broadcom Tomahawk/Trident ASICs
+          
+        
+      
+
+      
+        ## Education
+        
+          Stony Brook University·Stony Brook, NY·May 2015
+          Bachelor of Science in Computer Science
+        
+      
+
+      
+        
+          ▖
+          
+            Firmware engineer in Austin, TX
+            ·
+            11+ YOE
+            ·
+            husband
+            ·
+            father
+            ·
+            builder
+          
+        
+        
+          
+            phongvcao@gmail.com
+            
+          
+          Built with OpenCode · DeepSeek V4.1 Flash 1017
+        
+        
+        © 2026 Phong V. Cao
+        Credits
+      
+      
+    
+  
+
+  
+
+  
+    (function () {
+      var root = document.documentElement;
+      function fitChrome() {
+        var bar = document.querySelector(".pl-top");
+        if (bar) root.style.setProperty("--topbar-h", bar.getBoundingClientRect().height + "px");
+      }
+      fitChrome();
+      window.addEventListener("resize", fitChrome);
+      window.addEventListener("load", fitChrome);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitChrome);
+
+      var dateEl = document.getElementById("clock-date");
+      var timeEl = document.getElementById("clock-time");
+      if (!dateEl || !timeEl) return;
+      var dateFmt = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Chicago",
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+      var timeFmt = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Chicago",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+        timeZoneName: "short"
+      });
+      function parts(fmt, date) {
+        var out = {};
+        fmt.formatToParts(date).forEach(function (part) {
+          out[part.type] = part.value;
+        });
+        return out;
+      }
+      function tick() {
+        var now = new Date();
+        var d = parts(dateFmt, now);
+        var t = parts(timeFmt, now);
+        dateEl.textContent = d.month + " " + d.day + " " + d.year;
+        timeEl.textContent = t.hour + ":" + t.minute + ":" + t.second + " " + t.dayPeriod + " " + t.timeZoneName;
+        var iso = now.toISOString();
+        dateEl.setAttribute("datetime", iso);
+        timeEl.setAttribute("datetime", iso);
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      var STATE_KEY = "phongvcao-state";
+      function readState() {
+        try {
+          return JSON.parse(localStorage.getItem(STATE_KEY) || "{}") || {};
+        } catch (error) {
+          return {};
+        }
+      }
+      function writeState(patch) {
+        var next = readState();
+        Object.keys(patch).forEach(function (key) {
+          next[key] = patch[key];
+        });
+        try {
+          localStorage.setItem(STATE_KEY, JSON.stringify(next));
+        } catch (error) {
+          /* private mode: memory only */
+        }
+      }
+      var state = readState();
+
+      var themeButtons = document.querySelectorAll("[data-theme-set]");
+      function paintTheme(name) {
+        document.documentElement.setAttribute("data-theme", name);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+          meta.setAttribute("content", name === "light" ? "#fdf6e3" : "#002b36");
+        }
+        var icon = document.getElementById("favicon");
+        if (icon) {
+          icon.setAttribute(
+            "href",
+            name === "light" ? "assets/favicon-light.svg" : "assets/favicon.svg"
+          );
+        }
+        themeButtons.forEach(function (button) {
+          var active = button.getAttribute("data-theme-set") === name;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+      }
+      var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+      paintTheme(state.theme || (prefersLight ? "light" : "dark"));
+      themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var name = button.getAttribute("data-theme-set");
+          paintTheme(name);
+          writeState({ theme: name });
+        });
+      });
+
+      var expItems = document.querySelectorAll(".exp-item");
+      function savePins() {
+        var pins = [];
+        expItems.forEach(function (item, index) {
+          if (item.dataset.pinned) pins.push(index);
+        });
+        writeState({ pins: pins });
+      }
+
+      var hoverLocked = false;
+      document.addEventListener(
+        "pointermove",
+        function () {
+          hoverLocked = false;
+        },
+        { passive: true }
+      );
+
+      function setRows(list, open) {
+        if (!list) return;
+        list.querySelectorAll(".exp-item").forEach(function (row) {
+          row.open = open;
+          if (open) {
+            row.dataset.pinned = "1";
+          } else {
+            delete row.dataset.pinned;
+          }
+        });
+        if (!open) {
+          hoverLocked = true;
+        }
+        savePins();
+      }
+      function hasSelection() {
+        var sel = window.getSelection();
+        return Boolean(sel && String(sel).length);
+      }
+      function placeTip(event) {
+        var tip = document.getElementById("pin-tip");
+        if (!tip) return;
+        var x = event.clientX + 14;
+        var y = event.clientY + 18;
+        x = Math.min(x, window.innerWidth - tip.offsetWidth - 10);
+        y = Math.min(y, window.innerHeight - tip.offsetHeight - 10);
+        tip.style.left = Math.max(10, x) + "px";
+        tip.style.top = Math.max(10, y) + "px";
+      }
+      function showTip(event) {
+        var tip = document.getElementById("pin-tip");
+        if (!tip) return;
+        var row = event.currentTarget && event.currentTarget.closest
+          ? event.currentTarget.closest(".exp-item")
+          : null;
+        tip.classList.toggle("is-over-open", Boolean(row && row.open));
+        tip.hidden = false;
+        placeTip(event);
+      }
+      function hideTip() {
+        var tip = document.getElementById("pin-tip");
+        if (tip) tip.hidden = true;
+      }
+      function bindTip(el) {
+        if (!el) return;
+        el.addEventListener("pointerenter", showTip);
+        el.addEventListener("pointermove", placeTip);
+        el.addEventListener("pointerleave", hideTip);
+      }
+
+      expItems.forEach(function (item) {
+        var summary = item.querySelector(".exp-summary");
+        if (!summary) return;
+        summary.setAttribute("aria-describedby", "pin-tip");
+        bindTip(summary);
+        bindTip(item.querySelector(".exp-body"));
+        summary.addEventListener("focus", function () {
+          var box = summary.getBoundingClientRect();
+          showTip({ clientX: box.left + 24, clientY: box.bottom - 4 });
+        });
+        summary.addEventListener("blur", hideTip);
+        item.addEventListener("pointerenter", function (event) {
+          if (hoverLocked && event.pointerType === "mouse") return;
+          item.open = true;
+        });
+        item.addEventListener("pointerleave", function () {
+          if (!item.dataset.pinned && !hasSelection()) {
+            item.open = false;
+          }
+        });
+        var body = item.querySelector(".exp-body");
+        if (body) {
+          body.addEventListener("click", function (event) {
+            if (event.target.closest && event.target.closest("a")) return;
+            if (hasSelection()) return;
+            setRows(item.closest(".experience-list, .work-list"), false);
+          });
+        }
+        summary.addEventListener("click", function (event) {
+          if (event.target.closest && event.target.closest("a")) return;
+          event.preventDefault();
+          if (hasSelection()) return;
+          var list = item.closest(".experience-list, .work-list");
+          var expanded = list && [...list.querySelectorAll(".exp-item")].some(function (row) {
+            return row.dataset.pinned;
+          });
+          setRows(list, !expanded);
+        });
+      });
+      document.querySelectorAll("[data-expand], [data-collapse]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var open = button.hasAttribute("data-expand");
+          var target = document.getElementById(
+            button.getAttribute(open ? "data-expand" : "data-collapse")
+          );
+          if (!target) return;
+          setRows(target, open);
+        });
+      });
+
+      window.addEventListener("beforeprint", function () {
+        expItems.forEach(function (item) {
+          item.dataset.printOpen = item.open ? "1" : "";
+          item.open = true;
+        });
+      });
+      window.addEventListener("afterprint", function () {
+        expItems.forEach(function (item) {
+          if (item.dataset.printOpen !== "1") item.open = false;
+          delete item.dataset.printOpen;
+        });
+      });
+
+      // The page reads as a document: every row is open on every arrival, so
+      // a collapsed row never surprises the reader. Collapsing works for the
+      // session but does not carry over to the next load.
+      expItems.forEach(function (item) {
+        item.open = true;
+        item.dataset.pinned = "1";
+      });
+
+      function yearsSince(iso) {
+        var start = new Date(iso);
+        var now = new Date();
+        var years = now.getFullYear() - start.getFullYear();
+        var month = now.getMonth() - start.getMonth();
+        if (month < 0 || (month === 0 && now.getDate() < start.getDate())) {
+          years -= 1;
+        }
+        return years;
+      }
+      function paintYears() {
+        document.querySelectorAll("[data-since]").forEach(function (el) {
+          el.textContent = el
+            .getAttribute("data-template")
+            .replace("{n}", yearsSince(el.getAttribute("data-since")));
+        });
+      }
+      paintYears();
+      setInterval(paintYears, 3600000);
+
+      var spinnerEl = document.querySelector(".spinner");
+      if (spinnerEl && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        var frames = ["\u2598", "\u259d", "\u2597", "\u2596"];
+        var frame = 0;
+        setInterval(function () {
+          frame = (frame + 1) % frames.length;
+          spinnerEl.textContent = frames[frame];
+        }, 140);
+      }
+    })();
+  
+
+
