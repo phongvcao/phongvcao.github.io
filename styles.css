@@ -896,12 +896,11 @@ code {
   font-weight: 600;
 }
 
-/* Dates and tech stacks end on the page's right margin. With the logos gone
-   the text is shorter than the column, so the column is anchored right
-   instead of leaving a hole after the words. */
+/* Dates and tech stacks start on one left edge, like the role and the
+   company chip do. */
 .exp-dates {
   color: var(--base2);
-  text-align: right;
+  text-align: left;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
@@ -1921,7 +1920,6 @@ html[data-theme="light"] .button .gh-white {
 
 /* Headliner tech stacks take the headliner cream, not the link cyan. */
 .exp-dates a.logo-link { color: var(--base2); }
-.exp-dates a.go-word { color: var(--cyan); }
 
 /* Alphabet is Google's parent: the same cream as the Google keyword. */
 .page a[href^="https://abc.xyz"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-google); }
