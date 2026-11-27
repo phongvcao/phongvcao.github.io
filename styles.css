@@ -698,17 +698,18 @@ html[data-theme="light"] .pl-linkedin-glyph {
 /* The outer <svg> has no viewBox, so the symbol fills whatever box CSS gives
    it. Widths are the trimmed ratio times the 1.102em height: a square box
    would letterbox the wide marks back down to nothing. */
-svg.lg-nvidia { width: 1.667em; }   /* 24 / 15.87 */
+svg.lg-nvidia { width: 1.735em; }   /* 24 / 15.87, at the 1.147em height */
 
 /* The fixed box keeps the names aligned; the mark is centred in it, so
    every headliner logo shares the same centre line. */
 .company-mark svg {
+  height: 1.147em; /* 19.5px at the 17px header: 1.5x the 13px name cap */
   margin-right: 0;
 }
-svg.lg-tesla { width: 1.102em; }
-svg.lg-google { width: 1.102em; }   /* 48 / 48 */
-svg.lg-arista { width: 1.486em; }   /* 24 / 17.8 */
-svg.lg-hire4real { width: 1.102em; }
+svg.lg-tesla { width: 1.147em; }
+svg.lg-google { width: 1.147em; }   /* 48 / 48 */
+svg.lg-arista { width: 1.547em; }   /* 24 / 17.8 */
+svg.lg-hire4real { width: 1.147em; }
 
 .logo-sprite {
   position: absolute;
@@ -1110,7 +1111,7 @@ a[href^="https://www.amd.com"] {
 
 .tesla-word {
   font-family: "Tesla Wordmark", var(--mono);
-  font-size: 1.28em;
+  font-size: 1.19em; /* rendered T caps at 13px, same as the mono names */
   font-weight: 400;
   letter-spacing: 0.02em;
 }
