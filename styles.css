@@ -773,6 +773,13 @@ svg.lg-hire4real { width: 1.102em; }
   font-variant-numeric: tabular-nums;
 }
 
+/* Project tags stay on one line: a smaller tag size keeps the date-column
+   alignment while the marks stay 1.5x the tag cap height. */
+.exp-dates.work-tags {
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
 .exp-body {
   padding: 0 0 14px 2em;
   cursor: pointer;
@@ -859,6 +866,37 @@ html[data-theme="light"] .logo-usb-on-dark {
 .skill-logo[src$="usb-cream.svg"],
 .skill-logo[src$="usb-dark.svg"] {
   height: 1.394em;
+}
+
+/* Project tags, the hero role line and the build credit follow the same
+   1.5x cap-height rule in their own font size. */
+.tag-logo,
+.role-skill,
+.model-logo {
+  height: 1.2em;
+  width: auto;
+  vertical-align: -0.25em;
+}
+
+.tag-logo {
+  margin-right: 0.3em;
+}
+
+/* Technology marks inside the prose follow the same 1.5x cap rule. */
+.tech-logo {
+  height: 1.2em;
+  width: auto;
+  vertical-align: -0.25em;
+  margin-right: 0.3em;
+}
+
+.role-skill {
+  margin-right: 0.3em;
+  vertical-align: -0.22em;
+}
+
+.model-logo {
+  margin-right: 0.35em;
 }
 
 .skill-row {
@@ -1257,10 +1295,17 @@ h1 .cursor {
 
 
 
-.pl-pin {
-  width: 0.85em;
-  height: 0.85em;
+.pl-flag {
+  width: 1.28em;
+  height: auto;
   flex: none;
+}
+
+.place-logo {
+  height: 1.2em;
+  width: auto;
+  vertical-align: -0.25em;
+  margin-right: 0.25em;
 }
 
 .pl-fill {
