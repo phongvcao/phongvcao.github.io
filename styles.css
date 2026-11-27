@@ -1412,6 +1412,11 @@ h1 .cursor {
   color: var(--base0);
 }
 
+/* OpenCode itself is a technology link: cyan, new tab. */
+.prompt-meta .logo-link {
+  color: var(--cyan);
+}
+
 .model-auto,
 .model-dim,
 .model-provider {
