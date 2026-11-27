@@ -202,8 +202,9 @@ h1 {
   margin-right: 0.35em;
 }
 
-.pl-emoji {
+.pl-icon.pl-emoji {
   margin-right: 0;
+  font-size: 1.26em;
 }
 
 .role-emoji {
@@ -292,17 +293,27 @@ code {
 /* Nerd Font glyphs ink a different fraction of their em, so each mark gets
    its own size. Every one lands at 1.5x the cap height of the text next to
    it: DejaVu Sans Mono caps at 0.734em, so the target ink is 1.102em. */
-.button .icon,
-.pl-icon {
-  font-size: var(--icon-size, 1.26em); /* github inks 0.872em */
+/* The hero buttons keep their 1.26em ink; the powerline bar wants the
+   same 18px the technology marks use, so its glyphs get 1.2em of ink
+   (github inks 0.872em of the font size). */
+.button .icon {
+  font-size: var(--icon-size, 1.26em);
 }
-.button .icon.i-in,
-.pl-icon.i-in {
+
+.pl-icon {
+  font-size: var(--icon-size, 1.38em);
+}
+.button .icon.i-in {
   --icon-size: 1.47em; /* linkedin inks 0.750em */
 }
-.button .icon.i-mail,
-.pl-icon.i-mail {
+.pl-icon.i-in {
+  --icon-size: 1.6em;
+}
+.button .icon.i-mail {
   --icon-size: 1.59em; /* envelope inks 0.692em */
+}
+.pl-icon.i-mail {
+  --icon-size: 1.74em;
 }
 .pl-icon.i-in,
 .button .icon.i-in {
@@ -332,10 +343,18 @@ html[data-theme="light"] .pl-linkedin-glyph {
   flex: none;
 }
 
-.pl-cal,
+/* These two drawings sit inside a padded 24-unit viewBox, so their boxes
+   run larger than the ink they show: 1.5em and 1.3em land at 18px of ink,
+   the same as the GitHub mark. */
+.pl-cal {
+  width: 1.5em;
+  height: 1.5em;
+  flex: none;
+}
+
 .pl-clock {
-  width: 1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.3em;
   flex: none;
 }
 
@@ -1451,6 +1470,23 @@ h1 .cursor {
   outline-offset: -2px;
 }
 
+/* The theme buttons carry a radio, not a bullet: a hollow ring when off,
+   and a green centre inside a dark circle when on. */
+.pl-radio {
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: 0.85em;
+  height: 0.85em;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.pl-theme-btn.is-active .pl-radio {
+  border-color: var(--base03);
+  background: var(--green);
+}
+
 .pl-seg[href] {
   transition: filter 120ms ease;
 }
@@ -1466,16 +1502,16 @@ h1 .cursor {
 
 
 .pl-map {
-  height: 1.05em;
+  height: 1.2em;
   width: auto;
   margin-right: 0.16em;
   flex: none;
 }
 
 .place-map {
-  height: 1.15em;
+  height: 1.2em;
   width: auto;
-  vertical-align: -0.25em;
+  vertical-align: -0.26em;
   margin-right: 0.28em;
 }
 
