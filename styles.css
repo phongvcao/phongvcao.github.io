@@ -57,6 +57,7 @@
   --c-arista: #268bd2; /* Solarized blue */
   --c-hire4real: #10b981; /* hire4real.fyi theme colour */
   --c-school: #dc322f; /* SBU red */
+  --c-go: #00add8; /* Go brand cyan */
 
   --page-w: 1200px;
   --mono: "Site Mono", "DejaVuSansM Nerd Font", "DejaVuSansM Nerd Font Mono", "DejaVuSansMono Nerd Font", "DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -78,6 +79,7 @@
   --c-arista: #268bd2;
   --c-hire4real: #10b981;
   --c-school: #dc322f;
+  --c-go: #00add8;
 }
 
 html[data-theme="light"] {
@@ -1897,3 +1899,6 @@ html[data-theme="light"] .button .gh-white {
 .page a[href^="https://developers.google.com"] { color: var(--c-google); }
 .page a[href^="https://www.arista.com"] { color: var(--c-arista); }
 .page a[href^="https://hire4real.fyi"] { color: var(--c-hire4real); }
+
+/* The Go keyword gets the headliner box too, in the Go brand cyan. */
+.page a.chip--go { color: var(--c-go); }
