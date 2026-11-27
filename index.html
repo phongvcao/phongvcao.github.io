@@ -144,7 +144,7 @@
           </div>
         </div>
         <div class="experience-list" id="experience-list">
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Senior Software Engineer</h3>
@@ -161,7 +161,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Senior Software Engineer</h3>
@@ -177,7 +177,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Senior Software Engineer</h3>
@@ -193,7 +193,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Software Engineer</h3>
@@ -209,7 +209,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Software Engineer</h3>
@@ -225,7 +225,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Software Engineer</h3>
@@ -240,7 +240,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Creator</h3>
@@ -268,7 +268,7 @@
           </div>
         </div>
         <div class="experience-list" id="decisions-list">
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Physical-slot GPU naming · HGX Rubin NVL8</h3>
@@ -289,7 +289,7 @@
               </dl>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">Rack-power Redfish contract · GB200 NVL72</h3>
@@ -310,7 +310,7 @@
               </dl>
             </div>
           </details>
-          <details class="exp-item">
+          <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role">AI Loop Engineering · Redfish Validation</h3>
@@ -343,7 +343,7 @@
           </div>
         </div>
         <div class="work-list" id="projects-list">
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">GPU Management Controller Firmware</h3>
@@ -359,7 +359,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">Rack Power Management</h3>
@@ -375,7 +375,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">Redfish Conformance Automation</h3>
@@ -391,7 +391,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">Security Risk Automation</h3>
@@ -406,7 +406,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">Server Hardware Testing</h3>
@@ -422,7 +422,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">Factory Material Flow</h3>
@@ -438,7 +438,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">Switch-Chip Drivers</h3>
@@ -453,7 +453,7 @@
               </ul>
             </div>
           </details>
-          <details class="exp-item work-item">
+          <details class="exp-item work-item" open>
             <summary class="exp-summary">
               <span class="exp-toggle" aria-hidden="true"></span>
               <h3 class="exp-role work-role">hire4real.fyi</h3>
@@ -772,8 +772,10 @@
         });
       });
 
-      var pins = state.pins || [];
-      if (pins.length) {
+      // The page reads as a document: every row is open until the reader
+      // collapses something. Once they do, their choice is what loads.
+      var pins = state.pins;
+      if (Array.isArray(pins)) {
         expItems.forEach(function (item) {
           item.open = false;
           delete item.dataset.pinned;
@@ -785,6 +787,12 @@
             item.dataset.pinned = "1";
           }
         });
+      } else {
+        expItems.forEach(function (item) {
+          item.open = true;
+          item.dataset.pinned = "1";
+        });
+        savePins();
       }
 
       function yearsSince(iso) {
