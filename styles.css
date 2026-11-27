@@ -953,12 +953,15 @@ svg.lg-hire4real { width: 1.102em; }
   height: 1.235em;
 }
 
-/* USB swaps its file so the mark is cream on dark and dark on light. */
-html[data-theme="dark"] .logo-usb-on-light {
+/* USB and LAN swap their files so the mark is cream on dark and dark on
+   light. */
+html[data-theme="dark"] .logo-usb-on-light,
+html[data-theme="dark"] .logo-lan-on-light {
   display: none;
 }
 
-html[data-theme="light"] .logo-usb-on-dark {
+html[data-theme="light"] .logo-usb-on-dark,
+html[data-theme="light"] .logo-lan-on-dark {
   display: none;
 }
 
