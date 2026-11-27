@@ -64,16 +64,7 @@
            ▖
            
 -            Firmware engineer in Austin, TX
-+            Firmware engineer in Austin, TX
++            Firmware engineer in Austin, TX
              ·
              11+ YOE
              ·
-@@ -492,7 +489,7 @@
-             phongvcao@gmail.com
-             
-           
--          Built with OpenCode · DeepSeek V4.1 Flash 1017
-+          Built with OpenCode · DeepSeek V4.1 Flash 1017 · static site · no live session
-         
-         
-         © 2026 Phong V. Cao
