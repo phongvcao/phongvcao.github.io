@@ -905,7 +905,7 @@ html[data-theme="light"] .logo-usb-on-dark {
 }
 
 /* Explicit opt-out: this mark is in the markup but not shown. */
-.tech-logo.icon-exception {
+.icon-exception {
   display: none;
 }
 
@@ -966,7 +966,7 @@ a[href="https://go.dev/"] {
 }
 
 .role-skill {
-  margin-right: 0.3em;
+  margin-right: 0.45em;
   vertical-align: -0.22em;
 }
 
@@ -1373,6 +1373,7 @@ h1 .cursor {
 .pl-flag {
   width: 1.28em;
   height: auto;
+  margin-right: 0.35em;
   flex: none;
 }
 
