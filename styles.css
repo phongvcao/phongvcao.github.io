@@ -203,11 +203,11 @@ h1 {
 }
 
 .pl-emoji {
-  margin-right: 0.3em;
+  margin-right: 0;
 }
 
 .role-emoji {
-  margin-right: 0.15em;
+  margin-right: 0.45em;
 }
 
 .pl-icon.i-mark svg {
