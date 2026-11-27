@@ -1409,7 +1409,7 @@ h1 .cursor {
 }
 
 .model-agent {
-  color: var(--base0);
+  color: var(--blue);
 }
 
 /* OpenCode itself is a technology link: cyan, new tab. */
