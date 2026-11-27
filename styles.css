@@ -927,6 +927,7 @@ a[href="https://go.dev/"] {
 
 .intel-word {
   color: #0071C5;
+  font-weight: 700;
 }
 
 .amd-word {
@@ -943,6 +944,7 @@ a[href="https://go.dev/"] {
    words in our own font, no extra mark. */
 .exp-bullets .company-link[href^="https://www.intel.com"] {
   color: #0071C5;
+  font-weight: 700;
 }
 
 .exp-bullets .company-link[href^="https://www.amd.com"] {
@@ -955,10 +957,6 @@ a[href="https://go.dev/"] {
   width: auto;
   vertical-align: -0.25em;
   margin-left: 0.2em;
-}
-
-.exp-bullets .company-link[href^="https://www.tesla.com"] {
-  color: var(--red);
 }
 
 .exp-bullets .company-link[href^="https://www.nvidia.com"] {
