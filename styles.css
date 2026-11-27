@@ -1358,7 +1358,6 @@ h1 .cursor {
   width: min(var(--page-w), calc(100% - 48px));
   margin: 0 auto;
   padding: 0;
-  border-bottom: 1px solid var(--base01);
 }
 
 .pl-line {
