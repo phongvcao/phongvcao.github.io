@@ -426,6 +426,17 @@ code {
   opacity: 0.85;
 }
 
+/* A quiet note beside a section heading, same ink as the About line. */
+.section-note {
+  margin-left: 0.75em;
+  color: var(--base01);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
 .work-list {
   display: grid;
   gap: 0;
@@ -623,7 +634,7 @@ svg.lg-hire4real { width: 1.102em; }
 
 .exp-summary {
   display: grid;
-  grid-template-columns: 1.5em minmax(0, 1.2fr) minmax(0, 0.9fr) 14em;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) 14em;
   align-items: baseline;
   gap: 12px;
   padding: 11px 16px 11px 0;
@@ -652,7 +663,8 @@ svg.lg-hire4real { width: 1.102em; }
 }
 
 .exp-toggle {
-  padding-left: 12px;
+  margin-left: 12px;
+  margin-right: 0.22em;
 }
 
 .exp-item[open] .exp-toggle::before {
@@ -1368,21 +1380,25 @@ h1 .cursor {
   }
 
   .exp-summary {
-    grid-template-columns: 1.5em minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 2px 8px;
-    padding: 10px 10px 10px 0;
+    padding: 10px;
+  }
+
+  .exp-toggle {
+    margin-left: 0;
   }
 
   .exp-role {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .exp-company {
-    grid-column: 2;
+    grid-column: 1;
   }
 
   .exp-dates {
-    grid-column: 2;
+    grid-column: 1;
     text-align: left;
   }
 
