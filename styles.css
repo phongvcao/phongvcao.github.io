@@ -225,6 +225,12 @@ h1 {
   margin-right: 0.45em;
 }
 
+/* The title word keeps the blue of the terminal prompt; the company and the
+   stack keep their own colours. */
+.role-title {
+  color: var(--blue);
+}
+
 .pl-icon.i-mark svg {
   margin-right: 0;
 }
@@ -1521,11 +1527,14 @@ html[data-theme="light"] .button .gh-white {
   margin-right: 0.28em;
 }
 
-.pl-sep {
-  color: var(--base1);
-  font-weight: 700;
-  margin: 0 -2px;
+/* tmuxline's soft divider, U+E0B1: the seam between two segments that share
+   a background, in the Austin, TX grey. */
+.pl-thin {
   flex: none;
+  width: 0.52em;
+  height: 1.04em;
+  margin: -0.04em 0.1em 0 -0.08em;
+  fill: var(--base1);
 }
 
 .pl-fill {
@@ -1898,14 +1907,18 @@ html[data-theme="light"] .button .gh-white {
   }
 }
 
-/* Company keywords in prose take the headliner colour, without the chip
-   box: the hero role line, bullets, project lines, skills and credits. */
-.page a[href^="https://www.nvidia.com"] { color: var(--c-nvidia); }
-.page a[href^="https://www.tesla.com"] { color: var(--c-tesla); }
-.page a[href^="https://www.google.com"],
-.page a[href^="https://developers.google.com"] { color: var(--c-google); }
-.page a[href^="https://www.arista.com"] { color: var(--c-arista); }
-.page a[href^="https://hire4real.fyi"] { color: var(--c-hire4real); }
+/* Company keywords in prose take the headliner colour, without the chip box.
+   Only the company word itself carries the colour: a link that is a product
+   or technology name (term-link, tech-word, tag) keeps its own colour. */
+.page a[href^="https://www.nvidia.com"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-nvidia); }
+.page a[href^="https://www.tesla.com"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-tesla); }
+.page a[href^="https://www.google.com"]:not(.term-link):not(.tech-word):not(.tag),
+.page a[href^="https://developers.google.com"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-google); }
+.page a[href^="https://www.arista.com"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-arista); }
+.page a[href^="https://hire4real.fyi"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-hire4real); }
 
-/* The Go keyword gets the headliner box too, in the Go brand cyan. */
-.page a.chip--go { color: var(--c-go); }
+/* Go reads in the Go brand cyan, no box. */
+.page a[href^="https://go.dev"] { color: var(--c-go); }
+
+/* Alphabet is Google's parent: the same cream as the Google keyword. */
+.page a[href^="https://abc.xyz"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-google); }
