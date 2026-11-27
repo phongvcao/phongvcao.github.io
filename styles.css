@@ -637,6 +637,7 @@ svg.lg-hire4real { width: 1.102em; }
 /* The employer name and its mark read green on the hero role line. */
 .role .company-link {
   color: var(--green);
+  font-weight: 700;
 }
 
 .experience-list {
@@ -713,6 +714,7 @@ svg.lg-hire4real { width: 1.102em; }
   justify-self: start;
   gap: 7px;
   color: var(--base2);
+  font-weight: 700;
 }
 
 .exp-company.company-link:hover {
@@ -737,7 +739,12 @@ svg.lg-hire4real { width: 1.102em; }
   color: #10b981;
 }
 
-/* The old Google letter colours, mapped to Solarized ink. */
+/* The old wordmark reads with a half-letter gap between letters. */
+.google-word {
+  display: inline;
+  letter-spacing: 0.2em;
+}
+
 .g-blue {
   color: var(--blue);
 }
@@ -845,6 +852,16 @@ svg.lg-hire4real { width: 1.102em; }
   color: var(--base1);
   font-size: 0.9375rem;
 }
+
+/* The university name and shield take the Stony Brook red. */
+.edu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--red);
+}
+
+svg.lg-sbu { width: 0.935em; }   /* 28 / 33 */
 
 .edu-sep {
   color: var(--base01);
