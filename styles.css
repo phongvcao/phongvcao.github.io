@@ -58,7 +58,7 @@
   --c-hire4real: #10b981; /* hire4real.fyi theme colour */
   --c-school: #dc322f; /* SBU red */
 
-  --page-w: 1100px;
+  --page-w: 1200px;
   --mono: "Site Mono", "DejaVuSansM Nerd Font", "DejaVuSansM Nerd Font Mono", "DejaVuSansMono Nerd Font", "DejaVuSansMono Nerd Font Mono", "DejaVu Sans Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -906,11 +906,9 @@ code {
   font-variant-numeric: tabular-nums;
 }
 
-/* Project tags stay on one line: a smaller tag size keeps the date-column
-   alignment while the marks stay 1.5x the tag cap height. */
+/* Tech stacks stay on one line, at the headliner text size. */
 .exp-dates.work-tags {
   white-space: nowrap;
-  font-size: 0.875rem;
 }
 
 .exp-body {
@@ -1920,6 +1918,10 @@ html[data-theme="light"] .button .gh-white {
 
 /* Go reads in the site cyan, same as every other technology word. */
 .page a[href^="https://go.dev"] { color: var(--cyan); }
+
+/* Headliner tech stacks take the headliner cream, not the link cyan. */
+.exp-dates a.logo-link { color: var(--base2); }
+.exp-dates a.go-word { color: var(--cyan); }
 
 /* Alphabet is Google's parent: the same cream as the Google keyword. */
 .page a[href^="https://abc.xyz"]:not(.term-link):not(.tech-word):not(.tag) { color: var(--c-google); }
