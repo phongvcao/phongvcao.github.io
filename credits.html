@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#002b36">
   <link rel="canonical" href="https://phongvcao.com/credits.html">
   <link rel="icon" id="favicon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261127g">
+  <link rel="stylesheet" href="styles.css?v=20261127h">
 </head>
 <body>
     <header class="pl-bar pl-top" aria-label="Runtime status">
@@ -108,7 +108,7 @@
           <p class="prompt-meta"><span class="model-agent">Built with <a class="logo-link" href="https://opencode.ai/" target="_blank" rel="noopener">OpenCode</a></span> <span class="model-dim">·</span> <a class="logo-link" href="https://www.deepseek.com/" target="_blank" rel="noopener">DeepSeek V4.1 Flash 1017</a></p>
         </div>
         <div class="prompt-status" aria-label="Site status">
-        <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span>© 2026 Phong V. Cao</span></span>
+        <span class="status-left"><span class="status-bar" aria-hidden="true"><span class="scan scan-fwd"></span><span class="scan scan-back"></span></span><span>© <span data-current-year>2026</span> Phong V. Cao</span></span>
         <span class="status-right"><a class="status-more" href="credits.html">Credits</a></span>
       </div>
       </div>
@@ -203,6 +203,11 @@
         });
       }
       paintYears();
+
+      document.querySelectorAll("[data-current-year]").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+      });
+
     })();
   </script>
 </body>

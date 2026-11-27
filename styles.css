@@ -1610,8 +1610,8 @@ html[data-theme="light"] .button .gh-white {
 }
 
 .pl-context {
-  --seg-bg: var(--yellow);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--yellow);
 }
 
 @media (max-width: 720px) {
