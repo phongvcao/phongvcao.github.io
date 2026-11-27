@@ -485,6 +485,37 @@ html[data-theme="light"] .pl-linkedin-glyph {
   opacity: 0.85;
 }
 
+/* Credits page list and the footer colophon link. */
+.credits-list {
+  margin: 0;
+  padding-left: 1.5em;
+  color: var(--base1);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.credits-list li + li {
+  margin-top: 6px;
+}
+
+.credits-list a {
+  color: var(--cyan);
+}
+
+.credits-list a:hover {
+  color: var(--base2);
+}
+
+.status-more {
+  color: var(--base0);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.status-more:hover {
+  color: var(--base2);
+}
+
 /* A note beside a section heading: body size, green, bold, parenthesized. */
 .section-note {
   margin-left: 0.75em;
