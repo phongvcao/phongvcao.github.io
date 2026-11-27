@@ -555,6 +555,84 @@ html[data-theme="light"] .pl-linkedin-glyph {
   color: var(--base2);
 }
 
+/* The scan bar that sat at the left of the old footer status line: a
+   dotted rail with a blue gradient sweeping across it. */
+.status-bar {
+  position: relative;
+  display: inline-block;
+  width: 10ch;
+  height: 1em;
+  margin-right: 1ch;
+  vertical-align: -0.12em;
+  overflow: hidden;
+  background-image: radial-gradient(circle, rgb(38 139 210 / 0.45) 0.07em, transparent 0.075em);
+  background-size: 1ch 1em;
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+}
+
+.scan {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: 10ch 100%;
+  -webkit-mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
+  -webkit-mask-size: 1ch 0.55em;
+  -webkit-mask-position: 0 50%;
+  -webkit-mask-repeat: repeat-x;
+  mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
+  mask-size: 1ch 0.55em;
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+}
+
+.scan-fwd {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0 3ch,
+    rgb(38 139 210 / 0.1) 3ch 4ch,
+    rgb(38 139 210 / 0.22) 4ch 5ch,
+    rgb(38 139 210 / 0.38) 5ch 6ch,
+    rgb(38 139 210 / 0.58) 6ch 7ch,
+    rgb(38 139 210 / 0.78) 7ch 8ch,
+    rgb(38 139 210 / 0.92) 8ch 9ch,
+    var(--blue) 9ch 10ch
+  );
+  animation: scan-fwd 3.2s linear infinite;
+}
+
+.scan-back {
+  background-image: linear-gradient(
+    90deg,
+    var(--blue) 0 1ch,
+    rgb(38 139 210 / 0.92) 1ch 2ch,
+    rgb(38 139 210 / 0.78) 2ch 3ch,
+    rgb(38 139 210 / 0.58) 3ch 4ch,
+    rgb(38 139 210 / 0.38) 4ch 5ch,
+    rgb(38 139 210 / 0.22) 5ch 6ch,
+    rgb(38 139 210 / 0.1) 6ch 7ch,
+    transparent 7ch 10ch
+  );
+  animation: scan-back 3.2s linear infinite;
+}
+
+@keyframes scan-fwd {
+  0% { transform: translateX(-9ch); }
+  12% { transform: translateX(-9ch); }
+  46% { transform: translateX(0); }
+  54% { transform: translateX(0); }
+  54.01% { transform: translateX(10ch); }
+  100% { transform: translateX(10ch); }
+}
+
+@keyframes scan-back {
+  0% { transform: translateX(-10ch); }
+  54% { transform: translateX(-10ch); }
+  54.01% { transform: translateX(9ch); }
+  88% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
 /* A note beside a section heading: body size, green, bold, parenthesized. */
 .section-note {
   margin-left: 0.75em;
@@ -1346,7 +1424,7 @@ h1 .cursor {
 }
 
 .model-agent {
-  color: var(--blue);
+  color: var(--base0);
 }
 
 .model-auto,
@@ -1956,6 +2034,18 @@ h1 .cursor {
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;
+  }
+
+  .scan {
+    animation: none;
+  }
+
+  .scan-fwd {
+    transform: translateX(-7ch);
+  }
+
+  .scan-back {
+    display: none;
   }
 
   *,
