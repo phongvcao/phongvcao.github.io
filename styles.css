@@ -202,6 +202,14 @@ h1 {
   margin-right: 0.35em;
 }
 
+.pl-emoji {
+  margin-right: 0.3em;
+}
+
+.role-emoji {
+  margin-right: 0.15em;
+}
+
 .pl-icon.i-mark svg {
   margin-right: 0;
 }
