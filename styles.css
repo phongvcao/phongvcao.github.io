@@ -1224,8 +1224,8 @@ h1 .cursor {
 }
 
 .pl-vcs {
-  --seg-bg: var(--yellow);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--green);
 }
 
 .pl-vim {
