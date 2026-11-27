@@ -804,7 +804,10 @@ code {
 
 .exp-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) 16em;
+  /* The right column is exactly as wide as its widest item, so the
+     longest date or tech stack ends on the same 16px inset as the role
+     text does on the left. */
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) 236px;
   align-items: baseline;
   gap: 12px;
   padding: 11px 16px 11px 0;
