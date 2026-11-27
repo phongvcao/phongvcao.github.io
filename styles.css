@@ -1741,11 +1741,17 @@ html[data-theme="light"] .button .gh-white {
   }
 
   /* The company starts on the role text column; the date or tags end at
-     the right edge, so every row header lines up. The dates take the tag
-     size on a phone so long ranges stay on one line with the company. */
+     the right edge, so every row header lines up. Dates and tech stacks
+     keep the headliner size and weight on a phone, and wrap only when a
+     narrow screen cannot hold them on one line. */
   .exp-meta .exp-dates {
     margin-left: auto;
-    font-size: 0.875rem;
+    white-space: normal;
+    text-align: right;
+  }
+
+  .exp-item {
+    min-width: 0;
   }
 
   .exp-meta .exp-dates::before {
