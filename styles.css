@@ -1521,6 +1521,13 @@ html[data-theme="light"] .button .gh-white {
   margin-right: 0.28em;
 }
 
+.pl-sep {
+  color: var(--base1);
+  font-weight: 700;
+  margin: 0 -2px;
+  flex: none;
+}
+
 .pl-fill {
   flex: 1;
   min-width: 16px;
@@ -1548,8 +1555,8 @@ html[data-theme="light"] .button .gh-white {
 }
 
 .pl-vcs {
-  --seg-bg: var(--green);
-  --seg-fg: var(--base03);
+  --seg-bg: var(--base02);
+  --seg-fg: var(--c-nvidia);
 }
 
 .pl-vim {
@@ -1612,8 +1619,8 @@ html[data-theme="light"] .button .gh-white {
 }
 
 .pl-context {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--yellow);
+  --seg-bg: var(--yellow);
+  --seg-fg: var(--base03);
 }
 
 @media (max-width: 720px) {
