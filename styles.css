@@ -1383,6 +1383,12 @@ h1 .cursor {
   font-size: 1em; /* the bar keeps its own text size */
 }
 
+/* The hero chip follows the hero line, so its box matches the words
+   around it. */
+.role .chip {
+  font-size: 1em;
+}
+
 .pl-seg {
   position: relative;
   display: inline-flex;
@@ -1534,16 +1540,6 @@ html[data-theme="light"] .button .gh-white {
   width: auto;
   vertical-align: -0.26em;
   margin-right: 0.28em;
-}
-
-/* tmuxline's powerline divider, U+E0B0: the solid right arrow, drawn in the
-   Austin, TX grey so the seam between the two base02 segments stays visible. */
-.pl-div {
-  flex: none;
-  width: 15px;
-  height: 28px;
-  margin: 0 6px 0 0;
-  fill: var(--base1);
 }
 
 .pl-fill {
