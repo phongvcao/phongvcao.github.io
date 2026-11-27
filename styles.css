@@ -7,26 +7,6 @@
     url("assets/dejavu-sans-mono-regular.woff2") format("woff2");
 }
 
-/* Brand word faces: Intel publishes Clear Sans (Apache 2.0); the AMD brand
-   type (Klavika) is commercial, so its word uses Saira. The subsets carry
-   only the letters the words need. Tesla's wordmark is custom lettering,
-   drawn from the public-domain wordmark SVG instead of a font. */
-@font-face {
-  font-family: "Brand Intel";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/fonts/brand-intel.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Brand AMD";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/fonts/brand-amd.woff2") format("woff2");
-}
-
 @font-face {
   font-family: "Site Mono";
   font-style: normal;
@@ -340,23 +320,8 @@ code {
   color: #0A66C2;
 }
 
-.pl-linkedin {
-  width: 1.2em;
-  height: 1.2em;
-  flex: none;
-  margin-right: 0.28em;
-}
-
-html[data-theme="dark"] .pl-linkedin {
-  display: none;
-}
-
-html[data-theme="light"] .pl-linkedin-glyph {
-  display: none;
-}
-
-.button .icon.acrobat-logo,
-.pl-icon.acrobat-logo {
+.button .icon.pdf-icon,
+.pl-icon.pdf-icon {
   width: 1.2em;
   height: 1.2em;
   font-size: 1em;
@@ -535,6 +500,11 @@ html[data-theme="light"] .pl-linkedin-glyph {
 
 .credits-list li + li {
   margin-top: 6px;
+}
+
+.credits-list code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .credits-list a {
@@ -776,8 +746,6 @@ html[data-theme="light"] .pl-linkedin-glyph {
 /* The outer <svg> has no viewBox, so the symbol fills whatever box CSS gives
    it. Widths are the trimmed ratio times the 1.102em height: a square box
    would letterbox the wide marks back down to nothing. */
-svg.lg-nvidia { width: 1.735em; }   /* 24 / 15.87, at the 1.147em height */
-
 /* The fixed box keeps the names aligned; the mark is centred in it, so
    every headliner logo shares the same centre line. */
 .company-mark svg {
@@ -785,24 +753,6 @@ svg.lg-nvidia { width: 1.735em; }   /* 24 / 15.87, at the 1.147em height */
   margin-right: 0;
 }
 
-/* The TESLA face sits high in the header line box; drop the word onto the
-   mono cap line (3.2px measured at the 17px header). The Google G carries
-   a short overshoot; lift its mark by the same half-pixel. */
-.exp-company .tesla-word {
-  position: relative;
-  top: 3.2px;
-}
-
-.exp-company[href^="https://www.tesla.com"] .company-mark svg {
-  transform: translateY(2.1px);
-}
-
-.exp-company[href^="https://www.google.com"] .company-mark svg {
-  transform: translateY(-0.7px);
-}
-svg.lg-tesla { width: 1.147em; }
-svg.lg-google { width: 1.147em; }   /* 48 / 48 */
-svg.lg-arista { width: 1.547em; }   /* 24 / 17.8 */
 svg.lg-hire4real { width: 1.147em; }
 
 .logo-sprite {
@@ -846,12 +796,6 @@ svg.lg-hire4real { width: 1.147em; }
 .company-link:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 2px;
-}
-
-/* The employer name and its mark read green on the hero role line. */
-.role .company-link {
-  color: var(--green);
-  font-weight: 700;
 }
 
 .experience-list {
@@ -947,46 +891,7 @@ svg.lg-hire4real { width: 1.147em; }
   color: var(--base3);
 }
 
-/* Company names keep their brand colour in every row header. */
-.exp-company[href^="https://www.nvidia.com"] {
-  color: var(--green);
-}
-
-.exp-company[href^="https://www.tesla.com"] {
-  color: var(--red);
-}
-
-.exp-company[href^="https://www.arista.com"] {
-  color: var(--blue);
-}
-
-/* hire4real.fyi brand emerald (theme-color on the live site). */
-.exp-company[href^="https://hire4real.fyi"] {
-  color: #10b981;
-}
-
 /* The old wordmark reads with a half-letter gap between letters. */
-.google-word {
-  display: inline;
-  letter-spacing: 0.2em;
-}
-
-.g-blue {
-  color: var(--blue);
-}
-
-.g-red {
-  color: var(--red);
-}
-
-.g-yellow {
-  color: var(--yellow);
-}
-
-.g-green {
-  color: var(--green);
-}
-
 .now {
   color: var(--green);
   font-weight: 600;
@@ -1082,19 +987,12 @@ svg.lg-hire4real { width: 1.147em; }
 
 /* USB and LAN swap their files so the mark is cream on dark and dark on
    light. */
-html[data-theme="dark"] .logo-usb-on-light,
 html[data-theme="dark"] .logo-lan-on-light {
   display: none;
 }
 
-html[data-theme="light"] .logo-usb-on-dark,
 html[data-theme="light"] .logo-lan-on-dark {
   display: none;
-}
-
-.skill-logo[src$="usb-cream.svg"],
-.skill-logo[src$="usb-dark.svg"] {
-  height: 1.394em;
 }
 
 /* Project tags, the hero role line and the build credit follow the same
@@ -1160,7 +1058,7 @@ html[data-theme="light"] .logo-lan-on-dark {
 
 /* In-body technology words take the cyan link ink, like the bullet
    technology links. AMD keeps its red word. */
-a.logo-link.tech-word:not(.amd-word),
+a.logo-link.tech-word,
 .tech-word a.logo-link {
   color: var(--cyan);
 }
@@ -1170,79 +1068,8 @@ a.logo-link.tech-word:not(.amd-word),
   white-space: nowrap;
 }
 
-.intel-word,
-a[href^="https://www.intel.com"] {
-  font-family: "Brand Intel", var(--mono);
-  font-size: 1.2em; /* Clear Sans caps 0.667em; 1.2em matches the mono cap */
-}
-
-.intel-word {
-  color: #0071C5;
-  font-weight: 700;
-}
-
-.amd-word,
-a[href^="https://www.amd.com"] {
-  font-family: "Brand AMD", var(--mono);
-  font-size: 1.2em; /* Saira caps 0.667em; 1.2em matches the mono cap */
-}
-
-.amd-word {
-  color: #ED1C24;
-  font-weight: 700;
-}
-
-/* TESLA by Dies (DaFont, CC BY-SA 4.0) reproduces the wordmark lettering;
-   the site carries a five-letter subset. Cap height 0.625em: 1.28em lands
-   on the same 12px cap as the mono text. */
-@font-face {
-  font-family: "Tesla Wordmark";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/fonts/tesla-wordmark.woff2") format("woff2");
-}
-
-.tesla-word {
-  font-family: "Tesla Wordmark", var(--mono);
-  font-size: 1.19em; /* rendered T caps at 13px, same as the mono names */
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-
-.exp-bullets .company-link[href^="https://www.tesla.com"] {
-  color: var(--red);
-}
-
-.tech-logo[src$="usb-cream.svg"],
-.tech-logo[src$="usb-dark.svg"] {
-  height: 1.394em;
-}
-
 /* Inline company names carry their brand ink. Intel and AMD are just the
    words in our own font, no extra mark. */
-.exp-bullets .company-link[href^="https://www.intel.com"] {
-  color: #0071C5;
-  font-weight: 700;
-}
-
-.exp-bullets .company-link[href^="https://www.amd.com"] {
-  color: #ED1C24;
-  font-weight: 700;
-}
-
-.amd-mark {
-  height: 1.2em;
-  width: auto;
-  vertical-align: -0.25em;
-  margin-left: 0.2em;
-}
-
-.exp-bullets .company-link[href^="https://www.nvidia.com"] {
-  color: var(--cyan);
-}
-
 .role-skill {
   margin-right: 0.45em;
   vertical-align: -0.22em;
@@ -1296,11 +1123,6 @@ a[href^="https://www.amd.com"] {
 .edu-school .company-mark {
   align-self: center;
   opacity: 1;
-}
-
-svg.lg-sbu {
-  height: 1.2em;   /* 1.5x the cap height of the 15px text */
-  width: 1.018em;  /* 28 / 33 ratio */
 }
 
 .edu-sep {
@@ -2048,5 +1870,14 @@ h1 .cursor {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* The fixed chrome must leave the paper; the base rules come later in the
+   sheet than the first print block, so this one sits at the end. */
+@media print {
+  .pl-top,
+  .prompt-stack {
+    position: static;
   }
 }
