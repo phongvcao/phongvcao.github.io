@@ -833,12 +833,8 @@ svg.lg-hire4real { width: 1.102em; }
   flex: none;
 }
 
-/* These three sources carry transparent padding; scale the box so the
+/* PCIe, I2C and DMTF carry transparent padding; scale the box so the
    visible ink still measures 18px (1.5x the 12px cap height). */
-.skill-logo[src$="usb.svg"] {
-  height: 1.394em;
-}
-
 .skill-logo[src$="pcie.svg"] {
   height: 1.271em;
 }
@@ -849,6 +845,20 @@ svg.lg-hire4real { width: 1.102em; }
 
 .skill-logo[src$="dmtf.svg"] {
   height: 1.235em;
+}
+
+/* USB swaps its file so the mark is cream on dark and dark on light. */
+html[data-theme="dark"] .logo-usb-on-light {
+  display: none;
+}
+
+html[data-theme="light"] .logo-usb-on-dark {
+  display: none;
+}
+
+.skill-logo[src$="usb-cream.svg"],
+.skill-logo[src$="usb-dark.svg"] {
+  height: 1.394em;
 }
 
 .skill-row {
