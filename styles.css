@@ -910,11 +910,32 @@ html[data-theme="light"] .logo-usb-on-dark {
 }
 
 /* Go is just GO in the Go blue, in our own font. */
-/* Marks link to their technology homepage; the text keeps its own ink. */
-.logo-link,
+/* Marks link to their technology homepage; the text keeps its own ink
+   and every mark brightens on hover, like the company header links. */
+.logo-link {
+  color: inherit;
+  text-decoration: none;
+  transition: filter 120ms ease;
+}
+
 .logo-link:hover {
   color: inherit;
   text-decoration: none;
+  filter: brightness(1.3);
+}
+
+.tech-logo,
+.tag-logo,
+.skill-logo,
+.model-logo {
+  transition: filter 120ms ease;
+}
+
+.term-link:hover img,
+.inline-link:hover img,
+.work-link:hover img,
+.company-link:hover img {
+  filter: brightness(1.3);
 }
 
 /* Keep each inline tech mark glued to its word. */
