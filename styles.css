@@ -1528,13 +1528,13 @@ html[data-theme="light"] .button .gh-white {
   margin-right: 0.28em;
 }
 
-/* tmuxline's soft divider, U+E0B1: the seam between two segments that share
-   a background, in the Austin, TX grey. */
-.pl-thin {
+/* tmuxline's powerline divider, U+E0B0: the solid right arrow, drawn in the
+   Austin, TX grey so the seam between the two base02 segments stays visible. */
+.pl-div {
   flex: none;
-  width: 0.52em;
-  height: 1.04em;
-  margin: -0.04em 0.1em 0 -0.08em;
+  width: 15px;
+  height: 28px;
+  margin: 0 6px 0 0;
   fill: var(--base1);
 }
 
