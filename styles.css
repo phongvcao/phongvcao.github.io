@@ -1479,6 +1479,19 @@ h1 .cursor {
   margin-right: 0.25em;
 }
 
+.pl-pin {
+  width: 0.85em;
+  height: 0.85em;
+  flex: none;
+}
+
+.place-pin {
+  width: 0.8em;
+  height: 0.8em;
+  vertical-align: -0.1em;
+  margin-right: 0.2em;
+}
+
 .pl-fill {
   flex: 1;
   min-width: 16px;
