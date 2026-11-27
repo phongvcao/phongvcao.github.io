@@ -980,14 +980,6 @@ code {
 
 /* USB and LAN swap their files so the mark is cream on dark and dark on
    light. */
-html[data-theme="dark"] .logo-lan-on-light {
-  display: none;
-}
-
-html[data-theme="light"] .logo-lan-on-dark {
-  display: none;
-}
-
 /* Project tags, the hero role line and the build credit follow the same
    1.5x cap-height rule in their own font size. */
 .tag-logo,
@@ -1132,7 +1124,7 @@ a.logo-link.tech-word,
 
 .edu-degree {
   margin: 0;
-  padding-left: calc(1.9em + 8px);
+  padding-left: calc(0.5em + 1px);
   color: var(--base1);
   font-size: 0.9375rem;
 }
