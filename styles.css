@@ -1888,3 +1888,12 @@ html[data-theme="light"] .button .gh-white {
     position: static;
   }
 }
+
+/* Company keywords in prose take the headliner colour, without the chip
+   box: the hero role line, bullets, project lines, skills and credits. */
+.page a[href^="https://www.nvidia.com"] { color: var(--c-nvidia); }
+.page a[href^="https://www.tesla.com"] { color: var(--c-tesla); }
+.page a[href^="https://www.google.com"],
+.page a[href^="https://developers.google.com"] { color: var(--c-google); }
+.page a[href^="https://www.arista.com"] { color: var(--c-arista); }
+.page a[href^="https://hire4real.fyi"] { color: var(--c-hire4real); }
