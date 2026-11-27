@@ -1542,8 +1542,8 @@ html[data-theme="light"] .button .gh-white {
 }
 
 .pl-vcs {
-  --seg-bg: var(--base02);
-  --seg-fg: var(--green);
+  --seg-bg: var(--green);
+  --seg-fg: var(--base03);
 }
 
 .pl-vim {
@@ -1606,7 +1606,7 @@ html[data-theme="light"] .button .gh-white {
 }
 
 .pl-context {
-  --seg-bg: var(--green);
+  --seg-bg: var(--yellow);
   --seg-fg: var(--base03);
 }
 
