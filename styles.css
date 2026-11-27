@@ -587,7 +587,7 @@ code {
    would letterbox the wide marks back down to nothing. */
 svg.lg-nvidia { width: 1.667em; }   /* 24 / 15.87 */
 svg.lg-tesla { width: 1.102em; }
-svg.lg-google { width: 1.074em; }   /* 23.39 / 24 */
+svg.lg-google { width: 1.102em; }   /* 48 / 48 */
 svg.lg-arista { width: 1.486em; }   /* 24 / 17.8 */
 svg.lg-hire4real { width: 1.102em; }
 
@@ -717,6 +717,36 @@ svg.lg-hire4real { width: 1.102em; }
 
 .exp-company.company-link:hover {
   color: var(--base3);
+}
+
+/* Company names keep their brand colour in every row header. */
+.exp-company[href^="https://www.nvidia.com"] {
+  color: var(--green);
+}
+
+.exp-company[href^="https://www.tesla.com"] {
+  color: var(--red);
+}
+
+.exp-company[href^="https://www.arista.com"] {
+  color: var(--blue);
+}
+
+/* The old Google letter colours, mapped to Solarized ink. */
+.g-blue {
+  color: var(--blue);
+}
+
+.g-red {
+  color: var(--red);
+}
+
+.g-yellow {
+  color: var(--yellow);
+}
+
+.g-green {
+  color: var(--green);
 }
 
 .now {
