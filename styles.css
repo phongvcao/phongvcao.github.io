@@ -1465,31 +1465,18 @@ h1 .cursor {
 
 
 
-.pl-flag {
-  width: 1.28em;
-  height: auto;
-  margin-right: 0.35em;
+.pl-map {
+  height: 1.05em;
+  width: auto;
+  margin-right: 0.16em;
   flex: none;
 }
 
-.place-logo {
-  height: 1.2em;
+.place-map {
+  height: 1.15em;
   width: auto;
   vertical-align: -0.25em;
-  margin-right: 0.25em;
-}
-
-.pl-pin {
-  width: 0.85em;
-  height: 0.85em;
-  flex: none;
-}
-
-.place-pin {
-  width: 0.8em;
-  height: 0.8em;
-  vertical-align: -0.1em;
-  margin-right: 0.2em;
+  margin-right: 0.28em;
 }
 
 .pl-fill {
