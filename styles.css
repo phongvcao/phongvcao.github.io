@@ -291,15 +291,17 @@ code {
 .pl-icon.i-mail {
   --icon-size: 1.59em; /* envelope inks 0.692em */
 }
-.button .icon.i-pdf,
-.pl-icon.i-pdf {
-  --icon-size: 1.65em; /* pdf plate inks 0.668em */
-  color: #B30B00;      /* PDF file-icon dark red */
-}
-
 .pl-icon.i-in,
 .button .icon.i-in {
   color: #0A66C2;
+}
+
+.button .icon.acrobat-logo,
+.pl-icon.acrobat-logo {
+  width: 1.2em;
+  height: 1.2em;
+  font-size: 1em;
+  flex: none;
 }
 
 .pl-cal {

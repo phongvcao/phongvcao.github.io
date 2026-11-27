@@ -111,7 +111,7 @@
       </div>
       <span class="pl-fill" aria-hidden="true"></span>
       <div class="pl-group pl-right">
-        <a class="pl-seg pl-social" href="assets/phong-cao-resume.pdf" title="Resume (PDF)"><span class="pl-icon i-pdf" aria-hidden="true">&#xF0226;</span>Resume</a>
+        <a class="pl-seg pl-social" href="assets/phong-cao-resume.pdf" title="Resume (PDF)"><img class="pl-icon acrobat-logo" src="assets/logos/acrobat.svg" alt="" aria-hidden="true">Resume</a>
         <a class="pl-seg pl-social" href="https://github.com/phongvcao" target="_blank" rel="noopener" title="github.com/phongvcao"><span class="pl-icon i-gh" aria-hidden="true">&#xF09B;</span>GitHub</a>
         <a class="pl-seg pl-social" href="https://www.linkedin.com/in/phcao" target="_blank" rel="noopener" title="linkedin.com/in/phcao"><span class="pl-icon i-in" aria-hidden="true">&#xF033B;</span>LinkedIn</a>
       </div>
@@ -130,7 +130,7 @@
       <p class="intro">I work where firmware meets the rest of the data center: <a class="term-link" href="https://openbmc.org/" target="_blank" rel="noopener"><img class="tech-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true"><code>OpenBMC</code></a> controllers, <a class="term-link" href="https://www.dmtf.org/standards/redfish" target="_blank" rel="noopener"><img class="tech-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true"><code>Redfish</code></a> contracts and production validation. Recent work includes release-blocking GPU firmware fixes, a vendor-adopted rack power API, physical-slot GPU naming through a cross-team RFC, and validation used to gate partner-bound releases.</p>
 
       <nav class="actions" aria-label="Links">
-        <a class="button button-primary" href="assets/phong-cao-resume.pdf" aria-label="Resume, PDF file" title="Resume (PDF)"><span class="icon i-pdf" aria-hidden="true">&#xF0226;</span><span>Resume (<strong>PDF</strong>)</span></a>
+        <a class="button button-primary" href="assets/phong-cao-resume.pdf" aria-label="Resume, PDF file" title="Resume (PDF)"><img class="icon acrobat-logo" src="assets/logos/acrobat.svg" alt="" aria-hidden="true"><span>Resume (<strong>PDF</strong>)</span></a>
         <a class="button" href="https://github.com/phongvcao" target="_blank" rel="noopener" aria-label="GitHub, github.com/phongvcao" title="github.com/phongvcao"><span class="icon i-gh" aria-hidden="true">&#xF09B;</span>github.com/phongvcao</a>
         <a class="button" href="https://www.linkedin.com/in/phcao" target="_blank" rel="noopener" aria-label="LinkedIn, linkedin.com/in/phcao" title="linkedin.com/in/phcao"><span class="icon i-in" aria-hidden="true">&#xF033B;</span>linkedin.com/in/phcao</a>
         <a class="button" href="mailto:phongvcao@gmail.com" aria-label="Email, phongvcao@gmail.com" title="phongvcao@gmail.com"><span class="icon i-mail" aria-hidden="true">&#xF0E0;</span>phongvcao@gmail.com</a>
@@ -278,7 +278,7 @@
         <div class="experience-list" id="decisions-list">
           <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
-              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span>GPU Naming · HGX Rubin NVL8</h3>
+              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span>GPU Naming · <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">HGX Rubin NVL8</h3>
               <span class="exp-meta">
                 <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-nvidia" focusable="false"><use href="#logo-nvidia"/></svg></span>Nvidia</a>
                 <span class="exp-dates">Cross-Team RFC</span>
@@ -297,37 +297,37 @@
                 </div>
                 <div class="decision-node">
                   <dt>Adopted</dt>
-                  <dd>Physical-slot naming was established on HGX Rubin NVL8.</dd>
+                  <dd>Physical-slot naming was established on <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">HGX Rubin NVL8.</dd>
                 </div>
                 <div class="decision-node">
                   <dt>Trade-off</dt>
-                  <dd>BMC-driven per-slot locate LEDs were also proposed through the Redfish locate-indicator property, but the LED hardware part was not adopted. The naming improvement shipped without requiring that hardware change.</dd>
+                  <dd>BMC-driven per-slot locate LEDs were also proposed through the <img class="tech-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish locate-indicator property, but the LED hardware part was not adopted. The naming improvement shipped without requiring that hardware change.</dd>
                 </div>
               </dl>
             </div>
           </details>
           <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
-              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span>Redfish Contract · GB200 NVL72</h3>
+              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span><img class="tech-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish Contract · <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">GB200 NVL72</h3>
               <span class="exp-meta">
                 <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-nvidia" focusable="false"><use href="#logo-nvidia"/></svg></span>Nvidia</a>
                 <span class="exp-dates">API Design</span>
               </span>
-              <span class="row-line">Designed one rack-power API across power shelf vendors; a vendor adopted it and Nvidia's customer telemetry guide uses its power-state names.</span>
+              <span class="row-line">Designed one rack-power API across power shelf vendors; a vendor adopted it and <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">Nvidia's customer telemetry guide uses its power-state names.</span>
             </summary>
             <div class="exp-body">
               <dl class="decision-body">
                 <div class="decision-node">
                   <dt>Problem</dt>
-                  <dd>Power shelves from multiple vendors needed one Nvidia layout for rack power state, limits, policies and AC-loss behavior.</dd>
+                  <dd>Power shelves from multiple vendors needed one <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">Nvidia layout for rack power state, limits, policies and AC-loss behavior.</dd>
                 </div>
                 <div class="decision-node">
                   <dt>Decision</dt>
-                  <dd>Design the Redfish/CSDL and JSON Schema contract, then implement the OEM resources and actions in bmcweb with a C++ sdbusplus service.</dd>
+                  <dd>Design the <img class="tech-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish/CSDL and JSON Schema contract, then implement the OEM resources and actions in <img class="tech-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true">bmcweb with a <img class="tech-logo" src="assets/logos/cplusplus.svg" alt="" aria-hidden="true">C++ <img class="tech-logo" src="assets/logos/openbmc.svg" alt="" aria-hidden="true">sdbusplus service.</dd>
                 </div>
                 <div class="decision-node">
                   <dt>Adopted</dt>
-                  <dd>A power shelf vendor adopted the policy and AC-loss portions; Nvidia's customer telemetry guide uses the power-state names.</dd>
+                  <dd>A power shelf vendor adopted the policy and AC-loss portions; <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">Nvidia's customer telemetry guide uses the power-state names.</dd>
                 </div>
                 <div class="decision-node">
                   <dt>Trade-off</dt>
@@ -338,7 +338,7 @@
           </details>
           <details class="exp-item" open>
             <summary class="exp-summary decision-summary">
-              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span>AI Loop Engineering · Redfish Validation</h3>
+              <h3 class="exp-role"><span class="exp-toggle" aria-hidden="true"></span>AI Loop Engineering · <img class="tech-logo" src="assets/logos/redfish.png" alt="" aria-hidden="true">Redfish Validation</h3>
               <span class="exp-meta">
                 <a class="exp-company company-link" href="https://www.nvidia.com/" target="_blank" rel="noopener"><span class="company-mark is-logo" aria-hidden="true"><svg class="lg-nvidia" focusable="false"><use href="#logo-nvidia"/></svg></span>Nvidia</a>
                 <span class="exp-dates">Validation Design</span>
@@ -353,7 +353,7 @@
                 </div>
                 <div class="decision-node">
                   <dt>Decision</dt>
-                  <dd>Use one live-board capture as the shared input for DMTF and in-house validators plus model comparisons.</dd>
+                  <dd>Use one live-board capture as the shared input for <img class="tech-logo" src="assets/logos/dmtf.svg" alt="" aria-hidden="true">DMTF and in-house validators plus model comparisons.</dd>
                 </div>
                 <div class="decision-node">
                   <dt>Guardrail</dt>
@@ -406,7 +406,7 @@
             </summary>
             <div class="exp-body">
               <ul class="exp-bullets">
-                <li>A power shelf vendor adopted the policy and AC-loss portions; Nvidia's customer telemetry guide uses the power-state names.</li>
+                <li>A power shelf vendor adopted the policy and AC-loss portions; <img class="tech-logo" src="assets/logos/nvidia.svg" alt="" aria-hidden="true">Nvidia's customer telemetry guide uses the power-state names.</li>
                 <li>Built OpenBMC-on-QEMU test infrastructure before production hardware was available, including networking and simulated I2C FRU EEPROMs.</li>
                 <li>The API design is written up under Technical Decisions.</li>
               </ul>
