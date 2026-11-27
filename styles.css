@@ -1103,6 +1103,7 @@ svg.lg-sbu {
 
 .edu-degree {
   margin: 0;
+  padding-left: calc(1.9em + 8px);
   color: var(--base1);
   font-size: 0.9375rem;
 }
