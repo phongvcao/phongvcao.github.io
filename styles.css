@@ -602,7 +602,7 @@ html[data-theme="light"] .pl-linkedin-glyph {
 .company-mark {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex: none;
   width: 1.9em;
   height: 1.45em;
@@ -629,6 +629,12 @@ html[data-theme="light"] .pl-linkedin-glyph {
    it. Widths are the trimmed ratio times the 1.102em height: a square box
    would letterbox the wide marks back down to nothing. */
 svg.lg-nvidia { width: 1.667em; }   /* 24 / 15.87 */
+
+/* The header mark hugs the company name; the fixed box keeps the names
+   aligned, the mark sits on the right edge of that box. */
+.company-mark svg {
+  margin-right: 0;
+}
 svg.lg-tesla { width: 1.102em; }
 svg.lg-google { width: 1.102em; }   /* 48 / 48 */
 svg.lg-arista { width: 1.486em; }   /* 24 / 17.8 */
