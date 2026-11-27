@@ -369,13 +369,38 @@ code {
 
 
 .decision-body {
-  display: grid;
-  gap: 2px;
   margin: 0;
+  font-size: 0.9375rem;
 }
 
-.decision-body dt {
-  margin-top: 10px;
+/* Each node hangs off one continuous spine; the glyph branch marks the
+   label and the wrapped text keeps the same text column. */
+.decision-node {
+  position: relative;
+  padding: 10px 0 0 4.2ch;
+}
+
+.decision-node:first-child {
+  padding-top: 0;
+}
+
+.decision-node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(0.5ch - 0.5px);
+  width: 1px;
+  background: var(--base2);
+}
+
+.decision-node:last-child::before {
+  bottom: auto;
+  height: calc(0.82em + 10px);
+}
+
+.decision-node dt {
+  margin: 0;
   color: var(--base2);
   font-size: 0.9375rem;
   font-weight: 700;
@@ -383,21 +408,23 @@ code {
   text-transform: uppercase;
 }
 
-.decision-body dd {
+.decision-node dt::before {
+  content: "├── ";
+  position: absolute;
+  left: 0;
+  color: var(--base2);
+  font-weight: 400;
+}
+
+.decision-node:last-child dt::before {
+  content: "└── ";
+}
+
+.decision-node dd {
   margin: 0;
   color: var(--base1);
   font-size: 0.9375rem;
   line-height: 1.6;
-}
-
-.status-link {
-  color: var(--base0);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.status-link:hover {
-  color: var(--base2);
 }
 
 @media print {
@@ -418,6 +445,7 @@ code {
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
+  scroll-margin-top: calc(var(--topbar-h) + 72px);
 }
 
 .section h2 .mark {
@@ -426,11 +454,11 @@ code {
   opacity: 0.85;
 }
 
-/* A quiet note beside a section heading, same ink as the About line. */
+/* A note beside a section heading: body size, green, parenthesized. */
 .section-note {
   margin-left: 0.75em;
-  color: var(--base01);
-  font-size: 0.8125rem;
+  color: var(--green);
+  font-size: 0.9375rem;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -624,11 +652,16 @@ svg.lg-hire4real { width: 1.102em; }
 }
 
 .exp-item {
-  border-bottom: 1px solid var(--base02);
+  background: var(--base02);
+  border-bottom: 1px solid var(--base03);
+}
+
+/* Expanded rows sit on the page ink; collapsed rows lift one step. */
+.exp-item[open] {
+  background: var(--base03);
 }
 
 .exp-item[data-pinned] {
-  background: var(--base02);
   box-shadow: inset 2px 0 0 var(--blue);
 }
 
@@ -647,10 +680,6 @@ svg.lg-hire4real { width: 1.102em; }
   display: none;
 }
 
-.exp-item:hover {
-  background: var(--base02);
-}
-
 .exp-summary:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 2px;
@@ -663,8 +692,8 @@ svg.lg-hire4real { width: 1.102em; }
 }
 
 .exp-toggle {
-  margin-left: 12px;
-  margin-right: 0.22em;
+  margin-left: 16px;
+  margin-right: 0.75em;
 }
 
 .exp-item[open] .exp-toggle::before {
@@ -677,6 +706,12 @@ svg.lg-hire4real { width: 1.102em; }
   font-size: 1.0625rem;
   font-weight: 600;
   line-height: inherit;
+}
+
+/* Desktop keeps the company and date in their own grid columns; on mobile
+   the wrapper becomes the attached right-side meta group. */
+.exp-meta {
+  display: contents;
 }
 
 .exp-company {
@@ -944,7 +979,7 @@ h1 .cursor {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 4px 16px;
   width: min(var(--page-w), calc(100% - 48px));
   margin: 0 auto;
@@ -964,7 +999,6 @@ h1 .cursor {
   margin: 0;
 }
 
-.status-left,
 .status-right {
   display: inline-flex;
   align-items: center;
@@ -972,122 +1006,13 @@ h1 .cursor {
   gap: 5px;
 }
 
-.status-left {
-  color: var(--base1);
-}
-
-.status-bar {
-  position: relative;
-  display: inline-block;
-  width: 10ch;
-  height: 1em;
-  margin-right: 1ch;
-  overflow: hidden;
-  background-image: radial-gradient(circle, rgb(38 139 210 / 0.45) 0.07em, transparent 0.075em);
-  background-size: 1ch 1em;
-  background-position: 0 50%;
-  background-repeat: repeat-x;
-}
-
-.scan {
-  position: absolute;
-  inset: 0;
-  background-repeat: no-repeat;
-  background-size: 10ch 100%;
-  -webkit-mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
-  -webkit-mask-size: 1ch 0.55em;
-  -webkit-mask-position: 0 50%;
-  -webkit-mask-repeat: repeat-x;
-  mask-image: linear-gradient(90deg, #000 0 0.62ch, transparent 0.62ch 1ch);
-  mask-size: 1ch 0.55em;
-  mask-position: 0 50%;
-  mask-repeat: repeat-x;
-}
-
-.scan-fwd {
-  background-image: linear-gradient(
-    90deg,
-    transparent 0 3ch,
-    rgb(38 139 210 / 0.1) 3ch 4ch,
-    rgb(38 139 210 / 0.22) 4ch 5ch,
-    rgb(38 139 210 / 0.38) 5ch 6ch,
-    rgb(38 139 210 / 0.58) 6ch 7ch,
-    rgb(38 139 210 / 0.78) 7ch 8ch,
-    rgb(38 139 210 / 0.92) 8ch 9ch,
-    var(--blue) 9ch 10ch
-  );
-  animation: scan-fwd 3.2s linear infinite;
-}
-
-.scan-back {
-  background-image: linear-gradient(
-    90deg,
-    var(--blue) 0 1ch,
-    rgb(38 139 210 / 0.92) 1ch 2ch,
-    rgb(38 139 210 / 0.78) 2ch 3ch,
-    rgb(38 139 210 / 0.58) 3ch 4ch,
-    rgb(38 139 210 / 0.38) 4ch 5ch,
-    rgb(38 139 210 / 0.22) 5ch 6ch,
-    rgb(38 139 210 / 0.1) 6ch 7ch,
-    transparent 7ch 10ch
-  );
-  animation: scan-back 3.2s linear infinite;
-}
-
 .status-copy {
   margin-left: 8px;
   color: var(--base1);
 }
 
-.status-hint {
-  color: var(--base1);
-}
-
-.status-key {
-  color: var(--base0);
-}
-
 .status-right {
   color: var(--base01);
-}
-
-@keyframes scan-fwd {
-  0% {
-    transform: translateX(-9ch);
-  }
-  12% {
-    transform: translateX(-9ch);
-  }
-  46% {
-    transform: translateX(0);
-  }
-  54% {
-    transform: translateX(0);
-  }
-  54.01% {
-    transform: translateX(10ch);
-  }
-  100% {
-    transform: translateX(10ch);
-  }
-}
-
-@keyframes scan-back {
-  0% {
-    transform: translateX(-10ch);
-  }
-  54% {
-    transform: translateX(-10ch);
-  }
-  54.01% {
-    transform: translateX(9ch);
-  }
-  88% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
 .pl-bar {
@@ -1368,11 +1293,41 @@ h1 .cursor {
   }
 
   .actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
     margin-top: 22px;
+  }
+
+  .actions .button {
+    justify-content: flex-start;
+    padding: 0 14px;
   }
 
   .section {
     margin-top: 32px;
+  }
+
+  .section h2 {
+    scroll-margin-top: calc(var(--topbar-h) + 12px);
+  }
+
+  .fired-prompt {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .mini {
+    min-height: 32px;
+    padding: 4px 10px;
+  }
+
+  .prompt-stack {
+    position: static;
+  }
+
+  .prompt-box {
+    padding: 16px 12px;
   }
 
   .work-item p {
@@ -1380,26 +1335,35 @@ h1 .cursor {
   }
 
   .exp-summary {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 10px;
     padding: 10px;
   }
 
   .exp-toggle {
-    margin-left: 0;
+    margin-left: 6px;
   }
 
-  .exp-role {
-    grid-column: 1;
+  .exp-meta {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 0 2px;
+    margin-left: auto;
   }
 
-  .exp-company {
-    grid-column: 1;
+  .exp-meta .exp-dates::before {
+    content: "·";
+    margin-right: 0.4em;
+    color: var(--base01);
   }
 
-  .exp-dates {
-    grid-column: 1;
-    text-align: left;
+  .row-line {
+    flex: 1 0 100%;
+    padding-left: 0;
   }
 
   .exp-body {
@@ -1412,13 +1376,10 @@ h1 .cursor {
   }
 
   .prompt-meta {
-    font-size: 0.9375rem;
+    display: none;
   }
 
-  .model-agent,
-  .model-auto,
-  .model-agent + .model-auto + .model-dim,
-  .model-provider {
+  .spinner {
     display: none;
   }
 
@@ -1445,10 +1406,6 @@ h1 .cursor {
   .prompt-status {
     padding: 4px 8px;
     font-size: 0.8125rem;
-  }
-
-  .status-dot {
-    display: none;
   }
 
   .status-right {
@@ -1530,10 +1487,11 @@ h1 .cursor {
     --topbar-h: 57px;
   }
 
+  .pl-line:not(.pl-line-social) .pl-right .pl-seg,
+  .pl-line-social .pl-right .pl-seg:nth-child(n + 2),
   .pl-status,
   .pl-vim,
-  .pl-context,
-  .pl-right .pl-seg:nth-child(n + 2) {
+  .pl-context {
     display: none;
   }
 }
@@ -1541,18 +1499,6 @@ h1 .cursor {
 @media (prefers-reduced-motion: reduce) {
   .cursor {
     animation: none;
-  }
-
-  .scan {
-    animation: none;
-  }
-
-  .scan-fwd {
-    transform: translateX(-7ch);
-  }
-
-  .scan-back {
-    display: none;
   }
 
   *,
