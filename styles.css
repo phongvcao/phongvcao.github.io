@@ -672,7 +672,7 @@ html[data-theme="light"] .pl-linkedin-glyph {
 .company-mark {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex: none;
   width: 1.9em;
   height: 1.45em;
@@ -700,8 +700,8 @@ html[data-theme="light"] .pl-linkedin-glyph {
    would letterbox the wide marks back down to nothing. */
 svg.lg-nvidia { width: 1.667em; }   /* 24 / 15.87 */
 
-/* The header mark hugs the company name; the fixed box keeps the names
-   aligned, the mark sits on the right edge of that box. */
+/* The fixed box keeps the names aligned; the mark is centred in it, so
+   every headliner logo shares the same centre line. */
 .company-mark svg {
   margin-right: 0;
 }
@@ -772,6 +772,18 @@ svg.lg-hire4real { width: 1.102em; }
 /* Expanded rows sit on the page ink; collapsed rows lift one step. */
 .exp-item[open] {
   background: var(--base03);
+}
+
+/* The headliner keeps the collapsed ink when the row opens, so it reads as
+   its own bar above the expanded body. */
+.exp-item[open] .exp-summary {
+  background: var(--base02);
+}
+
+/* The open headliner paints over the item background, so a pinned row
+   carries its blue stripe on the summary too. */
+.exp-item[data-pinned] .exp-summary {
+  box-shadow: inset 2px 0 0 var(--blue);
 }
 
 .exp-item[data-pinned] {
@@ -1096,7 +1108,7 @@ a[href^="https://www.amd.com"] {
   src: url("assets/fonts/tesla-wordmark.woff2") format("woff2");
 }
 
-a[href^="https://www.tesla.com"] {
+.tesla-word {
   font-family: "Tesla Wordmark", var(--mono);
   font-size: 1.28em;
   font-weight: 400;
