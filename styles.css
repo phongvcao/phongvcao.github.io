@@ -359,7 +359,7 @@ code {
 .row-line {
   grid-column: 1 / -1;
   grid-row: 2;
-  padding-left: 2em;
+  padding-left: 39px;
   color: var(--base1);
   font-size: 0.9375rem;
   line-height: 1.55;
@@ -373,11 +373,11 @@ code {
   font-size: 0.9375rem;
 }
 
-/* Each node hangs off one continuous spine; the glyph branch marks the
-   label and the wrapped text keeps the same text column. */
+/* Same blue dot as the Experience bullets; the label and its text share
+   one text column so they read as one item. */
 .decision-node {
   position: relative;
-  padding: 10px 0 0 4.2ch;
+  padding: 10px 0 0 1.5em;
 }
 
 .decision-node:first-child {
@@ -387,16 +387,16 @@ code {
 .decision-node::before {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(0.5ch - 0.5px);
-  width: 1px;
-  background: var(--base2);
+  left: 0.18em;
+  top: calc(10px + 0.62em);
+  width: 0.38em;
+  height: 0.38em;
+  border-radius: 50%;
+  background: var(--blue);
 }
 
-.decision-node:last-child::before {
-  bottom: auto;
-  height: calc(0.82em + 10px);
+.decision-node:first-child::before {
+  top: 0.62em;
 }
 
 .decision-node dt {
@@ -406,18 +406,6 @@ code {
   font-weight: 700;
   letter-spacing: normal;
   text-transform: uppercase;
-}
-
-.decision-node dt::before {
-  content: "├── ";
-  position: absolute;
-  left: 0;
-  color: var(--base2);
-  font-weight: 400;
-}
-
-.decision-node:last-child dt::before {
-  content: "└── ";
 }
 
 .decision-node dd {
@@ -454,12 +442,12 @@ code {
   opacity: 0.85;
 }
 
-/* A note beside a section heading: body size, green, parenthesized. */
+/* A note beside a section heading: body size, green, bold, parenthesized. */
 .section-note {
   margin-left: 0.75em;
   color: var(--green);
   font-size: 0.9375rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   white-space: nowrap;
@@ -644,6 +632,11 @@ svg.lg-hire4real { width: 1.102em; }
 .company-link:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 2px;
+}
+
+/* The employer name and its mark read green on the hero role line. */
+.role .company-link {
+  color: var(--green);
 }
 
 .experience-list {
@@ -1363,7 +1356,7 @@ h1 .cursor {
 
   .row-line {
     flex: 1 0 100%;
-    padding-left: 0;
+    padding-left: 29px;
   }
 
   .exp-body {

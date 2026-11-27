@@ -20,8 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = Path.home() / ".local/share/fonts/NerdFonts"
 
 # Latin-1 + punctuation + block/shape fills the page draws itself.
-# Box drawing (U+2500-U+257F) draws the Technical Decisions tree.
-BASE = [(0x20, 0xFF), (0x2010, 0x2026), (0x2500, 0x257F), (0x2580, 0x25FF), (0x2713, 0x2714)]
+BASE = [(0x20, 0xFF), (0x2010, 0x2026), (0x2580, 0x25FF), (0x2713, 0x2714)]
 
 # Nerd Font glyphs the page actually renders. Keep in sync with index.html.
 ICONS = [
