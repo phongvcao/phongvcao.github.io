@@ -1884,6 +1884,15 @@ html[data-theme="light"] .button .gh-white {
   }
 }
 
+/* Landscape phones and small tablets are wider than the phone layout but
+   still scroll like a phone: the prompt block stays in the flow instead of
+   riding the bottom of the viewport. */
+@media (max-width: 900px) {
+  .prompt-stack {
+    position: static;
+  }
+}
+
 @media (max-width: 420px) {
   :root {
     --topbar-h: 57px;
