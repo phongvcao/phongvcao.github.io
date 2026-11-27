@@ -55,7 +55,7 @@
   --c-google: #eee8d5; /* Solarized base2, cream */
   --c-tesla: #dc322f;  /* Solarized red */
   --c-arista: #268bd2; /* Solarized blue */
-  --c-hire4real: #859900; /* Solarized green */
+  --c-hire4real: #10b981; /* hire4real.fyi theme colour */
   --c-school: #93a1a1; /* Solarized base1 */
 
   --page-w: 1200px;
@@ -76,7 +76,7 @@
   --c-google: #586e75; /* base01: cream would vanish on the light row */
   --c-tesla: #dc322f;
   --c-arista: #268bd2;
-  --c-hire4real: #859900;
+  --c-hire4real: #10b981;
   --c-school: #93a1a1;
 }
 
