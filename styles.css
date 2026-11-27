@@ -1372,22 +1372,7 @@ svg.lg-sbu {
   padding: 24px 16px 20px;
   border: 0;
   border-left: 2px solid var(--blue);
-  background-color: var(--base02);
-  /* The powerline spectrum runs along the bottom edge of the built-with
-     box, the way the TUI footer closes the screen. */
-  background-image: linear-gradient(
-    90deg,
-    #268bd2 0%,
-    #2aa198 22%,
-    #859900 42%,
-    #b58900 60%,
-    #cb4b16 76%,
-    #dc322f 90%,
-    #d33682 100%
-  );
-  background-size: 100% 2px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
+  background: var(--base02);
 }
 
 .prompt-link {
@@ -1500,11 +1485,17 @@ h1 .cursor {
   margin: 0;
 }
 
+.status-left,
 .status-right {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 5px;
+}
+
+.status-left {
+  margin-right: auto;
+  color: var(--base01);
 }
 
 .status-copy {
