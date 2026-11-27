@@ -301,6 +301,21 @@ code {
   color: #0A66C2;
 }
 
+.pl-linkedin {
+  width: 1.2em;
+  height: 1.2em;
+  flex: none;
+  margin-right: 0.28em;
+}
+
+html[data-theme="dark"] .pl-linkedin {
+  display: none;
+}
+
+html[data-theme="light"] .pl-linkedin-glyph {
+  display: none;
+}
+
 .button .icon.acrobat-logo,
 .pl-icon.acrobat-logo {
   width: 1.2em;
