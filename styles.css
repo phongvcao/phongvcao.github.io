@@ -900,10 +900,13 @@ code {
 }
 
 /* Dates and tech stacks start on one left edge, like the role and the
-   company chip do. */
+   company chip do, and stretch to the same right edge as well, so the
+   right side keeps the same 16px inset the role text keeps on the left.
+   Short labels stay flush left. */
 .exp-dates {
   color: var(--base2);
-  text-align: left;
+  text-align: justify;
+  text-align-last: justify;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
@@ -911,6 +914,11 @@ code {
 /* Tech stacks stay on one line, at the headliner text size. */
 .exp-dates.work-tags {
   white-space: nowrap;
+}
+
+.exp-dates.exp-label {
+  text-align: left;
+  text-align-last: auto;
 }
 
 .exp-body {
