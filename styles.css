@@ -7,6 +7,26 @@
     url("assets/dejavu-sans-mono-regular.woff2") format("woff2");
 }
 
+/* Brand word faces: Intel publishes Clear Sans (Apache 2.0); the AMD brand
+   type (Klavika) is commercial, so its word uses Saira. The subsets carry
+   only the letters the words need. Tesla's wordmark is custom lettering,
+   drawn from the public-domain wordmark SVG instead of a font. */
+@font-face {
+  font-family: "Brand Intel";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/brand-intel.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Brand AMD";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/brand-amd.woff2") format("woff2");
+}
+
 @font-face {
   font-family: "Site Mono";
   font-style: normal;
@@ -1043,14 +1063,48 @@ a.logo-link.tech-word:not(.amd-word),
   white-space: nowrap;
 }
 
+.intel-word,
+a[href^="https://www.intel.com"] {
+  font-family: "Brand Intel", var(--mono);
+  font-size: 1.2em; /* Clear Sans caps 0.667em; 1.2em matches the mono cap */
+}
+
 .intel-word {
   color: #0071C5;
   font-weight: 700;
 }
 
+.amd-word,
+a[href^="https://www.amd.com"] {
+  font-family: "Brand AMD", var(--mono);
+  font-size: 1.2em; /* Saira caps 0.667em; 1.2em matches the mono cap */
+}
+
 .amd-word {
   color: #ED1C24;
   font-weight: 700;
+}
+
+/* TESLA by Dies (DaFont, CC BY-SA 4.0) reproduces the wordmark lettering;
+   the site carries a five-letter subset. Cap height 0.625em: 1.28em lands
+   on the same 12px cap as the mono text. */
+@font-face {
+  font-family: "Tesla Wordmark";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/tesla-wordmark.woff2") format("woff2");
+}
+
+a[href^="https://www.tesla.com"] {
+  font-family: "Tesla Wordmark", var(--mono);
+  font-size: 1.28em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.exp-bullets .company-link[href^="https://www.tesla.com"] {
+  color: var(--red);
 }
 
 .tech-logo[src$="usb-cream.svg"],
