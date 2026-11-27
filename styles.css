@@ -706,6 +706,22 @@ svg.lg-nvidia { width: 1.735em; }   /* 24 / 15.87, at the 1.147em height */
   height: 1.147em; /* 19.5px at the 17px header: 1.5x the 13px name cap */
   margin-right: 0;
 }
+
+/* The TESLA face sits high in the header line box; drop the word onto the
+   mono cap line (3.2px measured at the 17px header). The Google G carries
+   a short overshoot; lift its mark by the same half-pixel. */
+.exp-company .tesla-word {
+  position: relative;
+  top: 3.2px;
+}
+
+.exp-company[href^="https://www.tesla.com"] .company-mark svg {
+  transform: translateY(2.1px);
+}
+
+.exp-company[href^="https://www.google.com"] .company-mark svg {
+  transform: translateY(-0.7px);
+}
 svg.lg-tesla { width: 1.147em; }
 svg.lg-google { width: 1.147em; }   /* 48 / 48 */
 svg.lg-arista { width: 1.547em; }   /* 24 / 17.8 */
@@ -913,7 +929,7 @@ svg.lg-hire4real { width: 1.147em; }
 }
 
 .exp-body {
-  padding: 0 0 14px 2em;
+  padding: 10px 0 14px 2em;
   cursor: pointer;
 }
 
@@ -1113,6 +1129,7 @@ a[href^="https://www.amd.com"] {
   font-family: "Tesla Wordmark", var(--mono);
   font-size: 1.19em; /* rendered T caps at 13px, same as the mono names */
   font-weight: 400;
+  line-height: 1;
   letter-spacing: 0.02em;
 }
 
