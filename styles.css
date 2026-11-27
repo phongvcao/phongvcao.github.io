@@ -1078,7 +1078,7 @@ a.logo-link.tech-word:not(.amd-word),
 }
 
 .exp-bullets .company-link[href^="https://www.nvidia.com"] {
-  color: var(--green);
+  color: var(--cyan);
 }
 
 .role-skill {
