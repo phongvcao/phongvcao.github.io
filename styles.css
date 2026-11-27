@@ -732,6 +732,11 @@ svg.lg-hire4real { width: 1.102em; }
   color: var(--blue);
 }
 
+/* hire4real.fyi brand emerald (theme-color on the live site). */
+.exp-company[href^="https://hire4real.fyi"] {
+  color: #10b981;
+}
+
 /* The old Google letter colours, mapped to Solarized ink. */
 .g-blue {
   color: var(--blue);
