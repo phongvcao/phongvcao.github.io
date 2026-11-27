@@ -865,7 +865,7 @@ code {
   align-items: center;
   white-space: nowrap;
   font-family: var(--mono);
-  font-size: 0.875rem;
+  font-size: 1em; /* the chip text is the headliner text size */
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: none;
