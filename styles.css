@@ -1582,7 +1582,11 @@ html[data-theme="light"] .button .gh-white {
   --seg-bg: var(--base02);
   --seg-fg: var(--c-nvidia);
   /* The seam from Senior SWE carries the thin divider, so this segment
-     starts square and keeps the arrow only on the right, into 11+ YOE. */
+     starts square and keeps the arrow only on the right, into 11+ YOE.
+     It also stops at the Senior SWE tip instead of overlapping it, so a
+     hover lights the segment and never the strip behind the divider. */
+  margin-left: 0;
+  gap: 2px;
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
 }
 
